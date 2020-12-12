@@ -71,8 +71,10 @@
     </div>
 
     <div class="my-btn">
-        <button type="button" class="btn btn-outline-light btn-block btn-lg">Login</button>
-        <button type="button" class="btn btn-outline-light btn-block btn-lg">Register</button>
+        <button type="button" class="btn btn-outline-light btn-block btn-lg"
+                onclick='Login()'>Login</button>
+        <button type="button" class="btn btn-outline-light btn-block btn-lg"
+                onclick='SignUp()'>Sign Up</button>
     </div>
 
 </div>
@@ -80,6 +82,16 @@
 <?php
 include_once("footer.php");
 ?>
+
+<script>
+    function Login() {
+        window.location = "<?php echo base_url()."HomePage/login" ?>";
+    }
+
+    function SignUp() {
+        window.location = "<?php echo base_url()."HomePage/signUp" ?>";
+    }
+</script>
 
 </body>
 </html>

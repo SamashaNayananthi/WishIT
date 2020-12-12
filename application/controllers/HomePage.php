@@ -10,4 +10,12 @@ class HomePage extends CI_Controller {
     public function myCV(){
         $this->load->view('samashaCV');
     }
+
+    public function login() {
+        $this->load->view('login');
+    }
+
+    public function signUp() {
+        $this->load->view('signUp');
+    }
 }
