@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ELDocs.tmbundle">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/user_guide/_downloads/ELDocs.tmbundle.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
