@@ -9,6 +9,7 @@
 			bottom: 0;
 			width: 100%;
 			background-color: #000000;
+            font-family: serif;
 		}
 
 		.para {

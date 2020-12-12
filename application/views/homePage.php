@@ -11,8 +11,7 @@
 
     <style>
         body {
-            width: 100vw;
-            height: 100vh;
+            height: 100%;
             margin: 0;
             /*background: radial-gradient(circle, #b537c4e0, #2c0241);*/
             background-image:url("/WishIT/images/bg.jpg");
