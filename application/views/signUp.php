@@ -23,11 +23,14 @@
 
     <div class="sign-up-box">
         <form action="" method="post">
-            <label for="name" class="lbl">Name</label>
-            <input type="text" placeholder="Enter Name" name="name" id="name" required>
+            <label for="fname" class="lbl">First Name</label>
+            <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
 
-            <label for="email" class="lbl">Email</label>
-            <input type="email" placeholder="Enter Email" name="email" id="email" required>
+            <label for="lname" class="lbl">Last Name</label>
+            <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
+
+            <label for="username" class="lbl">Username</label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
             <label for="psw" class="lbl">Password</label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>

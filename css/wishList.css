@@ -1,0 +1,95 @@
+body {
+    background: radial-gradient(circle, #b537c4e0, #2c0241);
+    font-family: serif;
+    margin: 0;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 2%;
+    overflow: hidden;
+    background-color: #0a0009cc;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li.right {float: right;}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0a0009cc;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.right:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #b537c4e0;
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
+.page-name {
+    color: white;
+    display: flex;
+}
+
+.page-name img {
+    width: 50px;
+    height: 55px;
+}
+
+.name {
+    font-size: 250%;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.user-name {
+    font-size: 125%;
+    display: flex;
+    margin: auto;
+}
+
+.icon {
+    color: white;
+    padding: 2% 6%;
+}

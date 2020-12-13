@@ -18,4 +18,8 @@ class HomePage extends CI_Controller {
     public function signUp() {
         $this->load->view('signUp');
     }
+
+    public function wishList() {
+        $this->load->view('wishList');
+    }
 }
