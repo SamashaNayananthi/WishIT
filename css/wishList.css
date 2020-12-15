@@ -93,3 +93,50 @@ li.dropdown {
     color: white;
     padding: 2% 6%;
 }
+
+.list-details {
+    color: white;
+    display: flex;
+    margin: 1% 2%;
+}
+
+.list-left {
+    display: flex;
+    float: left;
+    width: 90%;
+}
+
+.list-name, .vl, .list-note, .edit-icon {
+    margin: auto 4% auto 1%;
+}
+
+.list-name {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.vl {
+    border-left: 5px solid white;
+    height: 100%;
+}
+
+.list-note {
+    font-size: 125%;
+}
+
+.edit-icon, .add-icon {
+    font-size: 175%;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.list-right {
+    display: flex;
+    float: right;
+    width: 10%;
+}
+
+.add-icon {
+    font-size: 200%;
+}
