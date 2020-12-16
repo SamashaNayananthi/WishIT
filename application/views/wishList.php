@@ -5,7 +5,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="/WishIT/images/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/WishIT/css/bootstrap.min.css">
     <link href="/WishIT/css/wishList.css" rel="stylesheet">
 
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
@@ -42,6 +42,9 @@
         <button class='edit-icon' onclick="">
             <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
         </button>
+        <button class='share-icon' onclick="">
+            <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Share Link"></i>
+        </button>
     </div>
 
     <div class="list-right">
@@ -54,8 +57,16 @@
 <div class="items">
     <div class="item-card">
         <div class="card-top">
-            <span class="item-name">Item 1 : </span>
-            <span class="item-url">http://localhost/WishIT/index.php/HomePage/wishList</span>
+            <div class="item-name" data-toggle="tooltip" data-placement="bottom" title="Item 1">Item 1</div>
+            <div class="item-url"><a href="http://localhost/WishIT/index.php/HomePage/wishList">http://localhost/WishIT/index.php/HomePage/wishList</a></div>
+
+            <button class='item-icon' onclick="">
+                <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>
+            </button>
+
+            <button class='item-icon' onclick="">
+                <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Item"></i>
+            </button>
         </div>
 
         <div class="card-bottom">

@@ -100,14 +100,18 @@ li.dropdown { display: inline-block; }
 .list-left {
     display: flex;
     float: left;
-    width: 90%;
+    width: 93%;
 }
 
-.list-name, .vl, .list-note, .edit-icon { margin: auto 4% auto 1%; }
+.list-name, .vl, .list-note, .edit-icon, .share-icon { margin: auto 4% auto 1%; }
 
 .list-name {
-    font-size: 150%;
+    font-size: 200%;
     font-weight: bold;
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .vl {
@@ -115,9 +119,15 @@ li.dropdown { display: inline-block; }
     height: 100%;
 }
 
-.list-note { font-size: 125%; }
+.list-note {
+    font-size: 125%;
+    width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-.edit-icon, .add-icon {
+.edit-icon, .add-icon, .item-icon, .share-icon {
     font-size: 175%;
     background: none;
     border: none;
@@ -127,17 +137,17 @@ li.dropdown { display: inline-block; }
 .list-right {
     display: flex;
     float: right;
-    width: 10%;
+    width: 5%;
 }
 
-.add-icon { font-size: 200%; }
+.add-icon { font-size: 300%; }
 
 .items {
     margin: auto;
 }
 
 .item-card {
-    background-color: #c1b3c8c4;
+    background-color: #e8dfecc4;
     margin: 2%;
     padding: 2% 4%;
     border-radius: 5px;
@@ -145,19 +155,46 @@ li.dropdown { display: inline-block; }
 }
 
 .card-top {
-    margin: 0 0 2% 0;
+    margin: 0 0 1% 0;
+    display: flex;
 }
 
 .item-name {
-    font-size: 120%;
-    margin-right: 1%;
+    font-size: 150%;
+    margin-right: 2%;
+    color: #55176f;
+    width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-url {
+    margin: auto;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-url a {
+    color: #cc0eb5;
 }
 
 .item-detail {
     margin: auto 5% auto auto;
+    background-color: #4f4b5085;
+    padding: 1%;
+    border-radius: 5px;
 }
 
 .item-lbl {
-    font-size: 110%;
+    font-size: 120%;
     margin-right: 1%;
+}
+
+.item-icon {
+    float: right;
+    color: #55176f;
+    margin: 0 0 0 4%;
 }

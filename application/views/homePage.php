@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/x-icon" href="/WishIT/images/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/WishIT/css/bootstrap.min.css">
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
     <script src="/WishIT/js/popper.min.js"></script>
     <script src="/WishIT/js/bootstrap.min.js"></script>
