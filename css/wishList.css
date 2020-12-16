@@ -144,8 +144,13 @@ li.dropdown { display: inline-block; }
     font-weight: bold;
 }
 
+.card-top {
+    margin: 0 0 2% 0;
+}
+
 .item-name {
     font-size: 120%;
+    margin-right: 1%;
 }
 
 .item-detail {
@@ -154,4 +159,5 @@ li.dropdown { display: inline-block; }
 
 .item-lbl {
     font-size: 110%;
+    margin-right: 1%;
 }
