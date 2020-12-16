@@ -12,7 +12,7 @@ ul.topnav {
     background-color: #0a0009cc;
 }
 
-ul.topnav li {float: left;}
+ul.topnav li { float: left; }
 
 ul.topnav li a {
     display: block;
@@ -22,7 +22,7 @@ ul.topnav li a {
     text-decoration: none;
 }
 
-ul.topnav li.right {float: right;}
+ul.topnav li.right { float: right; }
 
 li a, .dropbtn {
     display: inline-block;
@@ -32,14 +32,12 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li.dropdown {
-    display: inline-block;
-}
+li.dropdown { display: inline-block; }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #0a0009cc;
+    background-color: black;
     min-width: 160px;
     z-index: 1;
 }
@@ -50,11 +48,10 @@ li.dropdown {
     text-decoration: none;
     display: block;
     text-align: left;
+    font-weight: bold;
 }
 
-.right:hover .dropdown-content {
-    display: block;
-}
+.right:hover .dropdown-content { display: block; }
 
 .dropdown-content a:hover {
     background-color: #b537c4e0;
@@ -97,7 +94,7 @@ li.dropdown {
 .list-details {
     color: white;
     display: flex;
-    margin: 1% 2%;
+    margin: 3% 2%;
 }
 
 .list-left {
@@ -106,9 +103,7 @@ li.dropdown {
     width: 90%;
 }
 
-.list-name, .vl, .list-note, .edit-icon {
-    margin: auto 4% auto 1%;
-}
+.list-name, .vl, .list-note, .edit-icon { margin: auto 4% auto 1%; }
 
 .list-name {
     font-size: 150%;
@@ -120,9 +115,7 @@ li.dropdown {
     height: 100%;
 }
 
-.list-note {
-    font-size: 125%;
-}
+.list-note { font-size: 125%; }
 
 .edit-icon, .add-icon {
     font-size: 175%;
@@ -137,6 +130,28 @@ li.dropdown {
     width: 10%;
 }
 
-.add-icon {
-    font-size: 200%;
+.add-icon { font-size: 200%; }
+
+.items {
+    margin: auto;
+}
+
+.item-card {
+    background-color: #c1b3c8c4;
+    margin: 2%;
+    padding: 2% 4%;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.item-name {
+    font-size: 120%;
+}
+
+.item-detail {
+    margin: auto 5% auto auto;
+}
+
+.item-lbl {
+    font-size: 110%;
 }

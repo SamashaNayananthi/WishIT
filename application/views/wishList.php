@@ -51,6 +51,38 @@
     </div>
 </div>
 
+<div class="items">
+    <div class="item-card">
+        <div class="card-top">
+            <span class="item-name">Item 1 : </span>
+            <span class="item-url">http://localhost/WishIT/index.php/HomePage/wishList</span>
+        </div>
+
+        <div class="card-bottom">
+            <span class="item-detail">
+                <span class="item-lbl">Occasion : </span>
+                <span class="item-lbl-detail">Birthday</span>
+            </span>
+
+            <span class="item-detail">
+                <span class="item-lbl">Price : </span>
+                <span class="item-lbl-detail">1000 (Rs.)</span>
+            </span>
+
+            <span class="item-detail">
+                <span class="item-lbl">Quantity : </span>
+                <span class="item-lbl-detail">1</span>
+            </span>
+
+            <span class="item-detail">
+                <span class="item-lbl">Priority : </span>
+                <span class="item-lbl-detail">I want it</span>
+            </span>
+        </div>
+
+    </div>
+</div>
+
 <?php
 include_once("footer.php");
 ?>
