@@ -53,6 +53,13 @@ input, .btn {
     background-color: #b537c4e0;
 }
 
+.form i {
+    margin-left: -50px;
+    cursor: pointer;
+    display: inline;
+    font-size: 20;
+}
+
 .sign-up-div {
     text-align: center;
     font-size: 20px;

@@ -22,4 +22,13 @@ class UserModel extends CI_Model {
         }
     }
 
+    function isLoggedIn() {
+        if (isset($this->session->user)) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
 }
