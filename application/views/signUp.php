@@ -22,7 +22,7 @@
     </div>
 
     <div class="sign-up-box">
-        <form action="" method="post">
+        <form action="<?php echo base_url()."api/User/users" ?>" method="post" id="form" onSubmit="return checkForm()">
             <label for="fname" class="lbl">First Name</label>
             <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
 
@@ -53,6 +53,48 @@ include_once("footer.php");
 ?>
 
 <script>
+
+    function checkForm() {
+        let namePattern = /^[A-Za-z]+$/;
+        let fname = document.getElementById('fname').value;
+        let lname = document.getElementById('lname').value;
+        let psw = document.getElementById('psw').value;
+        let pswRepeat = document.getElementById('pswRepeat').value;
+
+        if (fname != '' && !fname.match(namePattern)) {
+            alert('First name is invalid');
+            return false;
+
+        } else if (lname != '' && !lname.match(namePattern)) {
+            alert('Last name is invalid');
+            return false;
+
+        } else if(psw != pswRepeat) {
+            alert('The password and repeat password do not match.');
+            return false;
+
+        } else {
+            return true;
+        }
+
+    }
+
+    $('#form').submit(function(){
+        $.ajax({
+            url: $('#form').attr('action'),
+            type: 'POST',
+            data : $('#form').serialize(),
+            success: function(){
+                window.location = "<?php echo base_url()."HomePage/login" ?>";
+            },
+            statusCode: {
+                409: function() {
+                    alert('Username already exists');
+                }
+            }
+        });
+        return false;
+    });
 
 </script>
 
