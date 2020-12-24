@@ -11,6 +11,8 @@
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
     <script src="/WishIT/js/popper.min.js"></script>
     <script src="/WishIT/js/bootstrap.min.js"></script>
+    <script src="/WishIT/js/underscore.js" type="text/javascript"></script>
+    <script src="/WishIT/js/backbone.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -33,7 +35,16 @@
         </div>
     </li>
 </ul>
-<div class="list-details">
+
+<div class="no-list" id="noListView">
+    <div class="no-list-msg">Create your Wish List</div>
+
+    <button class='add-icon' onclick="">
+        <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
+    </button>
+</div>
+
+<div class="list-details" id="listView">
     <div class="list-left">
         <div class="list-name" data-toggle="tooltip" data-placement="bottom" title="My List Test">My List Test</div>
         <div class="vl"></div>
@@ -54,7 +65,7 @@
     </div>
 </div>
 
-<div class="items">
+<div class="items" id="wishItems">
     <div class="item-card">
         <div class="card-top">
             <div class="item-name" data-toggle="tooltip" data-placement="bottom" title="Item 1">Item 1</div>
@@ -99,6 +110,8 @@ include_once("footer.php");
 ?>
 
 <script>
+    var listGlobal = null;
+
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -113,6 +126,42 @@ include_once("footer.php");
         });
         return false;
     });
+
+    var List = Backbone.Model.extend({
+        url: '/WishIT/index.php/api/ListDetails/list/userId/<?php echo "$user->id" ?>',
+        idAttribute: 'userId',
+        defaults: {"id":null,
+            "name":"",
+            "description":"",
+            "userId":null
+        }
+    });
+
+    var list = new List();
+    list.fetch({async:false});
+
+    if (list.get('id') == null) {
+        document.getElementById("listView").style.visibility = "hidden";
+        document.getElementById("noListView").style.visibility = "visible";
+        document.getElementById("wishItems").style.visibility = "hidden";
+    } else {
+        document.getElementById("listView").style.visibility = "visible";
+        document.getElementById("noListView").style.visibility = "hidden";
+        document.getElementById("wishItems").style.visibility = "visible";
+    }
+
+    // var ListView = Backbone.View.extend({
+    //     el: '#listView',
+    //     initialize: function () {
+    //         this.listenTo(this.model, 'sync change', this.render);
+    //         this.model.fetch();
+    //     },
+    //     render: function () {
+    //
+    //         return this;
+    //     }
+    // });
+
 </script>
 
 </body>

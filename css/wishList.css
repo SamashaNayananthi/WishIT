@@ -38,7 +38,7 @@ li.dropdown { display: inline-block; }
     display: none;
     position: absolute;
     background-color: black;
-    min-width: 160px;
+    min-width: 135px;
     z-index: 1;
 }
 
@@ -89,6 +89,27 @@ li.dropdown { display: inline-block; }
 .icon {
     color: white;
     padding: 2% 6%;
+}
+
+.no-list {
+    margin: 5% auto;
+    width: 90%;
+    display: flex;
+    color: white;
+    font-size: 350%;
+    background-color: #0a0009cc;
+    padding: 5%;
+    border-radius: 15px;
+}
+
+.no-list-msg {
+    margin: auto;
+}
+
+.no-list .add-icon {
+    font-size: 100%;
+    padding: 0 5%;
+    margin: auto;
 }
 
 .list-details {
@@ -178,7 +199,7 @@ li.dropdown { display: inline-block; }
 }
 
 .item-url a {
-    color: #cc0eb5;
+    color: #0e1dcc;
 }
 
 .item-detail {

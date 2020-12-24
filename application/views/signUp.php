@@ -22,7 +22,7 @@
     </div>
 
     <div class="sign-up-box">
-        <form action="<?php echo base_url()."api/User/users" ?>" method="post" id="form" onSubmit="return checkForm()">
+        <form action="<?php echo base_url()."api/User/users" ?>" method="post" id="form">
             <label for="fname" class="lbl">First Name</label>
             <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
 
@@ -58,6 +58,7 @@ include_once("footer.php");
         let namePattern = /^[A-Za-z]+$/;
         let fname = document.getElementById('fname').value;
         let lname = document.getElementById('lname').value;
+        let username = document.getElementById('username').value;
         let psw = document.getElementById('psw').value;
         let pswRepeat = document.getElementById('pswRepeat').value;
 
@@ -65,8 +66,20 @@ include_once("footer.php");
             alert('First name is invalid');
             return false;
 
+        } else if (fname != '' && fname.length > 25) {
+            alert('First name is too lengthy');
+            return false;
+
         } else if (lname != '' && !lname.match(namePattern)) {
             alert('Last name is invalid');
+            return false;
+
+        } else if (lname != '' && lname.length > 25) {
+            alert('Last name is too lengthy');
+            return false;
+
+        } else if (username != '' && username.length > 15) {
+            alert('Username is too lengthy. Please limit to 15 characters.');
             return false;
 
         } else if(psw != pswRepeat) {
@@ -80,19 +93,22 @@ include_once("footer.php");
     }
 
     $('#form').submit(function(){
-        $.ajax({
-            url: $('#form').attr('action'),
-            type: 'POST',
-            data : $('#form').serialize(),
-            success: function(){
-                window.location = "<?php echo base_url()."HomePage/login" ?>";
-            },
-            statusCode: {
-                409: function() {
-                    alert('Username already exists');
+        var validation = checkForm();
+        if (validation) {
+            $.ajax({
+                url: $('#form').attr('action'),
+                type: 'POST',
+                data : $('#form').serialize(),
+                success: function(){
+                    window.location = "<?php echo base_url()."HomePage/login" ?>";
+                },
+                statusCode: {
+                    409: function() {
+                        alert('Username already exists');
+                    }
                 }
-            }
-        });
+            });
+        }
         return false;
     });
 

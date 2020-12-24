@@ -18,6 +18,7 @@ class AuthenticateModel extends CI_Model {
 
             if (password_verify($password, $hashPassword)) {
                 $user = new stdClass();
+                $user->id = $row->id;
                 $user->fname = $row->first_name;
                 $user->lname = $row->last_name;
                 $user->username = $row->username;
