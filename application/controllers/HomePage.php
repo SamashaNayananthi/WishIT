@@ -20,6 +20,14 @@ class HomePage extends CI_Controller {
     }
 
     public function wishList() {
-        $this->load->view('wishList');
+        $this->load->model('UserModel');
+
+        if (!$this->UserModel->isLoggedIn()) {
+            $this->load->view('login');
+
+        } else {
+            $this->load->view('wishList');
+        }
+
     }
 }

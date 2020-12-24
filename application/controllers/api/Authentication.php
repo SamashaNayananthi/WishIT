@@ -24,4 +24,12 @@ class Authentication extends \Restserver\Libraries\REST_Controller {
         }
     }
 
+    public function logout_get(){
+        $this->load->model('AuthenticateModel');
+
+        $result = $this ->AuthenticateModel->logout();
+
+        $this->set_response(NULL, \Restserver\Libraries\REST_Controller::HTTP_OK);
+    }
+
 }

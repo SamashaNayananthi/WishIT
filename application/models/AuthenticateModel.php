@@ -32,4 +32,9 @@ class AuthenticateModel extends CI_Model {
 
     }
 
+    public function logout(){
+        $this->session->unset_userdata('user');
+        $this->session->sess_destroy();
+    }
+
 }

@@ -29,7 +29,7 @@
             </div>
         </a>
         <div class="dropdown-content">
-            <a href="">Logout</a>
+            <a href="<?php echo base_url()."api/Authentication/logout" ?>" id="logout">Logout</a>
         </div>
     </li>
 </ul>
@@ -101,6 +101,17 @@ include_once("footer.php");
 <script>
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $('#logout').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            success: function(response) {
+                window.location = "<?php echo base_url()."HomePage/" ?>";
+            }
+        });
+        return false;
     });
 </script>
 
