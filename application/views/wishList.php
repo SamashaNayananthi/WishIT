@@ -38,18 +38,31 @@
 
 <div class="no-list" id="noListView">
     <div class="no-list-msg">Create your Wish List</div>
-
-    <button class='add-icon' onclick="">
+    <button class='add-icon' id="addList">
         <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
     </button>
 </div>
 
+<div id="listPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <div class="popup-heading">Create Wish List</div>
+
+        <label for="name" class="lbl">List Name</label>
+        <input type="text" placeholder="List Name" name="name" id="name">
+
+        <label for="desc" class="lbl">List Description</label>
+        <input type="text" placeholder="List Description" name="desc" id="desc">
+
+        <input type="button" value="Create Wish List" class="popupBtn" onclick="onCreateList()">
+    </div>
+</div>
+
 <div class="list-details" id="listView">
-    <div class="list-left">
-        <div class="list-name" data-toggle="tooltip" data-placement="bottom" title="My List Test">My List Test</div>
+    <div class="list-left" id="listMain">
+        <div class="list-name" data-toggle="tooltip" data-placement="bottom" title=""></div>
         <div class="vl"></div>
-        <div class="list-note" data-toggle="tooltip" data-placement="bottom" title="This is my first list">
-            This is my first list</div>
+        <div class="list-note" data-toggle="tooltip" data-placement="bottom" title=""></div>
         <button class='edit-icon' onclick="">
             <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
         </button>
@@ -128,8 +141,8 @@ include_once("footer.php");
     });
 
     var List = Backbone.Model.extend({
-        url: '/WishIT/index.php/api/ListDetails/list/userId/<?php echo "$user->id" ?>',
-        idAttribute: 'userId',
+        url: '/WishIT/index.php/api/ListDetails/list',
+        idAttribute: 'id',
         defaults: {"id":null,
             "name":"",
             "description":"",
@@ -138,29 +151,83 @@ include_once("footer.php");
     });
 
     var list = new List();
-    list.fetch({async:false});
 
-    if (list.get('id') == null) {
-        document.getElementById("listView").style.visibility = "hidden";
-        document.getElementById("noListView").style.visibility = "visible";
-        document.getElementById("wishItems").style.visibility = "hidden";
-    } else {
-        document.getElementById("listView").style.visibility = "visible";
-        document.getElementById("noListView").style.visibility = "hidden";
-        document.getElementById("wishItems").style.visibility = "visible";
+    var span = document.getElementsByClassName("close")[0];
+    var listPopup = document.getElementById("listPopup");
+    var addList = document.getElementById("addList");
+
+    span.onclick = function() {
+        listPopup.style.display = "none";
     }
 
-    // var ListView = Backbone.View.extend({
-    //     el: '#listView',
-    //     initialize: function () {
-    //         this.listenTo(this.model, 'sync change', this.render);
-    //         this.model.fetch();
-    //     },
-    //     render: function () {
-    //
-    //         return this;
-    //     }
-    // });
+    window.onclick = function(event) {
+        if (event.target === listPopup) {
+            listPopup.style.display = "none";
+        }
+    }
+
+    addList.onclick = function() {
+        listPopup.style.display = "block";
+    }
+
+    var ListView = Backbone.View.extend({
+        el: '#listMain',
+        initialize: function () {
+            this.listenTo(this.model, 'sync change', this.render);
+            this.model.fetch();
+            if (this.model.get('id') == null) {
+                document.getElementById("listView").style.visibility = "hidden";
+                document.getElementById("noListView").style.visibility = "visible";
+                document.getElementById("wishItems").style.visibility = "hidden";
+            } else {
+                document.getElementById("listView").style.visibility = "visible";
+                document.getElementById("noListView").style.visibility = "hidden";
+                document.getElementById("wishItems").style.visibility = "visible";
+            }
+        },
+        render: function () {
+            if (this.model.get('id') == null) {
+                document.getElementById("listView").style.visibility = "hidden";
+                document.getElementById("noListView").style.visibility = "visible";
+                document.getElementById("wishItems").style.visibility = "hidden";
+            } else {
+                document.getElementById("listView").style.visibility = "visible";
+                document.getElementById("noListView").style.visibility = "hidden";
+                document.getElementById("wishItems").style.visibility = "visible";
+            }
+
+            var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" title="' +
+                this.model.get('name') + '">' + this.model.get('name') + '</div>\n' +
+                '<div class="vl"></div>\n' +
+                '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
+                this.model.get('description') + '">\n' +
+                this.model.get('description') + '</div>';
+
+            this.$el.html(html);
+            return this;
+        }
+    });
+
+    var listView = new ListView({model:list});
+
+    function onCreateList() {
+        var name = document.getElementById("name").value;
+        var desc = document.getElementById("desc").value;
+
+        if (name !== '' && desc !== '') {
+            list.set('id',null);
+            list.set('name', name);
+            list.set('description', desc);
+            list.set('userId', <?php echo "$user->id" ?>);
+            list.save({async:false});
+            listView.render();
+        } else if (name === '') {
+            alert('List Name is required.')
+        } else  {
+            alert('List Description is required.')
+        }
+
+    }
 
 </script>
 

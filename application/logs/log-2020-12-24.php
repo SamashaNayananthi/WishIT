@@ -462,3 +462,477 @@ ERROR - 2020-12-24 15:17:09 --> Severity: Notice --> Trying to get property 'nam
 ERROR - 2020-12-24 15:17:09 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
 ERROR - 2020-12-24 15:17:09 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
 DEBUG - 2020-12-24 15:17:09 --> Total execution time: 0.2332
+DEBUG - 2020-12-24 17:16:12 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:16:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:16:12 --> Total execution time: 0.1169
+DEBUG - 2020-12-24 17:16:12 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:16:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:16:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:16:13 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:16:13 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:16:13 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:16:13 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:16:13 --> Total execution time: 0.1998
+DEBUG - 2020-12-24 17:18:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:18:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:18:48 --> Total execution time: 0.1573
+DEBUG - 2020-12-24 17:18:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:18:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:18:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:18:49 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:18:49 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:18:49 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:18:49 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:18:49 --> Total execution time: 0.2242
+DEBUG - 2020-12-24 17:23:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:23:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:23:29 --> Total execution time: 0.1492
+DEBUG - 2020-12-24 17:23:30 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:23:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:23:30 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:23:30 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:23:30 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:23:30 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:23:30 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:23:30 --> Total execution time: 0.2307
+DEBUG - 2020-12-24 17:24:33 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:24:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:24:33 --> Total execution time: 0.1199
+DEBUG - 2020-12-24 17:24:33 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:24:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:24:33 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:24:34 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:24:34 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:24:34 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:24:34 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:24:34 --> Total execution time: 0.3285
+DEBUG - 2020-12-24 17:24:50 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:24:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:24:50 --> Total execution time: 0.1173
+DEBUG - 2020-12-24 17:24:50 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:24:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:24:50 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:24:50 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:24:50 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:24:50 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:24:50 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:24:50 --> Total execution time: 0.1770
+DEBUG - 2020-12-24 17:25:14 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:25:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:25:14 --> Total execution time: 0.1503
+DEBUG - 2020-12-24 17:25:14 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:25:15 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:25:15 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:25:15 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:25:15 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:25:15 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:25:15 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:25:15 --> Total execution time: 0.1875
+DEBUG - 2020-12-24 17:26:10 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:26:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:26:10 --> Total execution time: 0.1168
+DEBUG - 2020-12-24 17:26:10 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:26:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:26:10 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:26:10 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:26:10 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:26:10 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:26:10 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:26:10 --> Total execution time: 0.3025
+DEBUG - 2020-12-24 17:27:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:27:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:27:35 --> Total execution time: 0.1263
+DEBUG - 2020-12-24 17:27:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:27:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:27:35 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:27:35 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:27:35 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:27:35 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:27:35 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:27:35 --> Total execution time: 0.2131
+DEBUG - 2020-12-24 17:28:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:28:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:28:49 --> Total execution time: 0.0836
+DEBUG - 2020-12-24 17:28:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:28:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:28:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:28:49 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:28:49 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:28:49 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:28:49 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:28:49 --> Total execution time: 0.1311
+DEBUG - 2020-12-24 17:30:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:30:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:30:40 --> Total execution time: 0.0756
+DEBUG - 2020-12-24 17:30:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:30:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:30:41 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:30:41 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:30:41 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:30:41 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:30:41 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:30:41 --> Total execution time: 0.1469
+DEBUG - 2020-12-24 17:34:06 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:34:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:34:06 --> Total execution time: 0.0847
+DEBUG - 2020-12-24 17:34:07 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:34:07 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:34:07 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:34:07 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:34:07 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:34:07 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:34:07 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:34:07 --> Total execution time: 0.1848
+DEBUG - 2020-12-24 17:35:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:35:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:35:24 --> Total execution time: 0.0745
+DEBUG - 2020-12-24 17:35:24 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:35:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:35:24 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:35:24 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:35:24 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:35:24 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:35:24 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:35:24 --> Total execution time: 0.1499
+DEBUG - 2020-12-24 17:40:00 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:00 --> Total execution time: 0.0763
+DEBUG - 2020-12-24 17:40:00 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:40:00 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:40:00 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:40:00 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:40:00 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:40:00 --> Total execution time: 0.1433
+DEBUG - 2020-12-24 17:40:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:23 --> Total execution time: 0.0694
+DEBUG - 2020-12-24 17:40:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:40:23 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:40:23 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:40:24 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:40:24 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:40:24 --> Total execution time: 0.1475
+DEBUG - 2020-12-24 17:40:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:29 --> Total execution time: 0.0930
+DEBUG - 2020-12-24 17:40:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:40:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:40:29 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:40:29 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:40:29 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:40:29 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:40:29 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:40:29 --> Total execution time: 0.1503
+DEBUG - 2020-12-24 17:41:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:41:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:41:35 --> Total execution time: 0.0841
+DEBUG - 2020-12-24 17:41:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:41:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:41:36 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:41:36 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:41:36 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:41:36 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:41:36 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:41:36 --> Total execution time: 0.1459
+DEBUG - 2020-12-24 17:41:46 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:41:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:41:46 --> Total execution time: 0.0769
+DEBUG - 2020-12-24 17:41:46 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:41:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:41:46 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:41:46 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:41:46 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:41:46 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:41:46 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:41:46 --> Total execution time: 0.1461
+DEBUG - 2020-12-24 17:42:37 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:42:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:42:38 --> Total execution time: 0.0915
+DEBUG - 2020-12-24 17:42:38 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:42:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:42:38 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:42:38 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:42:38 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:42:38 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:42:38 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:42:38 --> Total execution time: 0.1476
+DEBUG - 2020-12-24 17:42:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:42:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:42:58 --> Total execution time: 0.0935
+DEBUG - 2020-12-24 17:42:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:42:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:42:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:42:58 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:42:58 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:42:58 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:42:58 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:42:58 --> Total execution time: 0.1271
+DEBUG - 2020-12-24 17:46:28 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:46:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:46:28 --> Total execution time: 0.0918
+DEBUG - 2020-12-24 17:46:28 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:46:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:46:28 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:46:28 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:46:28 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:46:28 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:46:28 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:46:28 --> Total execution time: 0.1397
+DEBUG - 2020-12-24 17:46:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:46:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:46:40 --> Total execution time: 0.1027
+DEBUG - 2020-12-24 17:46:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 17:46:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 17:46:40 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 17:46:40 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 17:46:40 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 17:46:40 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 17:46:40 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 17:46:40 --> Total execution time: 0.1417
+DEBUG - 2020-12-24 18:15:36 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:15:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:15:36 --> Total execution time: 0.0752
+DEBUG - 2020-12-24 18:15:36 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:15:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:15:36 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:15:36 --> Total execution time: 0.1207
+DEBUG - 2020-12-24 18:15:36 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:15:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:15:36 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:15:36 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:15:36 --> Total execution time: 0.1314
+DEBUG - 2020-12-24 18:15:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:15:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:15:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:15:49 --> Severity: Warning --> call_user_func_array() expects parameter 1 to be a valid callback, class 'ListDetails' does not have a method 'index_post' C:\xampp\htdocs\WishIT\application\libraries\REST_Controller.php 743
+DEBUG - 2020-12-24 18:15:49 --> Total execution time: 0.0938
+DEBUG - 2020-12-24 18:16:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:16:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:16:40 --> Total execution time: 0.0855
+DEBUG - 2020-12-24 18:16:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:16:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:16:40 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:16:40 --> Total execution time: 0.1458
+DEBUG - 2020-12-24 18:16:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:16:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:16:40 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:16:40 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:16:40 --> Total execution time: 0.1951
+DEBUG - 2020-12-24 18:16:44 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:16:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:16:44 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:16:44 --> Severity: Warning --> call_user_func_array() expects parameter 1 to be a valid callback, class 'ListDetails' does not have a method 'index_post' C:\xampp\htdocs\WishIT\application\libraries\REST_Controller.php 743
+DEBUG - 2020-12-24 18:16:44 --> Total execution time: 0.0943
+DEBUG - 2020-12-24 18:16:45 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:16:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:16:45 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:16:45 --> Severity: Warning --> call_user_func_array() expects parameter 1 to be a valid callback, class 'ListDetails' does not have a method 'index_post' C:\xampp\htdocs\WishIT\application\libraries\REST_Controller.php 743
+DEBUG - 2020-12-24 18:16:45 --> Total execution time: 0.0904
+DEBUG - 2020-12-24 18:33:57 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:33:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:33:57 --> Total execution time: 0.1203
+DEBUG - 2020-12-24 18:33:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:33:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:33:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:33:58 --> Total execution time: 0.1661
+DEBUG - 2020-12-24 18:33:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:33:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:33:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:33:58 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:33:58 --> Total execution time: 0.1914
+DEBUG - 2020-12-24 18:34:03 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:03 --> Total execution time: 0.0889
+DEBUG - 2020-12-24 18:34:04 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:04 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:34:04 --> Total execution time: 0.1632
+DEBUG - 2020-12-24 18:34:04 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:04 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:34:04 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:34:04 --> Total execution time: 0.1867
+DEBUG - 2020-12-24 18:34:25 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:25 --> Total execution time: 0.0949
+DEBUG - 2020-12-24 18:34:25 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:25 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:34:25 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:34:25 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:34:25 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:34:25 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:34:25 --> Total execution time: 0.1579
+DEBUG - 2020-12-24 18:34:25 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:34:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:34:26 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:34:26 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:34:26 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:34:26 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:34:26 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:34:26 --> Total execution time: 0.2543
+DEBUG - 2020-12-24 18:36:25 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:36:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:36:25 --> Total execution time: 0.0727
+DEBUG - 2020-12-24 18:36:26 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:36:26 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:36:26 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:36:26 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:36:26 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:36:26 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:36:26 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:36:26 --> Total execution time: 0.2105
+DEBUG - 2020-12-24 18:37:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:29 --> Total execution time: 0.0814
+DEBUG - 2020-12-24 18:37:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:29 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:37:30 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:37:30 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:37:30 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:37:30 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:37:30 --> Total execution time: 0.1652
+DEBUG - 2020-12-24 18:37:31 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:31 --> Total execution time: 0.0650
+DEBUG - 2020-12-24 18:37:31 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:31 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:37:31 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:37:31 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:37:31 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:37:31 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:37:31 --> Total execution time: 0.1409
+DEBUG - 2020-12-24 18:37:39 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:39 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:39 --> Total execution time: 0.0729
+DEBUG - 2020-12-24 18:37:39 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:39 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:39 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:37:40 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:37:40 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:37:40 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:37:40 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:37:40 --> Total execution time: 0.1736
+DEBUG - 2020-12-24 18:37:56 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:56 --> Total execution time: 0.0854
+DEBUG - 2020-12-24 18:37:56 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:37:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:37:56 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:37:56 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:37:56 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:37:56 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:37:56 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:37:56 --> Total execution time: 0.1822
+DEBUG - 2020-12-24 18:38:18 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:38:18 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:38:18 --> Total execution time: 0.0813
+DEBUG - 2020-12-24 18:38:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:38:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:38:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:38:23 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:38:23 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:38:23 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:38:23 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:38:23 --> Total execution time: 0.1913
+DEBUG - 2020-12-24 18:39:06 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:39:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:39:06 --> Total execution time: 0.0908
+DEBUG - 2020-12-24 18:39:06 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:39:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:39:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:39:06 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:39:06 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:39:06 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:39:06 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:39:06 --> Total execution time: 0.1389
+DEBUG - 2020-12-24 18:39:18 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:39:18 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:39:18 --> Total execution time: 0.0888
+DEBUG - 2020-12-24 18:39:18 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:39:18 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:39:18 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:39:18 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:39:18 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:39:18 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:39:18 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:39:18 --> Total execution time: 0.1441
+DEBUG - 2020-12-24 18:39:51 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:39:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:39:51 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:39:51 --> Severity: Warning --> call_user_func_array() expects parameter 1 to be a valid callback, class 'ListDetails' does not have a method 'index_post' C:\xampp\htdocs\WishIT\application\libraries\REST_Controller.php 743
+DEBUG - 2020-12-24 18:39:51 --> Total execution time: 0.0994
+DEBUG - 2020-12-24 18:44:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:44:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:44:19 --> Total execution time: 0.0998
+DEBUG - 2020-12-24 18:44:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:44:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:44:19 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:44:19 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:44:19 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:44:19 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:44:19 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:44:19 --> Total execution time: 0.1781
+DEBUG - 2020-12-24 18:44:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:44:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:44:48 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:44:48 --> Severity: Warning --> call_user_func_array() expects parameter 1 to be a valid callback, class 'ListDetails' does not have a method 'index_post' C:\xampp\htdocs\WishIT\application\libraries\REST_Controller.php 743
+DEBUG - 2020-12-24 18:44:48 --> Total execution time: 0.0909
+DEBUG - 2020-12-24 18:45:37 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:37 --> Total execution time: 0.0994
+DEBUG - 2020-12-24 18:45:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:48 --> Total execution time: 0.0946
+DEBUG - 2020-12-24 18:45:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:48 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-24 18:45:48 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-24 18:45:48 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-24 18:45:48 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-24 18:45:48 --> Severity: Notice --> Trying to get property 'userId' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-24 18:45:48 --> Total execution time: 0.1488
+DEBUG - 2020-12-24 18:45:50 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:50 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-24 18:45:50 --> Total execution time: 0.0892
+DEBUG - 2020-12-24 18:45:50 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:50 --> Total execution time: 0.1019
+DEBUG - 2020-12-24 18:45:54 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 18:45:54 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 18:45:54 --> Total execution time: 0.0736

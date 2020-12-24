@@ -6,7 +6,7 @@ require APPPATH . '/libraries/REST_Controller.php';
 class ListDetails extends \Restserver\Libraries\REST_Controller {
 
     public function list_get() {
-        $userId = $this->get('userId');
+        $userId = $this->session->user->id;
 
         if ($userId === NULL) {
             $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
