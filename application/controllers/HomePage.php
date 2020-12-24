@@ -26,7 +26,8 @@ class HomePage extends CI_Controller {
             $this->load->view('login');
 
         } else {
-            $this->load->view('wishList');
+            $data = array("user" => $this->session->user);
+            $this->load->view('wishList', $data);
         }
 
     }

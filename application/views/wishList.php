@@ -25,7 +25,7 @@
 
     <li class="right">
         <a href="javascript:void(0)" class="dropbtn">
-            <div class="user-name">Samashaaaa<i class="fa fa-sort-down icon"></i>
+            <div class="user-name"><?php echo "$user->fname" ?><i class="fa fa-sort-down icon"></i>
             </div>
         </a>
         <div class="dropdown-content">

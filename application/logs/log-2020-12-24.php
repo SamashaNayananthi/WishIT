@@ -111,3 +111,13 @@ DEBUG - 2020-12-24 12:27:04 --> Total execution time: 0.0720
 DEBUG - 2020-12-24 12:27:21 --> UTF-8 Support Enabled
 DEBUG - 2020-12-24 12:27:21 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2020-12-24 12:27:21 --> Total execution time: 0.0685
+DEBUG - 2020-12-24 12:32:47 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 12:32:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 12:32:47 --> Total execution time: 0.1102
+DEBUG - 2020-12-24 12:32:50 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 12:32:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 12:32:50 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-24 12:32:51 --> Total execution time: 0.2699
+DEBUG - 2020-12-24 12:32:51 --> UTF-8 Support Enabled
+DEBUG - 2020-12-24 12:32:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-24 12:32:51 --> Total execution time: 0.1174
