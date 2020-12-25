@@ -48,4 +48,22 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
     }
 
+    public function list_put() {
+        $id = $this->put('id');
+        $name = $this->put('name');
+        $description = $this->put('description');
+        $userId = $this->put('userId');
+
+        $this->load->model('ListModel');
+        $this ->ListModel->updateList($id, $name, $description);
+
+        $list = new stdClass();
+        $list->id = $id;
+        $list->name = $name;
+        $list->description = $description;
+        $list->userId = $userId;
+
+        $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
+    }
+
 }

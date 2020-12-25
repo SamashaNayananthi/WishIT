@@ -18,4 +18,9 @@ class ListModel extends CI_Model {
         return $this->db->insert_id();
     }
 
+    function updateList($id, $name, $description) {
+        $data = array('name' => $name, 'description' => $description);
+        $this->db->update('list_details', $data, array('id' => $id));
+    }
+
 }

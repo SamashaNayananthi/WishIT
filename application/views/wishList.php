@@ -38,7 +38,7 @@
 
 <div id="listPopup" class="popup">
     <div class="popup-content">
-        <span class="close">&times;</span>
+        <span class="close" id="listClose">&times;</span>
         <div class="popup-heading">Create Wish List</div>
 
         <label for="name" class="lbl">List Name*</label>
@@ -53,7 +53,7 @@
 
 <div id="editListPopup" class="popup">
     <div class="popup-content">
-        <span class="close">&times;</span>
+        <span class="close" id="editListClose">&times;</span>
         <div class="popup-heading">Edit Wish List</div>
 
         <label for="name" class="lbl">List Name*</label>
@@ -149,33 +149,6 @@ include_once("footer.php");
         return false;
     });
 
-    var span = document.getElementsByClassName("close")[0];
-    var listPopup = document.getElementById("listPopup");
-    var addList = document.getElementById("addList");
-    var editListPopup = document.getElementById("editListPopup");
-    var editList = document.getElementById("editList");
-
-    span.onclick = function() {
-        listPopup.style.display = "none";
-        editListPopup.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target === listPopup) {
-            listPopup.style.display = "none";
-        } else if (event.target === editListPopup) {
-            editListPopup.style.display = "none";
-        }
-    }
-
-    addList.onclick = function() {
-        listPopup.style.display = "block";
-    }
-
-    editList.onclick = function() {
-        listPopup.style.display = "block";
-    }
-
     var List = Backbone.Model.extend({
         url: '/WishIT/index.php/api/ListDetails/list',
         idAttribute: 'id',
@@ -206,7 +179,8 @@ include_once("footer.php");
 
             this.$el.html(html);
             return this;
-        }
+        },
+        wait: true
     });
 
     var listView = new ListView({model:list});
@@ -223,6 +197,18 @@ include_once("footer.php");
         }
     }
 
+    var lisClose = document.getElementById("listClose");
+    var listPopup = document.getElementById("listPopup");
+    var addList = document.getElementById("addList");
+
+    lisClose.onclick = function() {
+        listPopup.style.display = "none";
+    }
+
+    addList.onclick = function() {
+        listPopup.style.display = "block";
+    }
+
     function onCreateList() {
         var name = document.getElementById("name").value;
         var desc = document.getElementById("desc").value;
@@ -233,13 +219,51 @@ include_once("footer.php");
             list.set('description', desc);
             list.set('userId', <?php echo "$user->id" ?>);
             list.save({async:false});
-            listView.render();
             listPopup.style.display = "none";
 
         } else if (name === '') {
             alert('List Name is required.')
         } else  {
             alert('List Description is required.')
+        }
+    }
+
+    var editListClose = document.getElementById("editListClose");
+    var editListPopup = document.getElementById("editListPopup");
+    var editList = document.getElementById("editList");
+
+    editListClose.onclick = function() {
+        editListPopup.style.display = "none";
+    }
+
+    editList.onclick = function() {
+        document.getElementById("editName").value = list.get('name');
+        document.getElementById("editDesc").value = list.get('description');
+        editListPopup.style.display = "block";
+    }
+
+    function onEditList() {
+        var name = document.getElementById("editName").value;
+        var desc = document.getElementById("editDesc").value;
+
+        if (name !== '' && desc !== '') {
+            list.set('name', name);
+            list.set('description', desc);
+            list.save({async:false});
+            editListPopup.style.display = "none";
+
+        } else if (name === '') {
+            alert('List Name is required.')
+        } else  {
+            alert('List Description is required.')
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target === listPopup) {
+            listPopup.style.display = "none";
+        } else if (event.target === editListPopup) {
+            editListPopup.style.display = "none";
         }
     }
 
