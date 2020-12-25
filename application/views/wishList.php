@@ -36,46 +36,57 @@
     </li>
 </ul>
 
-<div class="no-list" id="noListView">
-    <div class="no-list-msg">Create your Wish List</div>
-    <button class='add-icon' id="addList">
-        <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
-    </button>
-</div>
-
 <div id="listPopup" class="popup">
     <div class="popup-content">
         <span class="close">&times;</span>
         <div class="popup-heading">Create Wish List</div>
 
-        <label for="name" class="lbl">List Name</label>
+        <label for="name" class="lbl">List Name*</label>
         <input type="text" placeholder="List Name" name="name" id="name">
 
-        <label for="desc" class="lbl">List Description</label>
-        <input type="text" placeholder="List Description" name="desc" id="desc">
+        <label for="desc" class="lbl">List Description*</label>
+        <textarea name="desc" id="desc" placeholder="List Description"></textarea>
 
         <input type="button" value="Create Wish List" class="popupBtn" onclick="onCreateList()">
     </div>
 </div>
 
-<div class="list-details" id="listView">
-    <div class="list-left" id="listMain">
-        <div class="list-name" data-toggle="tooltip" data-placement="bottom" title=""></div>
-        <div class="vl"></div>
-        <div class="list-note" data-toggle="tooltip" data-placement="bottom" title=""></div>
-        <button class='edit-icon' onclick="">
-            <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
-        </button>
-        <button class='share-icon' onclick="">
-            <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Share Link"></i>
-        </button>
+<div id="editListPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <div class="popup-heading">Edit Wish List</div>
+
+        <label for="name" class="lbl">List Name*</label>
+        <input type="text" placeholder="List Name" name="name" id="editName">
+
+        <label for="desc" class="lbl">List Description*</label>
+        <textarea name="desc" id="editDesc" placeholder="List Description"></textarea>
+
+        <input type="button" value="Edit Wish List" class="popupBtn" onclick="onEditList()">
     </div>
+</div>
+
+<div class="list-details" id="listView">
+    <div class="list-left" id="listMain"></div>
 
     <div class="list-right">
+        <button class="edit-icon" id="editList">
+            <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
+        </button>
+        <button class="share-icon" onclick="">
+            <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
+        </button>
         <button class='add-icon' onclick="">
             <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Add an Item"></i>
         </button>
     </div>
+</div>
+
+<div class="no-list" id="noListView">
+    <div class="no-list-msg">Create your Wish List</div>
+    <button class='add-icon' id="addList">
+        <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
+    </button>
 </div>
 
 <div class="items" id="wishItems">
@@ -123,8 +134,6 @@ include_once("footer.php");
 ?>
 
 <script>
-    var listGlobal = null;
-
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -140,6 +149,33 @@ include_once("footer.php");
         return false;
     });
 
+    var span = document.getElementsByClassName("close")[0];
+    var listPopup = document.getElementById("listPopup");
+    var addList = document.getElementById("addList");
+    var editListPopup = document.getElementById("editListPopup");
+    var editList = document.getElementById("editList");
+
+    span.onclick = function() {
+        listPopup.style.display = "none";
+        editListPopup.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === listPopup) {
+            listPopup.style.display = "none";
+        } else if (event.target === editListPopup) {
+            editListPopup.style.display = "none";
+        }
+    }
+
+    addList.onclick = function() {
+        listPopup.style.display = "block";
+    }
+
+    editList.onclick = function() {
+        listPopup.style.display = "block";
+    }
+
     var List = Backbone.Model.extend({
         url: '/WishIT/index.php/api/ListDetails/list',
         idAttribute: 'id',
@@ -152,56 +188,21 @@ include_once("footer.php");
 
     var list = new List();
 
-    var span = document.getElementsByClassName("close")[0];
-    var listPopup = document.getElementById("listPopup");
-    var addList = document.getElementById("addList");
-
-    span.onclick = function() {
-        listPopup.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target === listPopup) {
-            listPopup.style.display = "none";
-        }
-    }
-
-    addList.onclick = function() {
-        listPopup.style.display = "block";
-    }
-
     var ListView = Backbone.View.extend({
         el: '#listMain',
         initialize: function () {
-            this.listenTo(this.model, 'sync change', this.render);
+            this.listenTo(this.model, 'sync', this.render);
             this.model.fetch();
-            if (this.model.get('id') == null) {
-                document.getElementById("listView").style.visibility = "hidden";
-                document.getElementById("noListView").style.visibility = "visible";
-                document.getElementById("wishItems").style.visibility = "hidden";
-            } else {
-                document.getElementById("listView").style.visibility = "visible";
-                document.getElementById("noListView").style.visibility = "hidden";
-                document.getElementById("wishItems").style.visibility = "visible";
-            }
+            divVisibilityChange();
         },
         render: function () {
-            if (this.model.get('id') == null) {
-                document.getElementById("listView").style.visibility = "hidden";
-                document.getElementById("noListView").style.visibility = "visible";
-                document.getElementById("wishItems").style.visibility = "hidden";
-            } else {
-                document.getElementById("listView").style.visibility = "visible";
-                document.getElementById("noListView").style.visibility = "hidden";
-                document.getElementById("wishItems").style.visibility = "visible";
-            }
+            divVisibilityChange();
 
             var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" title="' +
-                this.model.get('name') + '">' + this.model.get('name') + '</div>\n' +
-                '<div class="vl"></div>\n' +
+                this.model.get('name') + '">' + this.model.get('name') + '</div>' +
+                '<div class="vl"></div>' +
                 '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
-                this.model.get('description') + '">\n' +
-                this.model.get('description') + '</div>';
+                this.model.get('description') + '">' + this.model.get('description') + '</div>';
 
             this.$el.html(html);
             return this;
@@ -209,6 +210,18 @@ include_once("footer.php");
     });
 
     var listView = new ListView({model:list});
+
+    function divVisibilityChange() {
+        if (list.get('id') == null) {
+            document.getElementById("listView").style.display = "none";
+            document.getElementById("noListView").style.display = "flex";
+            document.getElementById("wishItems").style.display = "none";
+        } else {
+            document.getElementById("listView").style.display = "flex";
+            document.getElementById("noListView").style.display = "none";
+            document.getElementById("wishItems").style.display = "block";
+        }
+    }
 
     function onCreateList() {
         var name = document.getElementById("name").value;
@@ -221,12 +234,13 @@ include_once("footer.php");
             list.set('userId', <?php echo "$user->id" ?>);
             list.save({async:false});
             listView.render();
+            listPopup.style.display = "none";
+
         } else if (name === '') {
             alert('List Name is required.')
         } else  {
             alert('List Description is required.')
         }
-
     }
 
 </script>

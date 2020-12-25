@@ -23,11 +23,29 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
                 $list->id = $result->id;
                 $list->name = $result->name;
                 $list->description = $result->description;
-                $list->userId = $result->userId;
+                $list->userId = $result->user_id;
+                log_message('debug',print_r($list,TRUE));
 
                 $this->response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }
         }
+    }
+
+    public function list_post() {
+        $name = $this->post('name');
+        $description = $this->post('description');
+        $userId = $this->post('userId');
+
+        $this->load->model('ListModel');
+        $listId = $this ->ListModel->insertList($name, $description, $userId);
+
+        $list = new stdClass();
+        $list->id = $listId;
+        $list->name = $name;
+        $list->description = $description;
+        $list->userId = $userId;
+
+        $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
     }
 
 }

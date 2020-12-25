@@ -8,7 +8,14 @@ class ListModel extends CI_Model {
 
     function getListDetails($userId) {
         $query = $this->db->get_where('list_details', array('user_id' => $userId));
-        return $query->result();
+        return $query->row();
+    }
+
+    function insertList($name, $description, $userId) {
+        $list = array('name' => $name, 'description' => $description, 'user_id' => $userId);
+        $this->db->insert('list_details', $list);
+
+        return $this->db->insert_id();
     }
 
 }

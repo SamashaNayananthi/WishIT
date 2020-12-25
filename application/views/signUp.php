@@ -23,19 +23,19 @@
 
     <div class="sign-up-box">
         <form action="<?php echo base_url()."api/User/users" ?>" method="post" id="form">
-            <label for="fname" class="lbl">First Name</label>
+            <label for="fname" class="lbl">First Name*</label>
             <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
 
-            <label for="lname" class="lbl">Last Name</label>
+            <label for="lname" class="lbl">Last Name*</label>
             <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
 
-            <label for="username" class="lbl">Username</label>
+            <label for="username" class="lbl">Username*</label>
             <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-            <label for="psw" class="lbl">Password</label>
+            <label for="psw" class="lbl">Password*</label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-            <label for="pswRepeat" class="lbl">Repeat Password</label>
+            <label for="pswRepeat" class="lbl">Repeat Password*</label>
             <input type="password" placeholder="Repeat Password" name="pswRepeat" id="pswRepeat" required>
 
             <input type="submit" value="Sign Up" class="btn">
