@@ -93,45 +93,7 @@
     <div class="no-list-msg">Your wish list is empty. Add your first item by clicking the "Plus" icon.</div>
 </div>
 
-<div class="items" id="wishItems">
-    <div class="item-card">
-        <div class="card-top">
-            <div class="item-name" data-toggle="tooltip" data-placement="bottom" title="Item 1">Item 1</div>
-            <div class="item-url"><a href="http://localhost/WishIT/index.php/HomePage/wishList">http://localhost/WishIT/index.php/HomePage/wishList</a></div>
-
-            <button class='item-icon' onclick="">
-                <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>
-            </button>
-
-            <button class='item-icon' onclick="">
-                <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Item"></i>
-            </button>
-        </div>
-
-        <div class="card-bottom">
-            <span class="item-detail">
-                <span class="item-lbl">Occasion : </span>
-                <span class="item-lbl-detail">Birthday</span>
-            </span>
-
-            <span class="item-detail">
-                <span class="item-lbl">Price : </span>
-                <span class="item-lbl-detail">1000 (Rs.)</span>
-            </span>
-
-            <span class="item-detail">
-                <span class="item-lbl">Quantity : </span>
-                <span class="item-lbl-detail">1</span>
-            </span>
-
-            <span class="item-detail">
-                <span class="item-lbl">Priority : </span>
-                <span class="item-lbl-detail">I want it</span>
-            </span>
-        </div>
-
-    </div>
-</div>
+<div class="items" id="wishItems"></div>
 
 <?php
 include_once("footer.php");
@@ -189,55 +151,101 @@ include_once("footer.php");
 
     var listView = new ListView({model:list});
 
-    // var WishItem = Backbone.Model.extend({
-    //     url: '/WishIT/index.php/api/WishItem/wishItems',
-    //     idAttribute: 'id',
-    //     defaults: {"id":null,
-    //         "title":"",
-    //         "listId":null,
-    //         "occasionId":null,
-    //         "priorityId":null,
-    //         "itemUrl":"",
-    //         "price":null
-    //     }
-    // });
-    //
-    // var wish = new WishItem();
-    //
-    // var WishItems = Backbone.Collection.extend({
-    //     model: WishItem,
-    //     url: "/CodeigniterRest/index.php/api/WishItem/wishItems"
-    // });
-    //
-    // var wishItems = new WishItems();
-    //
-    // var WishItemsView = Backbone.View.extend({
-    //     el: '#wishItems',
-    //     initialize : function () {
-    //         this.listenTo(this.model, 'sync', this.render());
-    //         this.model.fetch();
-    //     },
-    //     render : function () {
-    //         var html = 'User Name List with Collections : ';
-    //         this.model.each(function (item) {
-    //             stuff += '<br>' + item.get('name');
-    //         });
-    //
-    //         $('#newData').html(stuff);
-    //     }
-    // });
-    //
-    // var wishItemsView = new WishItemsView({model:wishItems});
+    var WishItem = Backbone.Model.extend({
+        url: '/WishIT/index.php/api/WishItem/wishItems',
+        idAttribute: 'id',
+        defaults: {"id":null,
+            "title":"",
+            "listId":null,
+            "occasionId":null,
+            "priorityId":null,
+            "itemUrl":"",
+            "price":null,
+            "quantity":null
+        }
+    });
+
+    var wish = new WishItem();
+
+    var WishItems = Backbone.Collection.extend({
+        model: WishItem,
+        url: "/WishIT/index.php/api/WishItem/wishItems"
+    });
+
+    var wishItems = new WishItems();
+
+    var WishItemsView = Backbone.View.extend({
+        el: '#wishItems',
+        initialize : function () {
+            this.listenTo(this.model, 'sync', this.render());
+            this.model.fetch();
+        },
+        render : function () {
+            divVisibilityChange();
+
+            var html = '';
+            this.model.each(function (item) {
+                html += '<div class="item-card">' +
+                    '<div class="card-top">' +
+                    '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
+                    this.model.get('title') + '">' + this.model.get('title') + '</div>' +
+                    '<div class="item-url"><a href="' + this.model.get('itemUrl') + '">' + this.model.get('itemUrl') + '</a></div>' +
+                    '<button class="item-icon">' +
+                    '<i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>' +
+                    '</button>' +
+                    '<button class="item-icon">' +
+                    '<i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Item"></i>' +
+                    '</button>' +
+                    '</div>' +
+                    '<div class="card-bottom">' +
+                    '<span class="item-detail">' +
+                    '<span class="item-lbl">Occasion : </span>' +
+                    '<span class="item-lbl-detail">Birthday</span>' +
+                    '</span>' +
+                    '<span class="item-detail">' +
+                    '<span class="item-lbl">Price : </span>' +
+                    '<span class="item-lbl-detail">' + this.model.get('price') + '</span>' +
+                    '</span>' +
+                    '<span class="item-detail">' +
+                    '<span class="item-lbl">Quantity : </span>' +
+                    '<span class="item-lbl-detail">' + this.model.get('quantity') + '</span>' +
+                    '</span>' +
+                    '<span class="item-detail">' +
+                    '<span class="item-lbl">Priority : </span>' +
+                    '<span class="item-lbl-detail">I want it</span>\n' +
+                    '</span>' +
+                    '</div>' +
+                    '</div>';
+            });
+
+            this.$el.html(html);
+            return this;
+        },
+        error: function () {
+            document.getElementById("wishItems").style.display = "none";
+            document.getElementById("noItemView").style.display = "flex";
+        }
+    });
+
+    var wishItemsView = new WishItemsView({model:wishItems});
 
     function divVisibilityChange() {
         if (list.get('id') == null) {
             document.getElementById("listView").style.display = "none";
             document.getElementById("noListView").style.display = "flex";
             document.getElementById("wishItems").style.display = "none";
+            document.getElementById("noItemView").style.display = "none";
         } else {
             document.getElementById("listView").style.display = "flex";
             document.getElementById("noListView").style.display = "none";
-            document.getElementById("wishItems").style.display = "block";
+
+            if (wishItems.length === 0) {
+                document.getElementById("wishItems").style.display = "none";
+                document.getElementById("noItemView").style.display = "flex";
+            } else {
+                document.getElementById("wishItems").style.display = "block";
+                document.getElementById("noItemView").style.display = "none";
+            }
         }
     }
 

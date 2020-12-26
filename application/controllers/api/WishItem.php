@@ -9,26 +9,29 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $id = $this->get('id');
 
         if ($id === NULL) {
+            $items = array();
+
             $userId = $this->session->user->id;
             $this->load->model('ListModel');
             $listId = $this->ListModel->getListIdBYUserId($userId);
-            log_message('debug', print_r($listId, TRUE));
 
-            $this->load->model('WishItemModel');
-            $result = $this->WishItemModel->getWishList($listId);
-            $items = array();
+            if (!empty($listId)) {
+                $this->load->model('WishItemModel');
+                $result = $this->WishItemModel->getWishList($listId->id);
 
-            foreach ($result as $row) {
-                $item = new stdClass();
-                $item->id = $row->id;
-                $item->title = $row->title;
-                $item->listId = $row->list_id;
-                $item->occasionId = $row->occasion;
-                $item->priorityId = $row->priority;
-                $item->itemUrl = $row->item_url;
-                $item->price = $row->price;
+                foreach ($result as $row) {
+                    $item = new stdClass();
+                    $item->id = $row->id;
+                    $item->title = $row->title;
+                    $item->listId = $row->list_id;
+                    $item->occasionId = $row->occasion;
+                    $item->priorityId = $row->priority;
+                    $item->itemUrl = $row->item_url;
+                    $item->price = $row->price;
+                    $item->quantity = $row->quantity;
 
-                array_push($items, $item);
+                    array_push($items, $item);
+                }
             }
 
             if (!empty($items)) {
@@ -57,6 +60,7 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $item->priorityId = $result->priority;
                 $item->itemUrl = $result->item_url;
                 $item->price = $result->price;
+                $item->quantity = $result->quantity;
 
                 $this->response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }

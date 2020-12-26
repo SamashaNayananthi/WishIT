@@ -359,3 +359,353 @@ DEBUG - 2020-12-26 13:56:23 --> stdClass Object
 )
 
 DEBUG - 2020-12-26 13:56:23 --> Total execution time: 0.1110
+DEBUG - 2020-12-26 14:16:30 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:16:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:16:30 --> Total execution time: 0.0989
+DEBUG - 2020-12-26 14:16:30 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:16:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:16:30 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:16:30 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:16:30 --> Total execution time: 0.1249
+DEBUG - 2020-12-26 14:22:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:22:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:22:19 --> Total execution time: 0.0802
+DEBUG - 2020-12-26 14:22:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:22:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:22:19 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:22:19 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:22:19 --> Total execution time: 0.1138
+DEBUG - 2020-12-26 14:22:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:22:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:22:29 --> Total execution time: 0.0828
+DEBUG - 2020-12-26 14:22:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:22:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:22:29 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:22:29 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:22:29 --> Total execution time: 0.1362
+DEBUG - 2020-12-26 14:24:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:24:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:24:58 --> Total execution time: 0.0985
+DEBUG - 2020-12-26 14:24:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:24:58 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:24:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:24:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:24:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:24:58 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:24:58 --> Total execution time: 0.1742
+DEBUG - 2020-12-26 14:24:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:24:58 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:24:58 --> Severity: Notice --> Array to string conversion C:\xampp\htdocs\WishIT\system\database\DB_query_builder.php 669
+ERROR - 2020-12-26 14:24:58 --> Query error: Unknown column 'Array' in 'where clause' - Invalid query: SELECT *
+FROM `wish_items`
+WHERE `list_id` = `Array`
+DEBUG - 2020-12-26 14:26:20 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:26:20 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:26:20 --> Total execution time: 0.0908
+DEBUG - 2020-12-26 14:26:20 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:26:20 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:26:20 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:26:20 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:26:21 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:26:21 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:26:21 --> Total execution time: 0.1592
+DEBUG - 2020-12-26 14:26:21 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-26 14:26:21 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 15
+DEBUG - 2020-12-26 14:26:21 --> 
+ERROR - 2020-12-26 14:26:21 --> Severity: Notice --> Array to string conversion C:\xampp\htdocs\WishIT\system\database\DB_query_builder.php 669
+ERROR - 2020-12-26 14:26:21 --> Query error: Unknown column 'Array' in 'where clause' - Invalid query: SELECT *
+FROM `wish_items`
+WHERE `list_id` = `Array`
+DEBUG - 2020-12-26 14:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:27:13 --> Total execution time: 0.1117
+DEBUG - 2020-12-26 14:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:27:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:27:13 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:27:13 --> Total execution time: 0.1729
+DEBUG - 2020-12-26 14:27:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:27:13 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:27:13 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:27:13 --> Total execution time: 0.2628
+DEBUG - 2020-12-26 14:29:54 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:29:54 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:29:54 --> Total execution time: 0.0925
+DEBUG - 2020-12-26 14:29:55 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:29:55 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:29:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:29:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:29:55 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:29:55 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:29:55 --> Total execution time: 0.1324
+DEBUG - 2020-12-26 14:29:55 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:29:55 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:29:55 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:29:55 --> Total execution time: 0.1777
+DEBUG - 2020-12-26 14:30:10 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:10 --> Total execution time: 0.0682
+DEBUG - 2020-12-26 14:30:10 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:10 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:11 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:11 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:30:11 --> Total execution time: 0.1789
+DEBUG - 2020-12-26 14:30:11 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:11 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:30:11 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:30:11 --> Total execution time: 0.2445
+DEBUG - 2020-12-26 14:30:43 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:43 --> Total execution time: 0.0887
+DEBUG - 2020-12-26 14:30:43 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:43 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:43 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:30:43 --> Total execution time: 0.1387
+DEBUG - 2020-12-26 14:30:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:43 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:30:43 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:30:43 --> Total execution time: 0.2053
+DEBUG - 2020-12-26 14:30:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:59 --> Total execution time: 0.0941
+DEBUG - 2020-12-26 14:30:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:30:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:30:59 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:59 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:30:59 --> Total execution time: 0.1071
+DEBUG - 2020-12-26 14:30:59 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:30:59 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:30:59 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:30:59 --> Total execution time: 0.1729
+DEBUG - 2020-12-26 14:31:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:31:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:31:13 --> Total execution time: 0.0833
+DEBUG - 2020-12-26 14:31:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:31:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:31:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:31:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:31:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:31:13 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:31:13 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:31:13 --> Total execution time: 0.1728
+DEBUG - 2020-12-26 14:31:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:31:13 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:31:13 --> Total execution time: 0.2180
+DEBUG - 2020-12-26 14:32:21 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:32:21 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:32:21 --> Total execution time: 0.0869
+DEBUG - 2020-12-26 14:32:21 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:32:21 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:32:21 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:32:21 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:32:21 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:32:21 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:32:21 --> Total execution time: 0.1273
+DEBUG - 2020-12-26 14:32:21 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:32:21 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+        )
+
+)
+
+ERROR - 2020-12-26 14:32:21 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 18
+DEBUG - 2020-12-26 14:32:21 --> Total execution time: 0.1842
+DEBUG - 2020-12-26 14:35:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:35:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:35:23 --> Total execution time: 0.1192
+DEBUG - 2020-12-26 14:35:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:35:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:35:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:35:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:35:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:35:23 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4 - wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-26 14:35:23 --> Total execution time: 0.1218
+DEBUG - 2020-12-26 14:35:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-26 14:35:23 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 20
+DEBUG - 2020-12-26 14:35:23 --> Total execution time: 0.1566
+DEBUG - 2020-12-26 14:37:07 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:37:07 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:37:07 --> Total execution time: 0.0810
+DEBUG - 2020-12-26 14:37:07 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:37:07 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:37:07 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:37:07 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:37:07 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:37:07 --> Total execution time: 0.1238
+DEBUG - 2020-12-26 14:37:07 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-26 14:37:07 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 23
+ERROR - 2020-12-26 14:37:07 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 24
+ERROR - 2020-12-26 14:37:07 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 25
+ERROR - 2020-12-26 14:37:07 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 26
+DEBUG - 2020-12-26 14:37:07 --> stdClass Object
+(
+    [id] => 
+    [name] => 
+    [description] => 
+    [userId] => 
+)
+
+DEBUG - 2020-12-26 14:37:07 --> Total execution time: 0.2041
+DEBUG - 2020-12-26 14:37:27 --> UTF-8 Support Enabled
+DEBUG - 2020-12-26 14:37:27 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-26 14:37:27 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-26 14:37:27 --> Total execution time: 0.0959
