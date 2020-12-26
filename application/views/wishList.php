@@ -188,8 +188,8 @@ include_once("footer.php");
                 html += '<div class="item-card">' +
                     '<div class="card-top">' +
                     '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
-                    this.model.get('title') + '">' + this.model.get('title') + '</div>' +
-                    '<div class="item-url"><a href="' + this.model.get('itemUrl') + '">' + this.model.get('itemUrl') + '</a></div>' +
+                    item.get('title') + '">' + item.get('title') + '</div>' +
+                    '<div class="item-url"><a href="' + item.get('itemUrl') + '">' + item.get('itemUrl') + '</a></div>' +
                     '<button class="item-icon">' +
                     '<i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>' +
                     '</button>' +
@@ -200,19 +200,19 @@ include_once("footer.php");
                     '<div class="card-bottom">' +
                     '<span class="item-detail">' +
                     '<span class="item-lbl">Occasion : </span>' +
-                    '<span class="item-lbl-detail">Birthday</span>' +
+                    '<span class="item-lbl-detail">' + setOccasion(item.get('occasionId')) + '</span>' +
                     '</span>' +
                     '<span class="item-detail">' +
                     '<span class="item-lbl">Price : </span>' +
-                    '<span class="item-lbl-detail">' + this.model.get('price') + '</span>' +
+                    '<span class="item-lbl-detail">' + item.get('price') + '</span>' +
                     '</span>' +
                     '<span class="item-detail">' +
                     '<span class="item-lbl">Quantity : </span>' +
-                    '<span class="item-lbl-detail">' + this.model.get('quantity') + '</span>' +
+                    '<span class="item-lbl-detail">' + item.get('quantity') + '</span>' +
                     '</span>' +
                     '<span class="item-detail">' +
                     '<span class="item-lbl">Priority : </span>' +
-                    '<span class="item-lbl-detail">I want it</span>\n' +
+                    '<span class="item-lbl-detail">' + setPriority(item.get('priorityId')) + '</span>' +
                     '</span>' +
                     '</div>' +
                     '</div>';
@@ -247,6 +247,34 @@ include_once("footer.php");
                 document.getElementById("noItemView").style.display = "none";
             }
         }
+    }
+
+    var occasionList = <?php echo json_encode($occasionList); ?>;
+
+    function setOccasion(id) {
+        var occasionName = '';
+
+        for (i=0; i<occasionList.length; i++) {
+            if (occasionList[i].id === id) {
+                occasionName = occasionList[i].name;
+            }
+        }
+
+        return occasionName;
+    }
+
+    var priorityList = <?php echo json_encode($priorityList); ?>;
+
+    function setPriority(id) {
+        var priorityName = '';
+
+        for (i=0; i<priorityList.length; i++) {
+            if (priorityList[i].id === id) {
+                priorityName = priorityList[i].name;
+            }
+        }
+
+        return priorityName;
     }
 
     var lisClose = document.getElementById("listClose");
