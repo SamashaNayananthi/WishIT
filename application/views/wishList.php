@@ -89,6 +89,10 @@
     </button>
 </div>
 
+<div class="no-list" id="noItemView">
+    <div class="no-list-msg">Your wish list is empty. Add your first item by clicking the "Plus" icon.</div>
+</div>
+
 <div class="items" id="wishItems">
     <div class="item-card">
         <div class="card-top">
@@ -184,6 +188,46 @@ include_once("footer.php");
     });
 
     var listView = new ListView({model:list});
+
+    // var WishItem = Backbone.Model.extend({
+    //     url: '/WishIT/index.php/api/WishItem/wishItems',
+    //     idAttribute: 'id',
+    //     defaults: {"id":null,
+    //         "title":"",
+    //         "listId":null,
+    //         "occasionId":null,
+    //         "priorityId":null,
+    //         "itemUrl":"",
+    //         "price":null
+    //     }
+    // });
+    //
+    // var wish = new WishItem();
+    //
+    // var WishItems = Backbone.Collection.extend({
+    //     model: WishItem,
+    //     url: "/CodeigniterRest/index.php/api/WishItem/wishItems"
+    // });
+    //
+    // var wishItems = new WishItems();
+    //
+    // var WishItemsView = Backbone.View.extend({
+    //     el: '#wishItems',
+    //     initialize : function () {
+    //         this.listenTo(this.model, 'sync', this.render());
+    //         this.model.fetch();
+    //     },
+    //     render : function () {
+    //         var html = 'User Name List with Collections : ';
+    //         this.model.each(function (item) {
+    //             stuff += '<br>' + item.get('name');
+    //         });
+    //
+    //         $('#newData').html(stuff);
+    //     }
+    // });
+    //
+    // var wishItemsView = new WishItemsView({model:wishItems});
 
     function divVisibilityChange() {
         if (list.get('id') == null) {

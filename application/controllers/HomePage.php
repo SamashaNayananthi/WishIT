@@ -26,7 +26,11 @@ class HomePage extends CI_Controller {
             $this->load->view('login');
 
         } else {
-            $data = array("user" => $this->session->user);
+            $this->load->model('ItemOptionModel');
+            $occasionList = $this->ItemOptionModel->getOccasions();
+            $priorityList = $this->ItemOptionModel->getPriorities();
+
+            $data = array("user" => $this->session->user, "occasionList" => $occasionList, "priorityList" => $priorityList);
             $this->load->view('wishList', $data);
         }
 

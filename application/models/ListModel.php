@@ -23,4 +23,10 @@ class ListModel extends CI_Model {
         $this->db->update('list_details', $data, array('id' => $id));
     }
 
+    function getListIdBYUserId($userId) {
+        $this->db->select('id');
+        $query = $this->db->get_where('list_details', array('user_id' => $userId));
+        return $query->result();
+    }
+
 }

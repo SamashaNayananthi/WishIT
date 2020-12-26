@@ -809,3 +809,56 @@ DEBUG - 2020-12-25 13:22:45 --> UTF-8 Support Enabled
 DEBUG - 2020-12-25 13:22:45 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2020-12-25 13:22:45 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
 DEBUG - 2020-12-25 13:22:45 --> Total execution time: 0.1602
+DEBUG - 2020-12-25 13:23:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:23:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:23:59 --> Total execution time: 0.1451
+DEBUG - 2020-12-25 13:23:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-25 13:24:00 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-25 13:24:00 --> Total execution time: 0.1766
+DEBUG - 2020-12-25 13:24:12 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:12 --> Total execution time: 0.1208
+DEBUG - 2020-12-25 13:24:12 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:12 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-25 13:24:12 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-25 13:24:12 --> Total execution time: 0.1519
+DEBUG - 2020-12-25 13:24:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:19 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-25 13:24:19 --> Total execution time: 0.1565
+DEBUG - 2020-12-25 13:24:42 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-25 13:24:43 --> Total execution time: 0.1562
+DEBUG - 2020-12-25 13:24:45 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:45 --> Total execution time: 0.1159
+DEBUG - 2020-12-25 13:24:45 --> UTF-8 Support Enabled
+DEBUG - 2020-12-25 13:24:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-25 13:24:45 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-25 13:24:45 --> stdClass Object
+(
+    [id] => 4
+    [name] => Test 4
+    [description] => test 4wish list for the new year 2021
+    [userId] => 5
+)
+
+DEBUG - 2020-12-25 13:24:45 --> Total execution time: 0.1681
