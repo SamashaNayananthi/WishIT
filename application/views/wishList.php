@@ -36,7 +36,30 @@
     </li>
 </ul>
 
-<div id="listPopup" class="popup">
+<div class="no-list" id="noListView">
+    <div class="no-list-msg">Create your Wish List</div>
+    <button class='add-icon' id="addList">
+        <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
+    </button>
+</div>
+
+<div class="list-details" id="listView">
+    <div class="list-left" id="listMain"></div>
+
+    <div class="list-right">
+        <button class="edit-icon" id="editList">
+            <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
+        </button>
+        <button class="share-icon" onclick="">
+            <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
+        </button>
+        <button class='add-icon' id="addItemBtn">
+            <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Add an Item"></i>
+        </button>
+    </div>
+</div>
+
+<div class="popup" id="listPopup">
     <div class="popup-content">
         <span class="close" id="listClose">&times;</span>
         <div class="popup-heading">Create Wish List</div>
@@ -51,7 +74,7 @@
     </div>
 </div>
 
-<div id="editListPopup" class="popup">
+<div class="popup" id="editListPopup">
     <div class="popup-content">
         <span class="close" id="editListClose">&times;</span>
         <div class="popup-heading">Edit Wish List</div>
@@ -66,34 +89,23 @@
     </div>
 </div>
 
-<div class="list-details" id="listView">
-    <div class="list-left" id="listMain"></div>
-
-    <div class="list-right">
-        <button class="edit-icon" id="editList">
-            <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
-        </button>
-        <button class="share-icon" onclick="">
-            <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
-        </button>
-        <button class='add-icon' onclick="">
-            <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Add an Item"></i>
-        </button>
-    </div>
-</div>
-
-<div class="no-list" id="noListView">
-    <div class="no-list-msg">Create your Wish List</div>
-    <button class='add-icon' id="addList">
-        <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
-    </button>
-</div>
-
 <div class="no-list" id="noItemView">
     <div class="no-list-msg">Your wish list is empty. Add your first item by clicking the "Plus" icon.</div>
 </div>
 
 <div class="items" id="wishItems"></div>
+
+<div class="popup" id="addItem">
+    <div class="popup-content">
+        <span class="close" id="addItemClose">&times;</span>
+        <div class="popup-heading">Add an Item</div>
+
+        <label for="name" class="lbl">Title*</label>
+        <input type="text" placeholder="Title" name="title" id="title">
+
+        <input type="button" value="Add an Item" class="popupBtn" onclick="onCreateList()">
+    </div>
+</div>
 
 <?php
 include_once("footer.php");
@@ -301,10 +313,8 @@ include_once("footer.php");
             list.save({async:false});
             listPopup.style.display = "none";
 
-        } else if (name === '') {
-            alert('List Name is required.')
         } else  {
-            alert('List Description is required.')
+            alert('Please fill all the required fields.')
         }
     }
 
@@ -332,11 +342,25 @@ include_once("footer.php");
             list.save({async:false});
             editListPopup.style.display = "none";
 
-        } else if (name === '') {
-            alert('List Name is required.')
         } else  {
-            alert('List Description is required.')
+            alert('Please fill all the required fields.')
         }
+    }
+
+    var addItemClose = document.getElementById("addItemClose");
+    var addItem = document.getElementById("addItem");
+    var addItemBtn = document.getElementById("addItemBtn");
+
+    addItemClose.onclick = function() {
+        addItem.style.display = "none";
+    }
+
+    addItemBtn.onclick = function() {
+        addItem.style.display = "block";
+    }
+
+    function onAddItem() {
+
     }
 
     window.onclick = function(event) {
@@ -344,6 +368,8 @@ include_once("footer.php");
             listPopup.style.display = "none";
         } else if (event.target === editListPopup) {
             editListPopup.style.display = "none";
+        } else if (event.target === addItem) {
+            addItem.style.display = "none";
         }
     }
 
