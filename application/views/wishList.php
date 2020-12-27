@@ -100,10 +100,37 @@
         <span class="close" id="addItemClose">&times;</span>
         <div class="popup-heading">Add an Item</div>
 
-        <label for="name" class="lbl">Title*</label>
+        <label for="title" class="lbl">Title*</label>
         <input type="text" placeholder="Title" name="title" id="title">
 
-        <input type="button" value="Add an Item" class="popupBtn" onclick="onCreateList()">
+        <label for="itemUrl" class="lbl">Item URL*</label>
+        <input type="text" placeholder="Item URL" name="itemUrl" id="itemUrl">
+
+        <label for="occasion" class="lbl">Occasion*</label>
+        <select name="occasion" id="occasion">
+            <?php
+            foreach ($occasionList as $occasion) {
+                echo "<option value='$occasion->id'>$occasion->name</option>";
+            }
+            ?>
+        </select>
+
+        <label for="priority" class="lbl">Priority*</label>
+        <select name="priority" id="priority">
+            <?php
+            foreach ($priorityList as $priority) {
+                echo "<option value='$priority->id'>$priority->name</option>";
+            }
+            ?>
+        </select>
+
+        <label for="price" class="lbl">Price*</label>
+        <input type="number" placeholder="Price" name="price" id="price" min="1" step="any" oninput="validity.valid||(value='');">
+
+        <label for="quantity" class="lbl">Quantity*</label>
+        <input type="number" placeholder="Quantity" name="quantity" id="quantity" min="1" oninput="validity.valid||(value='');">
+
+        <input type="button" value="Add an Item" class="popupBtn" onclick="onAddItem()">
     </div>
 </div>
 
@@ -213,21 +240,17 @@ include_once("footer.php");
                     '</button>' +
                     '</div>' +
                     '<div class="card-bottom">' +
-                    '<span class="item-detail">' +
-                    '<span class="item-lbl">Occasion : </span>' +
+                    '<span class="item-detail"><span class="item-lbl">Occasion : </span>' +
                     '<span class="item-lbl-detail">' + setOccasion(item.get('occasionId')) + '</span>' +
                     '</span>' +
-                    '<span class="item-detail">' +
-                    '<span class="item-lbl">Price : </span>' +
+                    '<span class="item-detail"><span class="item-lbl">Priority : </span>' +
+                    '<span class="item-lbl-detail">' + setPriority(item.get('priorityId')) + '</span>' +
+                    '</span>' +
+                    '<span class="item-detail"><span class="item-lbl">Price : </span>' +
                     '<span class="item-lbl-detail">' + item.get('price') + '</span>' +
                     '</span>' +
-                    '<span class="item-detail">' +
-                    '<span class="item-lbl">Quantity : </span>' +
+                    '<span class="item-detail"><span class="item-lbl">Quantity : </span>' +
                     '<span class="item-lbl-detail">' + item.get('quantity') + '</span>' +
-                    '</span>' +
-                    '<span class="item-detail">' +
-                    '<span class="item-lbl">Priority : </span>' +
-                    '<span class="item-lbl-detail">' + setPriority(item.get('priorityId')) + '</span>' +
                     '</span>' +
                     '</div>' +
                     '</div>';
@@ -310,11 +333,18 @@ include_once("footer.php");
             list.set('name', name);
             list.set('description', desc);
             list.set('userId', <?php echo "$user->id" ?>);
-            list.save({async:false});
-            listPopup.style.display = "none";
+            list.save(null, {
+                async: false,
+                success: function () {
+                    listPopup.style.display = "none";
+                },
+                error: function () {
+                    alert('Error occurred while creating the list.');
+                }
+            });
 
         } else  {
-            alert('Please fill all the required fields.')
+            alert('Please fill all the required fields.');
         }
     }
 
@@ -343,7 +373,7 @@ include_once("footer.php");
             editListPopup.style.display = "none";
 
         } else  {
-            alert('Please fill all the required fields.')
+            alert('Please fill all the required fields.');
         }
     }
 
@@ -360,7 +390,57 @@ include_once("footer.php");
     }
 
     function onAddItem() {
+        var title = document.getElementById("title").value;
+        var itemUrl = document.getElementById("itemUrl").value;
+        var occasion = document.getElementById("occasion").value;
+        var priority = document.getElementById("priority").value;
+        var price = document.getElementById("price").value;
+        var quantity = document.getElementById("quantity").value;
 
+        var urlRegex = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+        var priorityList = <?php echo json_encode($priorityList); ?>;
+
+        if (title !== '' && itemUrl !== '' && price !== '' && quantity !== '') {
+            if (urlRegex.test(itemUrl)) {
+                var newItem = new WishItem();
+                newItem.set('title', title);
+                newItem.set('listId', list.get('id'));
+                newItem.set('occasionId', occasion);
+                newItem.set('priorityId', priority);
+                newItem.set('itemUrl', itemUrl);
+                newItem.set('price', price);
+                newItem.set('quantity', quantity);
+
+                var priorityLvl = null;
+                for (var i=0; i<priorityList.length; i++) {
+                    if (priorityList[i].id === priority) {
+                        priorityLvl = priorityList[i].priority;
+                    }
+                }
+                newItem.set('priorityLvl', priorityLvl);
+
+                newItem.save(null, {async:false,
+                     success: function () {
+                        wishItems.add(newItem);
+                        wishItemsView.render();
+                        addItem.style.display = "none";
+                         document.getElementById("title").value = '';
+                         document.getElementById("itemUrl").value = '';
+                         document.getElementById("price").value = '';
+                         document.getElementById("quantity").value = '';
+                    },
+                    error: function () {
+                    alert('Error occurred while adding the new item.');
+                    }
+                });
+
+            } else {
+                alert('Please provide a valid URL.');
+            }
+
+        } else  {
+            alert('Please fill all the required fields.');
+        }
     }
 
     window.onclick = function(event) {
