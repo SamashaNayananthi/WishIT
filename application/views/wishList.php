@@ -161,7 +161,8 @@ include_once("footer.php");
             "priorityId":null,
             "itemUrl":"",
             "price":null,
-            "quantity":null
+            "quantity":null,
+            "priorityLvl": null
         }
     });
 
@@ -169,6 +170,7 @@ include_once("footer.php");
 
     var WishItems = Backbone.Collection.extend({
         model: WishItem,
+        comparator: 'priorityLvl',
         url: "/WishIT/index.php/api/WishItem/wishItems"
     });
 
@@ -222,8 +224,7 @@ include_once("footer.php");
             $('#wishItems').html(html);
         },
         error: function () {
-            document.getElementById("wishItems").style.display = "none";
-            document.getElementById("noItemView").style.display = "flex";
+            divVisibilityChange();
         },
         wait: true
     });
