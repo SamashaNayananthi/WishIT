@@ -177,8 +177,9 @@ include_once("footer.php");
     var WishItemsView = Backbone.View.extend({
         el: '#wishItems',
         initialize : function () {
+            this.model.fetch({async:false});
             this.listenTo(this.model, 'sync', this.render());
-            this.model.fetch();
+            divVisibilityChange();
         },
         render : function () {
             divVisibilityChange();
@@ -218,13 +219,13 @@ include_once("footer.php");
                     '</div>';
             });
 
-            this.$el.html(html);
-            return this;
+            $('#wishItems').html(html);
         },
         error: function () {
             document.getElementById("wishItems").style.display = "none";
             document.getElementById("noItemView").style.display = "flex";
-        }
+        },
+        wait: true
     });
 
     var wishItemsView = new WishItemsView({model:wishItems});
@@ -249,12 +250,11 @@ include_once("footer.php");
         }
     }
 
-    var occasionList = <?php echo json_encode($occasionList); ?>;
-
     function setOccasion(id) {
+        var occasionList = <?php echo json_encode($occasionList); ?>;
         var occasionName = '';
 
-        for (i=0; i<occasionList.length; i++) {
+        for (var i=0; i<occasionList.length; i++) {
             if (occasionList[i].id === id) {
                 occasionName = occasionList[i].name;
             }
@@ -263,12 +263,11 @@ include_once("footer.php");
         return occasionName;
     }
 
-    var priorityList = <?php echo json_encode($priorityList); ?>;
-
     function setPriority(id) {
+        var priorityList = <?php echo json_encode($priorityList); ?>;
         var priorityName = '';
 
-        for (i=0; i<priorityList.length; i++) {
+        for (var i=0; i<priorityList.length; i++) {
             if (priorityList[i].id === id) {
                 priorityName = priorityList[i].name;
             }

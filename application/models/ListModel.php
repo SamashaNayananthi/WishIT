@@ -26,7 +26,7 @@ class ListModel extends CI_Model {
     function getListIdBYUserId($userId) {
         $this->db->select('id');
         $query = $this->db->get_where('list_details', array('user_id' => $userId));
-        return $query->result();
+        return $query->row();
     }
 
 }

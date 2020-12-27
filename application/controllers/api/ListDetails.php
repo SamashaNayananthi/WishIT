@@ -24,7 +24,7 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
                 $list->name = $result->name;
                 $list->description = $result->description;
                 $list->userId = $result->user_id;
-                log_message('debug',print_r($list,TRUE));
+                //log_message('debug',print_r($list,TRUE));
 
                 $this->response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }

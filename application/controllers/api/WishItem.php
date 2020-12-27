@@ -9,7 +9,7 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $id = $this->get('id');
 
         if ($id === NULL) {
-            $items = array();
+            $items = [];
 
             $userId = $this->session->user->id;
             $this->load->model('ListModel');
@@ -20,24 +20,20 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $result = $this->WishItemModel->getWishList($listId->id);
 
                 foreach ($result as $row) {
-                    $item = new stdClass();
-                    $item->id = $row->id;
-                    $item->title = $row->title;
-                    $item->listId = $row->list_id;
-                    $item->occasionId = $row->occasion;
-                    $item->priorityId = $row->priority;
-                    $item->itemUrl = $row->item_url;
-                    $item->price = $row->price;
-                    $item->quantity = $row->quantity;
+                    $item = ["id" => $row->id, "title" => $row->title, "listId" => $row->list_id,
+                        "occasionId" => $row->occasion, "priorityId" => $row->priority,
+                        "itemUrl" => $row->item_url, "price" => $row->price, "quantity" => $row->quantity];
 
                     array_push($items, $item);
                 }
             }
 
             if (!empty($items)) {
+                log_message('debug',print_r($items,TRUE));
                 $this->response($items, \Restserver\Libraries\REST_Controller::HTTP_OK);
 
             } else {
+                log_message('debug',print_r("No items found",TRUE));
                 $this->response(['status' => FALSE, 'message' => 'No wish items were found'],
                     \Restserver\Libraries\REST_Controller::HTTP_NOT_FOUND);
             }
@@ -46,6 +42,7 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
             $id = (int) $id;
 
             if ($id <= 0) {
+                log_message('debug',print_r("bad request",TRUE));
                 $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
 
             } else {
@@ -62,6 +59,7 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $item->price = $result->price;
                 $item->quantity = $result->quantity;
 
+                log_message('debug',print_r($item,TRUE));
                 $this->response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }
         }
