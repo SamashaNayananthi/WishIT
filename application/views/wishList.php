@@ -20,15 +20,13 @@
 <ul class="topnav">
     <li>
         <div class="page-name">
-            <img src="/WishIT/images/logo.png">
-            <div class="name">WishIT</div>
+            <img src="/WishIT/images/logo.png"><div class="name">WishIT</div>
         </div>
     </li>
 
     <li class="right">
         <a href="javascript:void(0)" class="dropbtn">
-            <div class="user-name"><?php echo "$user->fname" ?><i class="fa fa-sort-down icon"></i>
-            </div>
+            <div class="user-name"><?php echo "$user->fname" ?><i class="fa fa-sort-down icon"></i></div>
         </a>
         <div class="dropdown-content">
             <a href="<?php echo base_url()."api/Authentication/logout" ?>" id="logout">Logout</a>
@@ -38,7 +36,7 @@
 
 <div class="no-list" id="noListView">
     <div class="no-list-msg">Create your Wish List</div>
-    <button class='add-icon' id="addList">
+    <button class='add-icon' onclick="openList('add')">
         <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Create Wish List"></i>
     </button>
 </div>
@@ -47,7 +45,7 @@
     <div class="list-left" id="listMain"></div>
 
     <div class="list-right">
-        <button class="edit-icon" id="editList">
+        <button class="edit-icon" onclick="openList('edit')">
             <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
         </button>
         <button class="share-icon" onclick="">
@@ -61,8 +59,8 @@
 
 <div class="popup" id="listPopup">
     <div class="popup-content">
-        <span class="close" id="listClose">&times;</span>
-        <div class="popup-heading">Create Wish List</div>
+        <span class="close" onclick="closeListPopup()">&times;</span>
+        <div class="popup-heading" id="listPopupHeading"></div>
 
         <label for="name" class="lbl">List Name*</label>
         <input type="text" placeholder="List Name" name="name" id="name">
@@ -70,22 +68,8 @@
         <label for="desc" class="lbl">List Description*</label>
         <textarea name="desc" id="desc" placeholder="List Description"></textarea>
 
-        <input type="button" value="Create Wish List" class="popupBtn" onclick="onCreateList()">
-    </div>
-</div>
-
-<div class="popup" id="editListPopup">
-    <div class="popup-content">
-        <span class="close" id="editListClose">&times;</span>
-        <div class="popup-heading">Edit Wish List</div>
-
-        <label for="name" class="lbl">List Name*</label>
-        <input type="text" placeholder="List Name" name="name" id="editName">
-
-        <label for="desc" class="lbl">List Description*</label>
-        <textarea name="desc" id="editDesc" placeholder="List Description"></textarea>
-
-        <input type="button" value="Edit Wish List" class="popupBtn" onclick="onEditList()">
+        <input type="button" value="Create Wish List" class="popupBtn" id="addListBtn" onclick="onSubmitList('add')">
+        <input type="button" value="Edit Wish List" class="popupBtn" id="editListBtn" onclick="onSubmitList('edit')">
     </div>
 </div>
 
@@ -110,27 +94,25 @@
 
         <label for="occasion" class="lbl">Occasion*</label>
         <select name="occasion" id="occasion">
-            <?php
-            foreach ($occasionList as $occasion) {
+            <?php foreach ($occasionList as $occasion) {
                 echo "<option value='$occasion->id'>$occasion->name</option>";
-            }
-            ?>
+            } ?>
         </select>
 
         <label for="priority" class="lbl">Priority*</label>
         <select name="priority" id="priority">
-            <?php
-            foreach ($priorityList as $priority) {
+            <?php foreach ($priorityList as $priority) {
                 echo "<option value='$priority->id'>$priority->name</option>";
-            }
-            ?>
+            } ?>
         </select>
 
         <label for="price" class="lbl">Price*</label>
-        <input type="number" placeholder="Price" name="price" id="price" min="1" step="any" oninput="validity.valid||(value='');">
+        <input type="number" placeholder="Price" name="price" id="price" min="1" step="any"
+               oninput="validity.valid||(value='');">
 
         <label for="quantity" class="lbl">Quantity*</label>
-        <input type="number" placeholder="Quantity" name="quantity" id="quantity" min="1" oninput="validity.valid||(value='');">
+        <input type="number" placeholder="Quantity" name="quantity" id="quantity" min="1"
+               oninput="validity.valid||(value='');">
 
         <input type="button" value="Add an Item" class="popupBtn" id="addItemBtn" onclick="onSubmitItem('add')">
         <input type="button" value="Edit an Item" class="popupBtn" id="editItemBtn" onclick="onSubmitItem('edit')">
@@ -280,65 +262,52 @@ include_once("footer.php");
         }
     }
 
-    var lisClose = document.getElementById("listClose");
     var listPopup = document.getElementById("listPopup");
     var addList = document.getElementById("addList");
 
-    lisClose.onclick = function() {
+    function closeListPopup() {
         listPopup.style.display = "none";
     }
 
-    addList.onclick = function() {
-        listPopup.style.display = "block";
+    function openList(action) {
+        if (action === 'add') {
+            document.getElementById("listPopupHeading").innerHTML = 'Create Wish List';
+            document.getElementById("addListBtn").style.display = 'block';
+            document.getElementById("editListBtn").style.display = 'none';
+            listPopup.style.display = "block";
+        } else {
+            document.getElementById("listPopupHeading").innerHTML = 'Edit Wish List';
+            document.getElementById("addListBtn").style.display = 'none';
+            document.getElementById("editListBtn").style.display = 'block';
+            document.getElementById("name").value = list.get('name');
+            document.getElementById("desc").value = list.get('description');
+            listPopup.style.display = "block";
+        }
     }
 
-    function onCreateList() {
+    function onSubmitList(action) {
         var name = document.getElementById("name").value;
         var desc = document.getElementById("desc").value;
 
         if (name !== '' && desc !== '') {
-            list.set('id',null);
+            if (action === 'add') {
+                list.set('id',null);
+            }
             list.set('name', name);
             list.set('description', desc);
             list.set('userId', <?php echo "$user->id" ?>);
-            list.save(null, {
-                async: false,
+            list.save(null, { async: false,
                 success: function () {
                     listPopup.style.display = "none";
                 },
                 error: function () {
-                    alert('Error occurred while creating the list.');
+                    if (action === 'add') {
+                        alert('Error occurred while creating the list.');
+                    } else {
+                        alert('Error occurred while editing the list.');
+                    }
                 }
             });
-
-        } else  {
-            alert('Please fill all the required fields.');
-        }
-    }
-
-    var editListClose = document.getElementById("editListClose");
-    var editListPopup = document.getElementById("editListPopup");
-    var editList = document.getElementById("editList");
-
-    editListClose.onclick = function() {
-        editListPopup.style.display = "none";
-    }
-
-    editList.onclick = function() {
-        document.getElementById("editName").value = list.get('name');
-        document.getElementById("editDesc").value = list.get('description');
-        editListPopup.style.display = "block";
-    }
-
-    function onEditList() {
-        var name = document.getElementById("editName").value;
-        var desc = document.getElementById("editDesc").value;
-
-        if (name !== '' && desc !== '') {
-            list.set('name', name);
-            list.set('description', desc);
-            list.save({async:false});
-            editListPopup.style.display = "none";
 
         } else  {
             alert('Please fill all the required fields.');
@@ -436,8 +405,6 @@ include_once("footer.php");
     window.onclick = function(event) {
         if (event.target === listPopup) {
             listPopup.style.display = "none";
-        } else if (event.target === editListPopup) {
-            editListPopup.style.display = "none";
         } else if (event.target === itemPopup) {
             itemPopup.style.display = "none";
         }
