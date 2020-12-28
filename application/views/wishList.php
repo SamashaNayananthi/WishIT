@@ -230,9 +230,15 @@ include_once("footer.php");
                     '<div class="card-bottom">' +
                     '<span class="item-detail"><span class="item-lbl">Occasion : </span>' +
                     '<span class="item-lbl-detail">' + item.get('occasion') + '</span>' +
-                    '</span>' +
-                    '<span class="item-detail"><span class="item-lbl">Priority : </span>' +
-                    '<span class="item-lbl-detail">' + item.get('priority') + '</span>' +
+                    '</span>';
+                    if (item.get('priorityLvl') == 1) {
+                        html += '<span class="item-detail" style="background-color: red"><span class="item-lbl">Priority : </span>';
+                    } else if (item.get('priorityLvl') == 2) {
+                        html += '<span class="item-detail" style="background-color: orange"><span class="item-lbl">Priority : </span>';
+                    }else {
+                        html += '<span class="item-detail" style="background-color: yellow"><span class="item-lbl">Priority : </span>';
+                    }
+                html += '<span class="item-lbl-detail">' + item.get('priority') + '</span>' +
                     '</span>' +
                     '<span class="item-detail"><span class="item-lbl">Price : </span>' +
                     '<span class="item-lbl-detail">' + item.get('price') + '</span>' +

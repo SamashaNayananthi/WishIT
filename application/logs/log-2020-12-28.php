@@ -397,3 +397,41 @@ DEBUG - 2020-12-28 12:05:00 --> Config file loaded: C:\xampp\htdocs\WishIT\appli
 DEBUG - 2020-12-28 12:05:00 --> Total execution time: 0.1685
 DEBUG - 2020-12-28 12:05:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
 DEBUG - 2020-12-28 12:05:00 --> Total execution time: 0.2078
+DEBUG - 2020-12-28 12:20:56 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:20:56 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2020-12-28 12:20:56 --> Severity: Warning --> Use of undefined constant item - assumed 'item' (this will throw an Error in a future version of PHP) C:\xampp\htdocs\WishIT\application\views\wishList.php 236
+ERROR - 2020-12-28 12:20:56 --> Severity: error --> Exception: Call to undefined function get() C:\xampp\htdocs\WishIT\application\views\wishList.php 236
+DEBUG - 2020-12-28 12:21:04 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:21:04 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2020-12-28 12:21:04 --> Severity: Warning --> Use of undefined constant item - assumed 'item' (this will throw an Error in a future version of PHP) C:\xampp\htdocs\WishIT\application\views\wishList.php 236
+ERROR - 2020-12-28 12:21:04 --> Severity: error --> Exception: Call to undefined function get() C:\xampp\htdocs\WishIT\application\views\wishList.php 236
+DEBUG - 2020-12-28 12:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:27:13 --> Total execution time: 0.1458
+DEBUG - 2020-12-28 12:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:27:13 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:27:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:27:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:27:13 --> Total execution time: 0.1378
+DEBUG - 2020-12-28 12:27:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:27:13 --> Total execution time: 0.1865
+DEBUG - 2020-12-28 12:29:45 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:29:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:29:45 --> Total execution time: 0.1694
+DEBUG - 2020-12-28 12:29:46 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:29:46 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:29:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:29:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:29:46 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:29:46 --> Total execution time: 0.1429
+DEBUG - 2020-12-28 12:29:46 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:29:46 --> Total execution time: 0.1766
+DEBUG - 2020-12-28 12:36:19 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:36:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:36:19 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-28 12:36:19 --> Severity: error --> Exception: Call to undefined method ItemOptionModel::setPriorityLvl() C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 77
+DEBUG - 2020-12-28 12:39:31 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:39:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:39:31 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:39:32 --> Total execution time: 0.1569
