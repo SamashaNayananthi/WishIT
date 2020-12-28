@@ -192,3 +192,208 @@ DEBUG - 2020-12-28 11:28:29 --> UTF-8 Support Enabled
 DEBUG - 2020-12-28 11:28:29 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2020-12-28 11:28:29 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
 DEBUG - 2020-12-28 11:28:29 --> Total execution time: 0.1549
+DEBUG - 2020-12-28 11:40:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:40:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:40:48 --> Total execution time: 0.1271
+DEBUG - 2020-12-28 11:40:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:40:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:40:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:40:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:40:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:40:49 --> Total execution time: 0.1071
+DEBUG - 2020-12-28 11:40:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-28 11:40:49 --> Severity: error --> Exception: Call to undefined method ItemOptionModel::setPriorityLvl() C:\xampp\htdocs\WishIT\application\controllers\api\WishItem.php 25
+DEBUG - 2020-12-28 11:41:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:41:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:41:40 --> Total execution time: 0.1245
+DEBUG - 2020-12-28 11:41:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:41:40 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:41:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:41:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:41:40 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:41:40 --> Total execution time: 0.1559
+DEBUG - 2020-12-28 11:41:40 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:41:40 --> Total execution time: 0.2049
+DEBUG - 2020-12-28 11:42:48 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:42:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:42:48 --> Total execution time: 0.1425
+DEBUG - 2020-12-28 11:42:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:42:49 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:42:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:42:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:42:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:42:49 --> Total execution time: 0.1595
+DEBUG - 2020-12-28 11:42:49 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:42:49 --> Total execution time: 0.1990
+DEBUG - 2020-12-28 11:55:29 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:55:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:55:29 --> Total execution time: 0.1541
+DEBUG - 2020-12-28 11:55:30 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:55:30 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:55:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:55:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:55:30 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:55:30 --> Total execution time: 0.1403
+DEBUG - 2020-12-28 11:55:30 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-28 11:55:30 --> Query error: Not unique table/alias: 'wish_items' - Invalid query: SELECT `wish_items`.`id`, `wish_items`.`title`, `wish_items`.`list_id`, `wish_items`.`occasion`, `wish_items`.`priority`, `wish_items`.`item_url`, `wish_items`.`price`, `wish_items`.`quantity`, `occasions`.`name`, `priorities`.`name`, `priorities`.`priority`
+FROM (`wish_items`, `wish_items`)
+LEFT JOIN `occasions` ON `wish_items`.`occasion` = `occasions`.`id`
+LEFT JOIN `priorities` ON `wish_items`.`priority` = `priorities`.`id`
+WHERE `list_id` = '15'
+DEBUG - 2020-12-28 11:56:22 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:56:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:56:23 --> Total execution time: 0.1303
+DEBUG - 2020-12-28 11:56:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:56:23 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:56:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:56:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:56:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:56:23 --> Total execution time: 0.1601
+DEBUG - 2020-12-28 11:56:23 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:56:23 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+            [title] => Chocolate
+            [list_id] => 15
+            [occasion] => 2
+            [priority] => 1
+            [item_url] => https://www.kandos.lk/bar-cashewnut-45g/p/33
+            [price] => 140.00
+            [quantity] => 2
+            [name] => I want it
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 5
+            [title] => Cat
+            [list_id] => 15
+            [occasion] => 1
+            [priority] => 3
+            [item_url] => https://ikman.lk/en/ad/persian-kittens-for-sale-for-sale-kalutara-2
+            [price] => 39000.00
+            [quantity] => 1
+            [name] => If you can
+        )
+
+)
+
+DEBUG - 2020-12-28 11:56:23 --> Total execution time: 0.2093
+DEBUG - 2020-12-28 11:59:44 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:59:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:59:44 --> Total execution time: 0.1030
+DEBUG - 2020-12-28 11:59:44 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:59:44 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 11:59:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:59:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 11:59:44 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 11:59:44 --> Total execution time: 0.0905
+DEBUG - 2020-12-28 11:59:44 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2020-12-28 11:59:44 --> Query error: Unknown column 'wish_items.occasion' in 'on clause' - Invalid query: SELECT `wi`.`id`, `wi`.`title`, `wi`.`list_id`, `wi`.`occasion`, `wi`.`priority`, `wi`.`item_url`, `wi`.`price`, `wi`.`quantity`, `o`.`name` `o_name`, `p`.`name` `p_name`, `p`.`priority` `p_level`
+FROM `wish_items` `wi`
+LEFT JOIN `occasions` `o` ON `wish_items`.`occasion` = `occasions`.`id`
+LEFT JOIN `priorities` `p` ON `wish_items`.`priority` = `priorities`.`id`
+WHERE `list_id` = '15'
+DEBUG - 2020-12-28 12:00:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:00:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:00:35 --> Total execution time: 0.1259
+DEBUG - 2020-12-28 12:00:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:00:35 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:00:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:00:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:00:35 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:00:35 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+            [title] => Chocolate
+            [list_id] => 15
+            [occasion] => 2
+            [priority] => 1
+            [item_url] => https://www.kandos.lk/bar-cashewnut-45g/p/33
+            [price] => 140.00
+            [quantity] => 2
+            [o_name] => Christmas
+            [p_name] => I want it
+            [p_level] => 1
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 5
+            [title] => Cat
+            [list_id] => 15
+            [occasion] => 1
+            [priority] => 3
+            [item_url] => https://ikman.lk/en/ad/persian-kittens-for-sale-for-sale-kalutara-2
+            [price] => 39000.00
+            [quantity] => 1
+            [o_name] => Birthday
+            [p_name] => If you can
+            [p_level] => 3
+        )
+
+)
+
+DEBUG - 2020-12-28 12:00:35 --> Total execution time: 0.1680
+DEBUG - 2020-12-28 12:00:35 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:00:35 --> Total execution time: 0.2519
+DEBUG - 2020-12-28 12:02:38 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:02:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:02:39 --> Total execution time: 0.1169
+DEBUG - 2020-12-28 12:02:39 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:02:39 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:02:39 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:02:39 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:02:39 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:02:39 --> Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 4
+            [title] => Chocolate
+            [list_id] => 15
+            [occasion] => 2
+            [priority] => 1
+            [item_url] => https://www.kandos.lk/bar-cashewnut-45g/p/33
+            [price] => 140.00
+            [quantity] => 2
+            [o_name] => Christmas
+            [p_name] => I want it
+            [p_level] => 1
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 5
+            [title] => Cat
+            [list_id] => 15
+            [occasion] => 1
+            [priority] => 3
+            [item_url] => https://ikman.lk/en/ad/persian-kittens-for-sale-for-sale-kalutara-2
+            [price] => 39000.00
+            [quantity] => 1
+            [o_name] => Birthday
+            [p_name] => If you can
+            [p_level] => 3
+        )
+
+)
+
+DEBUG - 2020-12-28 12:02:39 --> Total execution time: 0.1458
+DEBUG - 2020-12-28 12:02:39 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:02:39 --> Total execution time: 0.2005
+DEBUG - 2020-12-28 12:04:59 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:04:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:04:59 --> Total execution time: 0.1599
+DEBUG - 2020-12-28 12:05:00 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:05:00 --> UTF-8 Support Enabled
+DEBUG - 2020-12-28 12:05:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:05:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-12-28 12:05:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:05:00 --> Total execution time: 0.1685
+DEBUG - 2020-12-28 12:05:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2020-12-28 12:05:00 --> Total execution time: 0.2078

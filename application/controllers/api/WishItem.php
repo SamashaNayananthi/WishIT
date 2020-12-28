@@ -19,13 +19,11 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $this->load->model('WishItemModel');
                 $result = $this->WishItemModel->getWishList($listId->id);
 
-                $this->load->model('ItemOptionModel');
-
                 foreach ($result as $row) {
                     $item = array("id" => $row->id, "title" => $row->title, "listId" => $row->list_id,
                         "occasionId" => $row->occasion, "priorityId" => $row->priority, "itemUrl" => $row->item_url,
-                        "price" => $row->price, "quantity" => $row->quantity,
-                        "priorityLvl" => $this->ItemOptionModel->setPriorityLvl($row->priority));
+                        "price" => $row->price, "quantity" => $row->quantity, "priorityLvl" => $row->p_level,
+                        "occasion" => $row->o_name, "priority" => $row->p_name);
 
                     array_push($items, $item);
                 }
@@ -49,12 +47,10 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $this->load->model('WishItemModel');
                 $result = $this->WishItemModel->getWishItem($id);
 
-                $this->load->model('ItemOptionModel');
-
                 $item = array("id" => $result->id, "title" => $result->title, "listId" => $result->list_id,
                     "occasionId" => $result->occasion, "priorityId" => $result->priority, "itemUrl" => $result->item_url,
                     "price" => $result->price, "quantity" => $result->quantity,
-                    "priorityLvl" => $this->ItemOptionModel->setPriorityLvl($result->priority));
+                    "priorityLvl" => $result->p_level, "occasion" => $result->o_name, "priority" => $result->p_name);
 
                 $this->response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }

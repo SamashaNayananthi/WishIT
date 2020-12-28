@@ -7,13 +7,20 @@ class WishItemModel extends CI_Model {
     }
 
     function getWishList($listId) {
-        $query = $this->db->get_where('wish_items', array('list_id' => $listId));
+        $this->db->select('wi.id, wi.title, wi.list_id, wi.occasion, wi.priority, wi.item_url, wi.price, 
+        wi.quantity, o.name o_name, p.name p_name, p.priority p_level');
+        $this->db->join('occasions o', 'wi.occasion = o.id', 'left');
+        $this->db->join('priorities p', 'wi.priority = p.id', 'left');
+        $query = $this->db->get_where('wish_items wi', array('list_id' => $listId));
         return $query->result();
     }
 
     function getWishItem($id) {
-        $this->db->join('priorities', 'priorities.id = wish_items.priority');
-        $query = $this->db->get_where('wish_items', array('id' => $id));
+        $this->db->select('wi.id, wi.title, wi.list_id, wi.occasion, wi.priority, wi.item_url, wi.price, 
+        wi.quantity, o.name o_name, p.name p_name, p.priority p_level');
+        $this->db->join('occasions o', 'wi.occasion = o.id', 'left');
+        $this->db->join('priorities p', 'wi.priority = p.id', 'left');
+        $query = $this->db->get_where('wish_items wi', array('id' => $id));
         return $query->row();
     }
 

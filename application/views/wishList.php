@@ -157,11 +157,7 @@ include_once("footer.php");
     var List = Backbone.Model.extend({
         url: '/WishIT/index.php/api/ListDetails/list',
         idAttribute: 'id',
-        defaults: {"id":null,
-            "name":"",
-            "description":"",
-            "userId":null
-        }
+        defaults: {"id": null, "name": "", "description": "", "userId": null}
     });
 
     var list = new List();
@@ -193,16 +189,8 @@ include_once("footer.php");
     var WishItem = Backbone.Model.extend({
         url: '/WishIT/index.php/api/WishItem/wishItems',
         idAttribute: 'id',
-        defaults: {"id":null,
-            "title":"",
-            "listId":null,
-            "occasionId":null,
-            "priorityId":null,
-            "itemUrl":"",
-            "price":null,
-            "quantity":null,
-            "priorityLvl": null
-        }
+        defaults: {"id": null, "title": "", "listId": null, "occasionId": null, "priorityId": null, "itemUrl": "",
+            "price": null, "quantity": null, "priorityLvl": null, "occasion": "", "priority": ""}
     });
 
     var wish = new WishItem();
@@ -241,10 +229,10 @@ include_once("footer.php");
                     '</div>' +
                     '<div class="card-bottom">' +
                     '<span class="item-detail"><span class="item-lbl">Occasion : </span>' +
-                    '<span class="item-lbl-detail">' + setOccasion(item.get('occasionId')) + '</span>' +
+                    '<span class="item-lbl-detail">' + item.get('occasion') + '</span>' +
                     '</span>' +
                     '<span class="item-detail"><span class="item-lbl">Priority : </span>' +
-                    '<span class="item-lbl-detail">' + setPriority(item.get('priorityId')) + '</span>' +
+                    '<span class="item-lbl-detail">' + item.get('priority') + '</span>' +
                     '</span>' +
                     '<span class="item-detail"><span class="item-lbl">Price : </span>' +
                     '<span class="item-lbl-detail">' + item.get('price') + '</span>' +
@@ -281,32 +269,6 @@ include_once("footer.php");
                 document.getElementById("noItemView").style.display = "none";
             }
         }
-    }
-
-    function setOccasion(id) {
-        var occasionList = <?php echo json_encode($occasionList); ?>;
-        var occasionName = '';
-
-        for (var i=0; i<occasionList.length; i++) {
-            if (occasionList[i].id === id) {
-                occasionName = occasionList[i].name;
-            }
-        }
-
-        return occasionName;
-    }
-
-    function setPriority(id) {
-        var priorityList = <?php echo json_encode($priorityList); ?>;
-        var priorityName = '';
-
-        for (var i=0; i<priorityList.length; i++) {
-            if (priorityList[i].id === id) {
-                priorityName = priorityList[i].name;
-            }
-        }
-
-        return priorityName;
     }
 
     var lisClose = document.getElementById("listClose");
@@ -395,7 +357,6 @@ include_once("footer.php");
         var quantity = document.getElementById("quantity").value;
 
         var urlRegex = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
-        var priorityList = <?php echo json_encode($priorityList); ?>;
 
         if (title !== '' && itemUrl !== '' && price !== '' && quantity !== '') {
             if (urlRegex.test(itemUrl)) {

@@ -17,15 +17,27 @@ class ItemOptionModel extends CI_Model {
         return $query->result();
     }
 
-    function setPriorityLvl($id) {
-        $priorityLvl = 0;
+    function setPriority($id) {
+        $priorityObj = 0;
         $priorityList = $this->getPriorities();
 
         foreach ($priorityList as $priority) {
             if ($priority->id == $id) {
-                $priorityLvl = $priority->priority;
+                $priorityObj = $priority;
             }
         }
-        return $priorityLvl;
+        return $priorityObj;
+    }
+
+    function setOccasionName($id) {
+        $occasionName = '';
+        $occasionList = $this->getOccasions();
+
+        foreach ($occasionList as $occasion) {
+            if ($occasion->id == $id) {
+                $occasionName = $occasion->name;
+            }
+        }
+        return $occasionName;
     }
 }
