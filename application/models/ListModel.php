@@ -11,7 +11,7 @@ class ListModel extends CI_Model {
         return $query->row();
     }
 
-    function insertList($name, $description, $userId) {
+    function saveList($name, $description, $userId) {
         $list = array('name' => $name, 'description' => $description, 'user_id' => $userId);
         $this->db->insert('list_details', $list);
 

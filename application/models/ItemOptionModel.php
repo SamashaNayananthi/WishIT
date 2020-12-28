@@ -16,4 +16,16 @@ class ItemOptionModel extends CI_Model {
         $query = $this->db->get('priorities');
         return $query->result();
     }
+
+    function setPriorityLvl($id) {
+        $priorityLvl = 0;
+        $priorityList = $this->getPriorities();
+
+        foreach ($priorityList as $priority) {
+            if ($priority->id == $id) {
+                $priorityLvl = $priority->priority;
+            }
+        }
+        return $priorityLvl;
+    }
 }

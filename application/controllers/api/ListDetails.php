@@ -37,7 +37,7 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $userId = $this->post('userId');
 
         $this->load->model('ListModel');
-        $listId = $this ->ListModel->insertList($name, $description, $userId);
+        $listId = $this ->ListModel->saveList($name, $description, $userId);
 
         $list = new stdClass();
         $list->id = $listId;

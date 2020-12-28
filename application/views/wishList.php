@@ -258,9 +258,6 @@ include_once("footer.php");
 
             $('#wishItems').html(html);
         },
-        error: function () {
-            divVisibilityChange();
-        },
         wait: true
     });
 
@@ -410,14 +407,6 @@ include_once("footer.php");
                 newItem.set('itemUrl', itemUrl);
                 newItem.set('price', price);
                 newItem.set('quantity', quantity);
-
-                var priorityLvl = null;
-                for (var i=0; i<priorityList.length; i++) {
-                    if (priorityList[i].id === priority) {
-                        priorityLvl = priorityList[i].priority;
-                    }
-                }
-                newItem.set('priorityLvl', priorityLvl);
 
                 newItem.save(null, {async:false,
                      success: function () {
