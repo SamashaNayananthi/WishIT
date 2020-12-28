@@ -82,4 +82,27 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $this->set_response($newItem, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
     }
 
+    public function wishItems_put() {
+        $id = $this->put('id');
+        $title = $this->put('title');
+        $occasionId = $this->put('occasionId');
+        $priorityId = $this->put('priorityId');
+        $itemUrl = $this->put('itemUrl');
+        $price = $this->put('price');
+        $quantity = $this->put('quantity');
+
+        $this->load->model('WishItemModel');
+        $this ->WishItemModel->updateWishItem($id, $title, $occasionId, $priorityId, $itemUrl, $price, $quantity);
+
+        $this->load->model('ItemOptionModel');
+
+        $priority = $this->ItemOptionModel->setPriority($priorityId);
+
+        $item = array("id" => $id, "title" => $title, "occasionId" => $occasionId, "priorityId" => $priorityId,
+            "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
+            "priority" => $priority->name, "occasion" => $this->ItemOptionModel->setOccasionName($occasionId));
+
+        $this->set_response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
+    }
+
 }

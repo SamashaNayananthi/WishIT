@@ -32,4 +32,10 @@ class WishItemModel extends CI_Model {
         return $this->db->insert_id();
     }
 
+    function updateWishItem($id, $title, $occasionId, $priorityId, $itemUrl, $price, $quantity) {
+        $item = array('title' => $title, 'occasion' => $occasionId, 'priority' => $priorityId,
+            'item_url' => $itemUrl, 'price' => $price, 'quantity' => $quantity);
+        $this->db->update('wish_items', $item, array('id' => $id));
+    }
+
 }

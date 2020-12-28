@@ -53,7 +53,7 @@
         <button class="share-icon" onclick="">
             <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
         </button>
-        <button class='add-icon' id="addItemBtn">
+        <button class='add-icon' onclick="openItemPopup('add', null)">
             <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Add an Item"></i>
         </button>
     </div>
@@ -95,10 +95,12 @@
 
 <div class="items" id="wishItems"></div>
 
-<div class="popup" id="addItem">
+<div class="popup" id="itemPopup">
     <div class="popup-content">
-        <span class="close" id="addItemClose">&times;</span>
-        <div class="popup-heading">Add an Item</div>
+        <span class="close" onclick="closeItemPopup()">&times;</span>
+        <div class="popup-heading" id="popupHeading"></div>
+
+        <input type="hidden" id="id" name="id" value="">
 
         <label for="title" class="lbl">Title*</label>
         <input type="text" placeholder="Title" name="title" id="title">
@@ -130,7 +132,8 @@
         <label for="quantity" class="lbl">Quantity*</label>
         <input type="number" placeholder="Quantity" name="quantity" id="quantity" min="1" oninput="validity.valid||(value='');">
 
-        <input type="button" value="Add an Item" class="popupBtn" onclick="onAddItem()">
+        <input type="button" value="Add an Item" class="popupBtn" id="addItemBtn" onclick="onSubmitItem('add')">
+        <input type="button" value="Edit an Item" class="popupBtn" id="editItemBtn" onclick="onSubmitItem('edit')">
     </div>
 </div>
 
@@ -223,7 +226,7 @@ include_once("footer.php");
                     '<button class="item-icon">' +
                     '<i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>' +
                     '</button>' +
-                    '<button class="item-icon">' +
+                    '<button class="item-icon" onclick="openItemPopup(\'edit\', ' + item.get('id') + ')">' +
                     '<i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Item"></i>' +
                     '</button>' +
                     '</div>' +
@@ -342,19 +345,36 @@ include_once("footer.php");
         }
     }
 
-    var addItemClose = document.getElementById("addItemClose");
-    var addItem = document.getElementById("addItem");
-    var addItemBtn = document.getElementById("addItemBtn");
+    var itemPopup = document.getElementById("itemPopup");
 
-    addItemClose.onclick = function() {
-        addItem.style.display = "none";
+    function closeItemPopup() {
+        itemPopup.style.display = "none";
     }
 
-    addItemBtn.onclick = function() {
-        addItem.style.display = "block";
+    function openItemPopup(action, id) {
+        if (action === 'add') {
+            document.getElementById("popupHeading").innerHTML = 'Add an Item';
+            document.getElementById("addItemBtn").style.display = 'block';
+            document.getElementById("editItemBtn").style.display = 'none';
+            itemPopup.style.display = "block";
+        } else {
+            document.getElementById("popupHeading").innerHTML = 'Edit an Item';
+            document.getElementById("addItemBtn").style.display = 'none';
+            document.getElementById("editItemBtn").style.display = 'block';
+            document.getElementById("id").value = id;
+            itemPopup.style.display = "block";
+
+            var selectedItem = wishItems.get(id);
+            document.getElementById("title").value = selectedItem.get('title');
+            document.getElementById("itemUrl").value = selectedItem.get('itemUrl');
+            document.getElementById("occasion").value = selectedItem.get('occasionId');
+            document.getElementById("priority").value = selectedItem.get('priorityId');
+            document.getElementById("price").value = selectedItem.get('price');
+            document.getElementById("quantity").value = selectedItem.get('quantity');
+        }
     }
 
-    function onAddItem() {
+    function onSubmitItem(action) {
         var title = document.getElementById("title").value;
         var itemUrl = document.getElementById("itemUrl").value;
         var occasion = document.getElementById("occasion").value;
@@ -366,27 +386,41 @@ include_once("footer.php");
 
         if (title !== '' && itemUrl !== '' && price !== '' && quantity !== '') {
             if (urlRegex.test(itemUrl)) {
-                var newItem = new WishItem();
-                newItem.set('title', title);
-                newItem.set('listId', list.get('id'));
-                newItem.set('occasionId', occasion);
-                newItem.set('priorityId', priority);
-                newItem.set('itemUrl', itemUrl);
-                newItem.set('price', price);
-                newItem.set('quantity', quantity);
+                var item;
+                if (action === 'add') {
+                    item = new WishItem();
+                } else {
+                    item = wishItems.get(document.getElementById("id").value);
+                }
 
-                newItem.save(null, {async:false,
+                item.set('title', title);
+                item.set('listId', list.get('id'));
+                item.set('occasionId', occasion);
+                item.set('priorityId', priority);
+                item.set('itemUrl', itemUrl);
+                item.set('price', price);
+                item.set('quantity', quantity);
+
+                item.save(null, {async:false,
                      success: function () {
-                        wishItems.add(newItem);
-                        wishItemsView.render();
-                        addItem.style.display = "none";
+                         if (action === 'add') {
+                             wishItems.add(item);
+                         }
+                         wishItems.sort();
+                         wishItemsView.render();
+                         itemPopup.style.display = "none";
                          document.getElementById("title").value = '';
                          document.getElementById("itemUrl").value = '';
                          document.getElementById("price").value = '';
                          document.getElementById("quantity").value = '';
+                         document.getElementById("id").value = '';
                     },
                     error: function () {
-                    alert('Error occurred while adding the new item.');
+                        if (action === "add") {
+                            alert('Error occurred while adding the new item.');
+                        } else {
+                            alert('Error occurred while editing the item.');
+                        }
                     }
                 });
 
@@ -404,8 +438,8 @@ include_once("footer.php");
             listPopup.style.display = "none";
         } else if (event.target === editListPopup) {
             editListPopup.style.display = "none";
-        } else if (event.target === addItem) {
-            addItem.style.display = "none";
+        } else if (event.target === itemPopup) {
+            itemPopup.style.display = "none";
         }
     }
 
