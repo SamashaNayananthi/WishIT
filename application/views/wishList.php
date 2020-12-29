@@ -48,7 +48,7 @@
         <button class="edit-icon" onclick="openList('edit')">
             <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
         </button>
-        <button class="share-icon" onclick="">
+        <button class="share-icon" onclick="shareableLink()">
             <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
         </button>
         <button class='add-icon' onclick="openItemPopup('add', null)">
@@ -132,6 +132,17 @@
     </div>
 </div>
 
+<div class="popup" id="shareablePopup">
+    <div class="popup-content">
+        <span class="close" onclick="closeShareablePopup()">&times;</span>
+        <div class="popup-heading">Your Shareable Link</div>
+
+        <input type="text" value="" id="shareableLink">
+
+        <input type="button" value="Copy to Clipboard" class="popupBtn" onclick="onClickCopyToClipboard()">
+    </div>
+</div>
+
 <?php
 include_once("footer.php");
 ?>
@@ -153,7 +164,7 @@ include_once("footer.php");
     });
 
     var List = Backbone.Model.extend({
-        url: '/WishIT/index.php/api/ListDetails/list',
+        url: "<?php echo base_url().'api/ListDetails/list' ?>",
         idAttribute: 'id',
         defaults: {"id": null, "name": "", "description": "", "userId": null}
     });
@@ -185,7 +196,7 @@ include_once("footer.php");
     var listView = new ListView({model:list});
 
     var WishItem = Backbone.Model.extend({
-        url: '/WishIT/index.php/api/WishItem/wishItems',
+        url: "<?php echo base_url().'api/WishItem/wishItems' ?>",
         idAttribute: 'id',
         defaults: {"id": null, "title": "", "listId": null, "occasionId": null, "priorityId": null, "itemUrl": "",
             "price": null, "quantity": null, "priorityLvl": null, "occasion": "", "priority": ""}
@@ -196,7 +207,7 @@ include_once("footer.php");
     var WishItems = Backbone.Collection.extend({
         model: WishItem,
         comparator: 'priorityLvl',
-        url: "/WishIT/index.php/api/WishItem/wishItems"
+        url: "<?php echo base_url().'api/WishItem/wishItems' ?>"
     });
 
     var wishItems = new WishItems();
@@ -431,7 +442,7 @@ include_once("footer.php");
     function onClickDeleteItem() {
         var item = wishItems.get(document.getElementById("deleteId").value);
 
-        item.destroy({ url: "/WishIT/index.php/api/WishItem/wishItems/id/" + item.get('id'),
+        item.destroy({ url: "<?php echo base_url().'api/WishItem/wishItems/id/' ?>" + item.get('id'),
             success: function () {
                 wishItemsView.render();
                 deletePopup.style.display = "none";
@@ -442,6 +453,33 @@ include_once("footer.php");
         });
     }
 
+    var shareablePopup = document.getElementById("shareablePopup");
+
+    function closeShareablePopup() {
+        shareablePopup.style.display = "none";
+    }
+
+    function shareableLink() {
+        $.ajax({
+            url:"<?php echo base_url()."api/ListDetails/shareableLink" ?>",
+            method: "GET",
+            success: function(response) {
+                document.getElementById("shareableLink").value = response;
+                shareablePopup.style.display = "block";
+            },
+            error: function () {
+                alert('Error occurred while getting shareable link.');
+            }
+        });
+    }
+
+    function onClickCopyToClipboard() {
+        var copiedText = document.getElementById("shareableLink");
+        copiedText.select();
+        copiedText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+    }
+
     window.onclick = function(event) {
         if (event.target === listPopup) {
             listPopup.style.display = "none";
@@ -449,6 +487,8 @@ include_once("footer.php");
             itemPopup.style.display = "none";
         } else if (event.target === deletePopup) {
             deletePopup.style.display = "none";
+        } else if (event.target === shareablePopup) {
+            shareablePopup.style.display = "none";
         }
     }
 

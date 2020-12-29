@@ -66,4 +66,11 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
     }
 
+    public function shareableLink_get() {
+        $username = $this->session->user->username;
+        $link = base_url()."WishList/sharedList/".$username;
+
+        $this->set_response($link, \Restserver\Libraries\REST_Controller::HTTP_OK);
+    }
+
 }
