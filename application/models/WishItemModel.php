@@ -38,4 +38,8 @@ class WishItemModel extends CI_Model {
         $this->db->update('wish_items', $item, array('id' => $id));
     }
 
+    function deleteWishItem($id) {
+        log_message('debug',print_r($id,TRUE));
+        $this->db->delete('wish_items', array('id' => $id));
+    }
 }

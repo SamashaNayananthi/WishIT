@@ -105,4 +105,20 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $this->set_response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
     }
 
+    public function wishItems_delete() {
+        $id = (int) $this->get('id');
+
+        if ($id <= 0) {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
+        }
+
+        log_message('debug',print_r($id,TRUE));
+        $this->load->model('WishItemModel');
+        $this ->WishItemModel->deleteWishItem($id);
+
+        $message = array('id' => $id, 'message' => 'Deleted the resource');
+
+        $this->set_response($message, \Restserver\Libraries\REST_Controller::HTTP_NO_CONTENT);
+    }
+
 }

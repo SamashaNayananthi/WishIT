@@ -119,6 +119,19 @@
     </div>
 </div>
 
+<div class="popup" id="deletePopup">
+    <div class="popup-content">
+        <span class="close" onclick="closeDeletePopup()">&times;</span>
+        <div class="popup-heading">Delete an Item</div>
+
+        <input type="hidden" id="deleteId" name="deleteId" value="">
+
+        <label for="name" class="del-msg" id="deleteMsg"></label>
+
+        <input type="button" value="Yes, delete this item" class="popupBtn" onclick="onClickDeleteItem()">
+    </div>
+</div>
+
 <?php
 include_once("footer.php");
 ?>
@@ -205,7 +218,7 @@ include_once("footer.php");
                     '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
                     item.get('title') + '">' + item.get('title') + '</div>' +
                     '<div class="item-url"><a href="' + item.get('itemUrl') + '">' + item.get('itemUrl') + '</a></div>' +
-                    '<button class="item-icon">' +
+                    '<button class="item-icon" onclick="openDeleteItemPopup(' + item.get('id') + ')">' +
                     '<i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>' +
                     '</button>' +
                     '<button class="item-icon" onclick="openItemPopup(\'edit\', ' + item.get('id') + ')">' +
@@ -263,7 +276,6 @@ include_once("footer.php");
     }
 
     var listPopup = document.getElementById("listPopup");
-    var addList = document.getElementById("addList");
 
     function closeListPopup() {
         listPopup.style.display = "none";
@@ -402,11 +414,41 @@ include_once("footer.php");
         }
     }
 
+    var deletePopup = document.getElementById("deletePopup");
+
+    function closeDeletePopup() {
+        deletePopup.style.display = "none";
+    }
+
+    function openDeleteItemPopup(id) {
+        var item = wishItems.get(id);
+        document.getElementById("deleteMsg").innerHTML = "Are you sure ? <br> The wish list item '" +
+            item.get('title') + "' will be removed from your wish list.";
+        document.getElementById("deleteId").value = id;
+        deletePopup.style.display = "block";
+    }
+
+    function onClickDeleteItem() {
+        var item = wishItems.get(document.getElementById("deleteId").value);
+
+        item.destroy({ url: "/WishIT/index.php/api/WishItem/wishItems/id/" + item.get('id'),
+            success: function () {
+                wishItemsView.render();
+                deletePopup.style.display = "none";
+            },
+            error: function () {
+                alert('Error occurred while deleting the item.');
+            }
+        });
+    }
+
     window.onclick = function(event) {
         if (event.target === listPopup) {
             listPopup.style.display = "none";
         } else if (event.target === itemPopup) {
             itemPopup.style.display = "none";
+        } else if (event.target === deletePopup) {
+            deletePopup.style.display = "none";
         }
     }
 
