@@ -11,6 +11,7 @@ class WishItemModel extends CI_Model {
         wi.quantity, o.name o_name, p.name p_name, p.priority p_level');
         $this->db->join('occasions o', 'wi.occasion = o.id', 'left');
         $this->db->join('priorities p', 'wi.priority = p.id', 'left');
+        $this->db->order_by("p.priority", "asc");
         $query = $this->db->get_where('wish_items wi', array('list_id' => $listId));
         return $query->result();
     }

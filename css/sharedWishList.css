@@ -1,0 +1,141 @@
+body {
+    background: radial-gradient(circle, #b537c4e0, #2c0241);
+    font-family: serif;
+    margin: 0;
+}
+
+.nav-bar {
+    background-color: #0a0009cc;
+    display: flex;
+    margin: auto;
+}
+
+.page-name {
+    color: white;
+    display: flex;
+    width: 25%;
+}
+
+.page-name img {
+    width: 50px;
+    height: 55px;
+}
+
+.name {
+    font-size: 250%;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.username {
+    font-size: xx-large;
+    color: white;
+    margin: auto;
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;;
+}
+
+.list-details {
+    color: white;
+    display: flex;
+    margin: 3% 10%;
+}
+
+.list-left {
+    display: flex;
+    float: left;
+    width: 100%;
+}
+
+.list-name {
+    font-size: 200%;
+    font-weight: bold;
+    width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto 4% auto 1%;
+}
+
+.vl {
+    border-left: 5px solid white;
+    height: 100%;
+}
+
+.list-note {
+    font-size: 125%;
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto 4% auto 5%;
+}
+
+.no-list {
+    margin: 5% auto;
+    width: 90%;
+    display: flex;
+    color: white;
+    font-size: 350%;
+    background-color: #0a0009cc;
+    padding: 5%;
+    border-radius: 15px;
+}
+
+.no-list-msg {
+    margin: auto;
+}
+
+.items {
+    margin: auto auto 10%;
+}
+
+.item-card {
+    background-color: #e8dfecc4;
+    margin: 2% 8%;
+    padding: 2% 4%;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.card-top {
+    margin: 0 auto 1% auto;
+    display: flex;
+}
+
+.item-name {
+    font-size: 150%;
+    margin-right: 2%;
+    color: #55176f;
+    width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-url {
+    margin: auto;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-url a {
+    color: #0e1dcc;
+}
+
+.item-detail {
+    margin: auto 5% auto auto;
+    background-color: #4f4b5085;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.item-lbl {
+    font-size: 120%;
+    margin-right: 1%;
+}

@@ -31,4 +31,9 @@ class UserModel extends CI_Model {
         }
     }
 
+    function getUserByUsername($username) {
+        $query = $this->db->get_where('users', array('username' => $username));
+        return $query->row();
+    }
+
 }
