@@ -200,19 +200,23 @@ select:focus ,option:focus {
 .list-details {
     color: white;
     display: flex;
-    margin: 3% 2%;
+    margin: 1% 5%;
 }
 
 .list-left {
-    display: flex;
     float: left;
     width: 70%;
+}
+
+.list-heading {
+    display: flex;
+    width: 100%;
 }
 
 .list-name, .vl, .list-note, .edit-icon, .share-icon { margin: auto 4% auto 1%; }
 
 .list-name {
-    font-size: 200%;
+    font-size: 250%;
     font-weight: bold;
     width: 25%;
     white-space: nowrap;
@@ -221,16 +225,26 @@ select:focus ,option:focus {
 }
 
 .vl {
-    border-left: 5px solid white;
-    height: 100%;
+    font-size: 200%;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.occasion {
+    font-size: 150%;
+    width: 25%;
+    margin: auto 0;
+    font-weight: bold;
 }
 
 .list-note {
+    display: block;
     font-size: 125%;
-    width: 50%;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 1%;
 }
 
 .edit-icon, .add-icon, .item-icon, .share-icon {

@@ -23,6 +23,8 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
                 $list->id = $result->id;
                 $list->name = $result->name;
                 $list->description = $result->description;
+                $list->occasionId = $result->occasion_id;
+                $list->occasion = $result->occasion;
                 $list->userId = $result->user_id;
                 //log_message('debug',print_r($list,TRUE));
 
@@ -34,15 +36,20 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
     public function list_post() {
         $name = $this->post('name');
         $description = $this->post('description');
+        $occasionId = $this->post('occasionId');
         $userId = $this->post('userId');
 
         $this->load->model('ListModel');
-        $listId = $this ->ListModel->saveList($name, $description, $userId);
+        $listId = $this ->ListModel->saveList($name, $description, $occasionId, $userId);
+
+        $this->load->model('ItemOptionModel');
 
         $list = new stdClass();
         $list->id = $listId;
         $list->name = $name;
         $list->description = $description;
+        $list->occasionId = $occasionId;
+        $list->occasion = $this->ItemOptionModel->setOccasionName($occasionId);
         $list->userId = $userId;
 
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
@@ -52,15 +59,20 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $id = $this->put('id');
         $name = $this->put('name');
         $description = $this->put('description');
+        $occasionId = $this->put('occasionId');
         $userId = $this->put('userId');
 
         $this->load->model('ListModel');
-        $this ->ListModel->updateList($id, $name, $description);
+        $this ->ListModel->updateList($id, $name, $description, $occasionId);
+
+        $this->load->model('ItemOptionModel');
 
         $list = new stdClass();
         $list->id = $id;
         $list->name = $name;
         $list->description = $description;
+        $list->occasionId = $occasionId;
+        $list->occasion = $this->ItemOptionModel->setOccasionName($occasionId);
         $list->userId = $userId;
 
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);

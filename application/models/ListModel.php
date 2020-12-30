@@ -7,19 +7,22 @@ class ListModel extends CI_Model {
     }
 
     function getListDetails($userId) {
-        $query = $this->db->get_where('list_details', array('user_id' => $userId));
+        $this->db->select('l.id, l.name, l.description, l.occasion_id, l.user_id, o.name occasion');
+        $this->db->join('occasions o', 'l.occasion_id = o.id', 'left');
+        $query = $this->db->get_where('list_details l', array('user_id' => $userId));
         return $query->row();
     }
 
-    function saveList($name, $description, $userId) {
-        $list = array('name' => $name, 'description' => $description, 'user_id' => $userId);
+    function saveList($name, $description, $occasionId, $userId) {
+        $list = array('name' => $name, 'description' => $description, 'occasion_id' => $occasionId,
+            'user_id' => $userId);
         $this->db->insert('list_details', $list);
 
         return $this->db->insert_id();
     }
 
-    function updateList($id, $name, $description) {
-        $data = array('name' => $name, 'description' => $description);
+    function updateList($id, $name, $description, $occasionId) {
+        $data = array('name' => $name, 'description' => $description, 'occasion_id' => $occasionId);
         $this->db->update('list_details', $data, array('id' => $id));
     }
 

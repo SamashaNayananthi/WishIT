@@ -68,6 +68,13 @@
         <label for="desc" class="lbl">List Description*</label>
         <textarea name="desc" id="desc" placeholder="List Description"></textarea>
 
+        <label for="occasion" class="lbl">Occasion*</label>
+        <select name="occasion" id="occasion">
+            <?php foreach ($occasionList as $occasion) {
+                echo "<option value='$occasion->id'>$occasion->name</option>";
+            } ?>
+        </select>
+
         <input type="button" value="Create Wish List" class="popupBtn" id="addListBtn" onclick="onSubmitList('add')">
         <input type="button" value="Edit Wish List" class="popupBtn" id="editListBtn" onclick="onSubmitList('edit')">
     </div>
@@ -91,13 +98,6 @@
 
         <label for="itemUrl" class="lbl">Item URL*</label>
         <input type="text" placeholder="Item URL" name="itemUrl" id="itemUrl">
-
-        <label for="occasion" class="lbl">Occasion*</label>
-        <select name="occasion" id="occasion">
-            <?php foreach ($occasionList as $occasion) {
-                echo "<option value='$occasion->id'>$occasion->name</option>";
-            } ?>
-        </select>
 
         <label for="priority" class="lbl">Priority*</label>
         <select name="priority" id="priority">
@@ -166,7 +166,8 @@ include_once("footer.php");
     var List = Backbone.Model.extend({
         url: "<?php echo base_url().'api/ListDetails/list' ?>",
         idAttribute: 'id',
-        defaults: {"id": null, "name": "", "description": "", "userId": null}
+        defaults: {"id": null, "name": "", "description": "", "occasionId": null,
+            "occasion":"", "userId": null}
     });
 
     var list = new List();
@@ -181,9 +182,11 @@ include_once("footer.php");
         render: function () {
             divVisibilityChange();
 
-            var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" title="' +
+            var html = '<div class="list-heading">' +
+                '<div class="list-name" data-toggle="tooltip" data-placement="bottom" title="' +
                 this.model.get('name') + '">' + this.model.get('name') + '</div>' +
-                '<div class="vl"></div>' +
+                '<div class="vl">|</div>' +
+                '<div class="occasion">' + this.model.get('occasion') + '</div></div>' +
                 '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
                 this.model.get('description') + '">' + this.model.get('description') + '</div>';
 
@@ -304,6 +307,7 @@ include_once("footer.php");
             document.getElementById("editListBtn").style.display = 'block';
             document.getElementById("name").value = list.get('name');
             document.getElementById("desc").value = list.get('description');
+            document.getElementById("occasion").value = list.get('occasionId');
             listPopup.style.display = "block";
         }
     }
@@ -311,6 +315,7 @@ include_once("footer.php");
     function onSubmitList(action) {
         var name = document.getElementById("name").value;
         var desc = document.getElementById("desc").value;
+        var occasion = document.getElementById("occasion").value;
 
         if (name !== '' && desc !== '') {
             if (action === 'add') {
@@ -318,6 +323,7 @@ include_once("footer.php");
             }
             list.set('name', name);
             list.set('description', desc);
+            list.set('occasionId', occasion);
             list.set('userId', <?php echo "$user->id" ?>);
             list.save(null, { async: false,
                 success: function () {
@@ -369,7 +375,6 @@ include_once("footer.php");
     function onSubmitItem(action) {
         var title = document.getElementById("title").value;
         var itemUrl = document.getElementById("itemUrl").value;
-        var occasion = document.getElementById("occasion").value;
         var priority = document.getElementById("priority").value;
         var price = document.getElementById("price").value;
         var quantity = document.getElementById("quantity").value;
