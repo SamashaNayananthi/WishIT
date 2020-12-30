@@ -201,8 +201,8 @@ include_once("footer.php");
     var WishItem = Backbone.Model.extend({
         url: "<?php echo base_url().'api/WishItem/wishItems' ?>",
         idAttribute: 'id',
-        defaults: {"id": null, "title": "", "listId": null, "occasionId": null, "priorityId": null, "itemUrl": "",
-            "price": null, "quantity": null, "priorityLvl": null, "occasion": "", "priority": ""}
+        defaults: {"id": null, "title": "", "listId": null, "priorityId": null, "itemUrl": "",
+            "price": null, "quantity": null, "priorityLvl": null, "priority": ""}
     });
 
     var wish = new WishItem();
@@ -240,18 +240,22 @@ include_once("footer.php");
                     '</button>' +
                     '</div>' +
                     '<div class="card-bottom">' +
-                    '<span class="item-detail"><span class="item-lbl">Occasion : </span>' +
-                    '<span class="item-lbl-detail">' + item.get('occasion') + '</span>' +
-                    '</span>';
-                    if (item.get('priorityLvl') == 1) {
-                        html += '<span class="item-detail" style="background-color: red"><span class="item-lbl">Priority : </span>';
-                    } else if (item.get('priorityLvl') == 2) {
-                        html += '<span class="item-detail" style="background-color: orange"><span class="item-lbl">Priority : </span>';
-                    }else {
-                        html += '<span class="item-detail" style="background-color: yellow"><span class="item-lbl">Priority : </span>';
-                    }
-                html += '<span class="item-lbl-detail">' + item.get('priority') + '</span>' +
-                    '</span>' +
+                    '<span class="item-detail"><span class="item-lbl">Priority : </span>' +
+                    '<span class="item-lbl-detail">' + item.get('priority') + '</span>';
+                if (item.get('priorityLvl') == 1) {
+                    html += '<span class="fa fa-star checked" style="color: #bf0a0a"></span>' +
+                        '<span class="fa fa-star checked" style="color: #bf0a0a"></span>' +
+                        '<span class="fa fa-star checked" style="color: #bf0a0a"></span>';
+                } else if (item.get('priorityLvl') == 2) {
+                    html += '<span class="fa fa-star checked" style="color: orange"></span>' +
+                        '<span class="fa fa-star checked" style="color: orange"></span>' +
+                        '<span class="fa fa-star checked"></span>';
+                } else {
+                    html += '<span class="fa fa-star checked" style="color: yellow"></span>' +
+                        '<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span>';
+                }
+                html += '</span>' +
                     '<span class="item-detail"><span class="item-lbl">Price : </span>' +
                     '<span class="item-lbl-detail">' + item.get('price') + '</span>' +
                     '</span>' +
@@ -365,7 +369,6 @@ include_once("footer.php");
             var selectedItem = wishItems.get(id);
             document.getElementById("title").value = selectedItem.get('title');
             document.getElementById("itemUrl").value = selectedItem.get('itemUrl');
-            document.getElementById("occasion").value = selectedItem.get('occasionId');
             document.getElementById("priority").value = selectedItem.get('priorityId');
             document.getElementById("price").value = selectedItem.get('price');
             document.getElementById("quantity").value = selectedItem.get('quantity');
@@ -392,7 +395,6 @@ include_once("footer.php");
 
                 item.set('title', title);
                 item.set('listId', list.get('id'));
-                item.set('occasionId', occasion);
                 item.set('priorityId', priority);
                 item.set('itemUrl', itemUrl);
                 item.set('price', price);
@@ -411,6 +413,7 @@ include_once("footer.php");
                          document.getElementById("price").value = '';
                          document.getElementById("quantity").value = '';
                          document.getElementById("id").value = '';
+                         document.getElementById("priority").value = 1;
                     },
                     error: function () {
                         if (action === "add") {

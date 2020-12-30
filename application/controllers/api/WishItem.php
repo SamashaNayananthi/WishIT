@@ -21,9 +21,8 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
 
                 foreach ($result as $row) {
                     $item = array("id" => $row->id, "title" => $row->title, "listId" => $row->list_id,
-                        "occasionId" => $row->occasion, "priorityId" => $row->priority, "itemUrl" => $row->item_url,
-                        "price" => $row->price, "quantity" => $row->quantity, "priorityLvl" => $row->p_level,
-                        "occasion" => $row->o_name, "priority" => $row->p_name);
+                        "priorityId" => $row->priority, "itemUrl" => $row->item_url, "price" => $row->price,
+                        "quantity" => $row->quantity, "priorityLvl" => $row->p_level, "priority" => $row->p_name);
 
                     array_push($items, $item);
                 }
@@ -48,9 +47,8 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $result = $this->WishItemModel->getWishItem($id);
 
                 $item = array("id" => $result->id, "title" => $result->title, "listId" => $result->list_id,
-                    "occasionId" => $result->occasion, "priorityId" => $result->priority, "itemUrl" => $result->item_url,
-                    "price" => $result->price, "quantity" => $result->quantity,
-                    "priorityLvl" => $result->p_level, "occasion" => $result->o_name, "priority" => $result->p_name);
+                    "priorityId" => $result->priority, "itemUrl" => $result->item_url, "price" => $result->price,
+                    "quantity" => $result->quantity, "priorityLvl" => $result->p_level, "priority" => $result->p_name);
 
                 $this->response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }
@@ -60,24 +58,21 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
     public function wishItems_post() {
         $title = $this->post('title');
         $listId = $this->post('listId');
-        $occasionId = $this->post('occasionId');
         $priorityId = $this->post('priorityId');
         $itemUrl = $this->post('itemUrl');
         $price = $this->post('price');
         $quantity = $this->post('quantity');
 
         $this->load->model('WishItemModel');
-        $newItemId = $this ->WishItemModel->saveWishItem($title, $listId, $occasionId,
-            $priorityId, $itemUrl, $price, $quantity);
+        $newItemId = $this ->WishItemModel->saveWishItem($title, $listId, $priorityId, $itemUrl, $price, $quantity);
 
         $this->load->model('ItemOptionModel');
 
         $priority = $this->ItemOptionModel->setPriority($priorityId);
 
-        $newItem = array("id" => $newItemId, "title" => $title, "listId" => $listId, "occasionId" => $occasionId,
-            "priorityId" => $priorityId, "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity,
-            "priorityLvl" => $priority->priority, "priority" => $priority->name,
-            "occasion" => $this->ItemOptionModel->setOccasionName($occasionId));
+        $newItem = array("id" => $newItemId, "title" => $title, "listId" => $listId, "priorityId" => $priorityId,
+            "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
+            "priority" => $priority->name);
 
         $this->set_response($newItem, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
     }
@@ -85,22 +80,21 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
     public function wishItems_put() {
         $id = $this->put('id');
         $title = $this->put('title');
-        $occasionId = $this->put('occasionId');
         $priorityId = $this->put('priorityId');
         $itemUrl = $this->put('itemUrl');
         $price = $this->put('price');
         $quantity = $this->put('quantity');
 
         $this->load->model('WishItemModel');
-        $this ->WishItemModel->updateWishItem($id, $title, $occasionId, $priorityId, $itemUrl, $price, $quantity);
+        $this ->WishItemModel->updateWishItem($id, $title, $priorityId, $itemUrl, $price, $quantity);
 
         $this->load->model('ItemOptionModel');
 
         $priority = $this->ItemOptionModel->setPriority($priorityId);
 
-        $item = array("id" => $id, "title" => $title, "occasionId" => $occasionId, "priorityId" => $priorityId,
-            "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
-            "priority" => $priority->name, "occasion" => $this->ItemOptionModel->setOccasionName($occasionId));
+        $item = array("id" => $id, "title" => $title, "priorityId" => $priorityId, "itemUrl" => $itemUrl,
+            "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
+            "priority" => $priority->name);
 
         $this->set_response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
     }
