@@ -17,6 +17,7 @@ class WishList extends CI_Controller {
         $list = new stdClass();
         $list->name = $resultList->name;
         $list->desc = $resultList->description;
+        $list->occasion = $resultList->occasion;
 
         $this->load->model('WishItemModel');
         $resultItems = $this->WishItemModel->getWishList($resultList->id);
@@ -29,7 +30,6 @@ class WishList extends CI_Controller {
             $item->price = $row->price;
             $item->quantity = $row->quantity;
             $item->priorityLvl = $row->p_level;
-            $item->occasion = $row->o_name;
             $item->priority = $row->p_name;
 
             array_push($listItems, $item);

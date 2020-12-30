@@ -41,7 +41,7 @@ body {
 .list-details {
     color: white;
     display: flex;
-    margin: 3% 10%;
+    margin: 1% 5%;
 }
 
 .list-left {
@@ -51,27 +51,36 @@ body {
 }
 
 .list-name {
-    font-size: 200%;
+    font-size: 250%;
     font-weight: bold;
     width: 25%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: auto 4% auto 1%;
+    margin: auto 1% auto 0;
 }
 
 .vl {
-    border-left: 5px solid white;
-    height: 100%;
+    font-size: 200%;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.occasion {
+    font-size: 150%;
+    width: 25%;
+    font-weight: bold;
+    margin: auto 1%;
 }
 
 .list-note {
+    display: block;
     font-size: 125%;
-    width: 65%;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: auto 4% auto 5%;
+    margin: auto 1%;
 }
 
 .no-list {
@@ -138,4 +147,8 @@ body {
 .item-lbl {
     font-size: 120%;
     margin-right: 1%;
+}
+
+.checked {
+    margin: auto 1%;
 }

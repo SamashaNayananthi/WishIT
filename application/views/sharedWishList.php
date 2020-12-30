@@ -30,7 +30,9 @@
         <div class="list-name" data-toggle="tooltip" data-placement="bottom" title="<?php echo $list->name ?>">
             <?php echo $list->name ?>
         </div>
-        <div class="vl"></div>
+        <div class="vl">|</div>
+        <div class="occasion"><?php echo $list->occasion ?></div>
+        <div class="vl">|</div>
         <div class="list-note" data-toggle="tooltip" data-placement="bottom" title="<?php echo $list->desc ?>">
             <?php echo $list->desc ?>
         </div>
@@ -47,9 +49,9 @@ if (empty($items)) {
 
 <?php
 if (!empty($items)) {
+    echo "<div class='items'>";
     foreach ($items as $item) {
 
-        echo "<div class='items'>";
         echo "<div class='item-card'>";
         echo "<div class='card-top'>";
         echo "<div class='item-name' data-toggle='tooltip' data-placement='bottom' title='$item->title'>$item->title</div>";
@@ -57,18 +59,23 @@ if (!empty($items)) {
         echo "</div>";
 
         echo "<div class='card-bottom'>";
-        echo "<span class='item-detail'><span class='item-lbl'>Occasion : </span>";
-        echo "<span class='item-lbl-detail'>$item->occasion</span>";
-        echo "</span>";
+        echo "<span class='item-detail'><span class='item-lbl'>Priority : </span>";
+        echo "<span class='item-lbl-detail'>$item->priority</span>";
 
         if ($item->priorityLvl == 1) {
-            echo "<span class='item-detail' style='background-color: red'><span class='item-lbl'>Priority : </span>";
+            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
+            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
+            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
         } elseif ($item->priorityLvl == 2) {
-            echo "<span class='item-detail' style='background-color: orange'><span class='item-lbl'>Priority : </span>";
-        } elseif ($item->priorityLvl == 3) {
-            echo "<span class='item-detail' style='background-color: yellow'><span class='item-lbl'>Priority : </span>";
+            echo "<span class='fa fa-star checked' style='color: orange'></span>";
+            echo "<span class='fa fa-star checked' style='color: orange'></span>";
+            echo "<span class='fa fa-star checked'></span>";
+        } else {
+            echo "<span class='fa fa-star checked' style='color: yellow'></span>";
+            echo "<span class='fa fa-star checked'></span>";
+            echo "<span class='fa fa-star checked'></span>";
         }
-        echo "<span class='item-lbl-detail'>$item->priority</span>";
+
         echo "</span>";
 
         echo "<span class='item-detail'><span class=item-lbl'>Price : </span>";
@@ -81,8 +88,8 @@ if (!empty($items)) {
 
         echo "</div>";
         echo "</div>";
-        echo "</div>";
     }
+    echo "</div>";
 }
 ?>
 
