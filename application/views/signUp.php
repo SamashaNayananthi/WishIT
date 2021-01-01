@@ -10,6 +10,8 @@
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
     <script src="/WishIT/js/popper.min.js"></script>
     <script src="/WishIT/js/bootstrap.min.js"></script>
+    <script src="/WishIT/js/underscore.js" type="text/javascript"></script>
+    <script src="/WishIT/js/backbone.js" type="text/javascript"></script>
 
 </head>
 
@@ -22,24 +24,22 @@
     </div>
 
     <div class="sign-up-box">
-        <form action="<?php echo base_url()."api/User/users" ?>" method="post" id="form">
-            <label for="fname" class="lbl">First Name*</label>
-            <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
+        <label for="fname" class="lbl">First Name*</label>
+        <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
 
-            <label for="lname" class="lbl">Last Name*</label>
-            <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
+        <label for="lname" class="lbl">Last Name*</label>
+        <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
 
-            <label for="username" class="lbl">Username*</label>
-            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+        <label for="username" class="lbl">Username*</label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-            <label for="psw" class="lbl">Password*</label>
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <label for="psw" class="lbl">Password*</label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-            <label for="pswRepeat" class="lbl">Repeat Password*</label>
-            <input type="password" placeholder="Repeat Password" name="pswRepeat" id="pswRepeat" required>
+        <label for="pswRepeat" class="lbl">Repeat Password*</label>
+        <input type="password" placeholder="Repeat Password" name="pswRepeat" id="pswRepeat" required>
 
-            <input type="submit" value="Sign Up" class="btn">
-        </form>
+        <input type="button" value="Sign Up" class="btn" onclick="checkForm()">
     </div>
 
 </div>
@@ -54,6 +54,14 @@ include_once("footer.php");
 
 <script>
 
+    var User = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/User/users' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "fname": "", "lname": "", "username": "", "password":""}
+    });
+
+    var user = new User();
+
     function checkForm() {
         let namePattern = /^[A-Za-z]+$/;
         let fname = document.getElementById('fname').value;
@@ -64,53 +72,47 @@ include_once("footer.php");
 
         if (fname != '' && !fname.match(namePattern)) {
             alert('First name is invalid');
-            return false;
 
         } else if (fname != '' && fname.length > 25) {
             alert('First name is too lengthy');
-            return false;
 
         } else if (lname != '' && !lname.match(namePattern)) {
             alert('Last name is invalid');
-            return false;
 
         } else if (lname != '' && lname.length > 25) {
             alert('Last name is too lengthy');
-            return false;
 
         } else if (username != '' && username.length > 15) {
             alert('Username is too lengthy. Please limit to 15 characters.');
-            return false;
 
         } else if(psw != pswRepeat) {
             alert('The password and repeat password do not match.');
-            return false;
 
         } else {
-            return true;
+            registerUser(fname, lname, username, psw);
         }
 
     }
 
-    $('#form').submit(function(){
-        var validation = checkForm();
-        if (validation) {
-            $.ajax({
-                url: $('#form').attr('action'),
-                type: 'POST',
-                data : $('#form').serialize(),
-                success: function(){
-                    window.location = "<?php echo base_url()."HomePage/login" ?>";
-                },
-                statusCode: {
-                    409: function() {
-                        alert('Username already exists');
-                    }
+    function registerUser(fname, lname, username, psw) {
+        user.set('fname', fname);
+        user.set('lname', lname);
+        user.set('username', username);
+        user.set('password', psw);
+        user.save(null, {async: false,
+            success: function (data, statusText, xhr) {
+                alert("User registered successfully. Please login.");
+                window.location = "<?php echo base_url()."HomePage/login" ?>";
+            },
+            error: function (data, statusText, xhr) {
+                if (statusText.status == 409) {
+                    alert('Username already exists.');
+                } else {
+                    alert('Error occurred while registering the user. Please try again');
                 }
-            });
-        }
-        return false;
-    });
+            }
+        });
+    }
 
 </script>
 

@@ -13,14 +13,20 @@ class User extends \Restserver\Libraries\REST_Controller {
         $fname = $this->post('fname');
         $lname = $this->post('lname');
         $username = $this->post('username');
-        $password = $this->post('psw');
+        $password = $this->post('password');
 
         $this->load->model('UserModel');
 
-        $result = $this ->UserModel->registerUser($fname, $lname, $username, $password);
+        $result = $this ->UserModel->registerUser(ucfirst($fname), ucfirst($lname), $username, $password);
+        log_message('debug', print_r($result, TRUE));
 
-        if ($result) {
-            $this->set_response(NULL, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
+        if ($result != 0) {
+            $user = new stdClass();
+            $user->id = $result;
+            $user->fname = $fname;
+            $user->lname = $lname;
+            $user->username = $username;
+            $this->set_response($user, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
         } else {
             $this->set_response(NULL, \Restserver\Libraries\REST_Controller::HTTP_CONFLICT);
         }

@@ -10,7 +10,7 @@ class UserModel extends CI_Model {
         $query = $this->db->get_where('users', array('username' => $username));
 
         if ($query->num_rows() != 0) {
-            return false;
+            return 0;
         } else {
             $hashPassword = password_hash($password, PASSWORD_DEFAULT);
             $data = array('first_name' => $fname, 'last_name' => $lname, 'username' => $username,
@@ -18,7 +18,7 @@ class UserModel extends CI_Model {
 
             $this->db->insert('users', $data);
 
-            return true;
+            return $this->db->insert_id();;
         }
     }
 
