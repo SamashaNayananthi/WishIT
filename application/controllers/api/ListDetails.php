@@ -6,7 +6,16 @@ require APPPATH . '/libraries/REST_Controller.php';
 class ListDetails extends \Restserver\Libraries\REST_Controller {
 
     public function list_get() {
-        $userId = $this->session->user->id;
+        $this->load->model('UserModel');
+
+        $userId = null;
+        if ($this->UserModel->isLoggedIn()) {
+            $userId = $this->session->user->id;
+
+        } else {
+            $userId = $this->get('userId');
+            log_message('debug', print_r($userId, TRUE));
+        }
 
         if ($userId === NULL) {
             $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);

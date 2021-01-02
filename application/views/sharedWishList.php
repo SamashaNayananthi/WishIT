@@ -26,17 +26,7 @@
 </div>
 
 <div class="list-details">
-    <div class="list-left">
-        <div class="list-name" data-toggle="tooltip" data-placement="bottom" title="<?php echo $list->name ?>">
-            <?php echo $list->name ?>
-        </div>
-        <div class="vl">|</div>
-        <div class="occasion"><?php echo $list->occasion ?></div>
-        <div class="vl">|</div>
-        <div class="list-note" data-toggle="tooltip" data-placement="bottom" title="<?php echo $list->desc ?>">
-            <?php echo $list->desc ?>
-        </div>
-    </div>
+    <div class="list-left" id="listDetails"></div>
 </div>
 
 <?php
@@ -110,21 +100,53 @@ include_once("footer.php");
 
     var user = new User();
     var username = window.location.href.split("/").pop();
-    user.set('username', username);
 
     var UserView = Backbone.View.extend({
         el: '#username',
         initialize : function () {
-            this.model.fetch({async:false});
+            this.model.fetch({data: $.param({"username": username}), async:false});
             this.render();
         },
         render : function () {
-            var html = '<span>' + this.model.get('fName') + ' ' + this.model.get('lName') + '\'s Wish List</span>';
+            var html = '<span>' + this.model.get('fname') + ' ' + this.model.get('lname') + '\'s Wish List</span>';
             this.$el.html(html);
         }
     });
 
     var userView = new UserView({model:user});
+
+
+    var List = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/ListDetails/list' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "name": "", "description": "", "occasionId": null,
+            "occasion":"", "userId": null}
+    });
+
+    var list = new List();
+
+    var ListView = Backbone.View.extend({
+        el: '#listDetails',
+        initialize: function () {
+            this.listenTo(this.model, 'sync', this.render);
+            this.model.fetch({data: $.param({"userId": user.get('id')}), async:false});
+        },
+        render: function () {
+            var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" ' +
+                'title= "' + this.model.get('name') + '">' + this.model.get('name') + '</div>' +
+                '<div class="vl">|</div>' +
+                '<div class="occasion">' + this.model.get('occasion') + '</div>' +
+                '<div class="vl">|</div>' +
+                '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
+                this.model.get('desc') + '">' + this.model.get('description') +
+                '</div>';
+
+            this.$el.html(html);
+            return this;
+        }
+    });
+
+    var listView = new ListView({model:list});
 </script>
 
 </body>

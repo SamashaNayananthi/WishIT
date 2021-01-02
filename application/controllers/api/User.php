@@ -44,8 +44,8 @@ class User extends \Restserver\Libraries\REST_Controller {
 
             $user = new stdClass();
             $user->id = $resultUser->id;
-            $user->fName = $resultUser->first_name;
-            $user->lName = $resultUser->last_name;
+            $user->fname = $resultUser->first_name;
+            $user->lname = $resultUser->last_name;
 
             $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
         }

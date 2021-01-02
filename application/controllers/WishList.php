@@ -17,15 +17,8 @@ class WishList extends CI_Controller {
 
     public function sharedList() {
 
-        $this->load->model('ListModel');
-        $resultList = $this ->ListModel->getListDetails(5);
-        $list = new stdClass();
-        $list->name = $resultList->name;
-        $list->desc = $resultList->description;
-        $list->occasion = $resultList->occasion;
-
         $this->load->model('WishItemModel');
-        $resultItems = $this->WishItemModel->getWishList($resultList->id);
+        $resultItems = $this->WishItemModel->getWishList(18);
         $listItems = array();
 
         foreach ($resultItems as $row) {
@@ -40,7 +33,7 @@ class WishList extends CI_Controller {
             array_push($listItems, $item);
         }
 
-        $data = array("list" => $list, "items" => $listItems);
+        $data = array("items" => $listItems);
 
         $this->load->view('sharedWishList', $data);
     }
