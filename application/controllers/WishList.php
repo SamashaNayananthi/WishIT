@@ -13,7 +13,7 @@ class WishList extends CI_Controller {
             $this->load->model('ItemOptionModel');
             $priorityList = $this->ItemOptionModel->getPriorities();
 
-            $data = array("user" => $this->session->user, "priorityList" => $priorityList);
+            $data = array("priorityList" => $priorityList);
             $this->load->view('wishList', $data);
         }
 

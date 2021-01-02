@@ -25,9 +25,7 @@
     </li>
 
     <li class="right">
-        <a href="javascript:void(0)" class="dropbtn">
-            <div class="user-name"><?php echo "$user->fname" ?><i class="fa fa-sort-down icon"></i></div>
-        </a>
+        <a href="javascript:void(0)" class="dropbtn" id="loggedInUser"></a>
         <div class="dropdown-content">
             <a href="<?php echo base_url()."api/Authentication/logout" ?>" id="logout">Logout</a>
         </div>
@@ -69,11 +67,7 @@
         <textarea name="desc" id="desc" placeholder="List Description"></textarea>
 
         <label for="occasion" class="lbl">Occasion*</label>
-        <select name="occasion" id="occasion">
-            <?php foreach ($occasionList as $occasion) {
-                echo "<option value='$occasion->id'>$occasion->name</option>";
-            } ?>
-        </select>
+        <select name="occasion" id="occasion"></select>
 
         <input type="button" value="Create Wish List" class="popupBtn" id="addListBtn" onclick="onSubmitList('add')">
         <input type="button" value="Edit Wish List" class="popupBtn" id="editListBtn" onclick="onSubmitList('edit')">
@@ -165,6 +159,29 @@ include_once("footer.php");
         });
         return false;
     });
+
+    var User = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/User/users' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "fname": "", "lname": ""}
+    });
+
+    var user = new User();
+
+    var UserView = Backbone.View.extend({
+        el: '#loggedInUser',
+        initialize : function () {
+            this.model.fetch({async:false});
+            this.listenTo(this.model, 'sync', this.render());
+        },
+        render : function () {
+            var html = '<div class="user-name">' + this.model.get('fname') +
+                '<i class="fa fa-sort-down icon"></i></div>';
+            this.$el.html(html);
+        }
+    });
+
+    var userView = new UserView({model:user});
 
     var Occasion = Backbone.Model.extend({
         url: "<?php echo base_url().'api/Occasion/occasion' ?>",
@@ -362,7 +379,7 @@ include_once("footer.php");
             list.set('name', name);
             list.set('description', desc);
             list.set('occasionId', occasion);
-            list.set('userId', <?php echo "$user->id" ?>);
+            list.set('userId', user.get('id'));
             list.save(null, { async: false,
                 success: function () {
                     listPopup.style.display = "none";

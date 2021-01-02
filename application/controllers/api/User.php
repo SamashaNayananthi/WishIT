@@ -31,4 +31,9 @@ class User extends \Restserver\Libraries\REST_Controller {
         }
     }
 
+    public function users_get(){
+        $user = $this->session->user;
+
+        $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+    }
 }
