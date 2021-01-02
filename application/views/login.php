@@ -24,11 +24,13 @@
         <div class="name">WishIT</div>
     </div>
 
+    <div class="form">
         <input type="text" name="username" placeholder="Username" id="username" required>
         <input type="password" name="password" placeholder="Password" id="password" required>
         <i class="far fa-eye" id="togglePassword" onclick="passwordVisibility()"></i>
 
         <input type="button" value="Login" class="btn" onclick="login()">
+    </div>
 </div>
 
 <div class="sign-up-div">
@@ -68,7 +70,7 @@ include_once("footer.php");
             authentication.set('username', username);
             authentication.set('password', password);
             authentication.save(null, {async: false,
-                success: function (data, statusText, xhr) {
+                success: function () {
                     window.location = "<?php echo base_url()."WishList/myWishList" ?>";
                 },
                 error: function (data, statusText, xhr) {

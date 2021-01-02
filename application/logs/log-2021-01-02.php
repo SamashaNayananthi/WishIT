@@ -344,3 +344,78 @@ DEBUG - 2021-01-02 12:34:00 --> Total execution time: 0.0867
 DEBUG - 2021-01-02 12:34:00 --> UTF-8 Support Enabled
 DEBUG - 2021-01-02 12:34:00 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2021-01-02 12:34:00 --> Total execution time: 0.0882
+DEBUG - 2021-01-02 12:35:28 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:35:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:35:28 --> Total execution time: 0.0727
+DEBUG - 2021-01-02 12:35:36 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:35:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:35:36 --> Total execution time: 0.0863
+DEBUG - 2021-01-02 12:35:55 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:35:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:35:55 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:35:55 --> samasha.n
+DEBUG - 2021-01-02 12:35:55 --> 1
+DEBUG - 2021-01-02 12:35:55 --> Total execution time: 0.1986
+DEBUG - 2021-01-02 12:36:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:16 --> Total execution time: 0.1089
+DEBUG - 2021-01-02 12:36:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:16 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:36:16 --> Total execution time: 0.1046
+DEBUG - 2021-01-02 12:36:16 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:36:16 --> Total execution time: 0.1417
+DEBUG - 2021-01-02 12:36:52 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:52 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:36:52 --> Total execution time: 0.1058
+DEBUG - 2021-01-02 12:36:52 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:52 --> Total execution time: 0.0796
+DEBUG - 2021-01-02 12:36:53 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:36:53 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:36:53 --> Total execution time: 0.0996
+DEBUG - 2021-01-02 12:37:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:37:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:37:11 --> Total execution time: 0.0940
+DEBUG - 2021-01-02 12:37:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:37:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:37:16 --> Total execution time: 0.0899
+DEBUG - 2021-01-02 12:37:22 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:37:22 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:37:23 --> Total execution time: 0.0779
+DEBUG - 2021-01-02 12:37:37 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:37:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:37:37 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:37:37 --> samasha
+DEBUG - 2021-01-02 12:37:37 --> -1
+DEBUG - 2021-01-02 12:37:37 --> Total execution time: 0.1097
+DEBUG - 2021-01-02 12:37:47 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:37:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:37:47 --> Total execution time: 0.0830
+DEBUG - 2021-01-02 12:38:00 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:38:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:38:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:38:00 --> samasha.n
+DEBUG - 2021-01-02 12:38:00 --> 0
+DEBUG - 2021-01-02 12:38:00 --> Total execution time: 0.1886
+DEBUG - 2021-01-02 12:38:19 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:38:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:38:19 --> Total execution time: 0.0712
+DEBUG - 2021-01-02 12:38:26 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:38:26 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:38:26 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:38:26 --> samasha.n
+DEBUG - 2021-01-02 12:38:26 --> 0
+DEBUG - 2021-01-02 12:38:26 --> Total execution time: 0.1614
+DEBUG - 2021-01-02 12:39:08 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:39:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:39:08 --> Total execution time: 0.0657
+DEBUG - 2021-01-02 12:39:30 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:39:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:39:30 --> Total execution time: 0.0744
+DEBUG - 2021-01-02 12:41:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:41:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:41:11 --> Total execution time: 0.0876
