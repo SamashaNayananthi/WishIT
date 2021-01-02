@@ -32,8 +32,22 @@ class User extends \Restserver\Libraries\REST_Controller {
     }
 
     public function users_get(){
-        $user = $this->session->user;
+        $username = $this->get('username');
 
-        $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+        if ($username == NULL) {
+            $user = $this->session->user;
+            $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+
+        } else {
+            $this->load->model('UserModel');
+            $resultUser = $this ->UserModel->getUserByUsername($username);
+
+            $user = new stdClass();
+            $user->id = $resultUser->id;
+            $user->fName = $resultUser->first_name;
+            $user->lName = $resultUser->last_name;
+
+            $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+        }
     }
 }

@@ -16,16 +16,9 @@ class WishList extends CI_Controller {
     }
 
     public function sharedList() {
-        $username = $this->uri->segment(3);
-
-        $this->load->model('UserModel');
-        $resultUser = $this ->UserModel->getUserByUsername($username);
-        $user = new stdClass();
-        $user->fName = $resultUser->first_name;
-        $user->lName = $resultUser->last_name;
 
         $this->load->model('ListModel');
-        $resultList = $this ->ListModel->getListDetails($resultUser->id);
+        $resultList = $this ->ListModel->getListDetails(5);
         $list = new stdClass();
         $list->name = $resultList->name;
         $list->desc = $resultList->description;
@@ -47,7 +40,7 @@ class WishList extends CI_Controller {
             array_push($listItems, $item);
         }
 
-        $data = array("user" => $user, "list" => $list, "items" => $listItems);
+        $data = array("list" => $list, "items" => $listItems);
 
         $this->load->view('sharedWishList', $data);
     }

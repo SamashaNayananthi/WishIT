@@ -11,6 +11,8 @@
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
     <script src="/WishIT/js/popper.min.js"></script>
     <script src="/WishIT/js/bootstrap.min.js"></script>
+    <script src="/WishIT/js/underscore.js" type="text/javascript"></script>
+    <script src="/WishIT/js/backbone.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -20,9 +22,7 @@
         <img src="/WishIT/images/logo.png"><div class="name">WishIT</div>
     </div>
 
-    <div class="username">
-        <span><?php echo $user->fName." ".$user->lName."'s Wish List"?></span>
-    </div>
+    <div class="username" id="username"></div>
 </div>
 
 <div class="list-details">
@@ -101,6 +101,30 @@ include_once("footer.php");
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
+
+    var User = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/User/users' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "fname": "", "lname": "", "username": ""}
+    });
+
+    var user = new User();
+    var username = window.location.href.split("/").pop();
+    user.set('username', username);
+
+    var UserView = Backbone.View.extend({
+        el: '#username',
+        initialize : function () {
+            this.model.fetch({async:false});
+            this.render();
+        },
+        render : function () {
+            var html = '<span>' + this.model.get('fName') + ' ' + this.model.get('lName') + '\'s Wish List</span>';
+            this.$el.html(html);
+        }
+    });
+
+    var userView = new UserView({model:user});
 </script>
 
 </body>
