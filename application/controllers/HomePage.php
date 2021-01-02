@@ -11,14 +11,6 @@ class HomePage extends CI_Controller {
         $this->load->view('samashaCV');
     }
 
-    public function login() {
-        $this->load->view('login');
-    }
-
-    public function signUp() {
-        $this->load->view('signUp');
-    }
-
     public function wishList() {
         $this->load->model('UserModel');
 

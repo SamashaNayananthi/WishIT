@@ -33,7 +33,7 @@
 </div>
 
 <div class="sign-up-div">
-    Don't have an account? <a href="<?php echo base_url()."HomePage/signUP" ?>" class="sign-up">Sign Up</a>
+    Don't have an account? <a href="<?php echo base_url()."Register/" ?>" class="sign-up">Sign Up</a>
 </div>
 
 <?php

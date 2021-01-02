@@ -83,11 +83,11 @@ include_once("footer.php");
 
 <script>
     function Login() {
-        window.location = "<?php echo base_url()."HomePage/login" ?>";
+        window.location = "<?php echo base_url()."Login/" ?>";
     }
 
     function SignUp() {
-        window.location = "<?php echo base_url()."HomePage/signUp" ?>";
+        window.location = "<?php echo base_url()."Register/" ?>";
     }
 </script>
 

@@ -45,7 +45,7 @@
 </div>
 
 <div class="login-div">
-    Already have an account? <a href="<?php echo base_url()."HomePage/login" ?>" class="login">Login</a>
+    Already have an account? <a href="<?php echo base_url()."Login/" ?>" class="login">Login</a>
 </div>
 
 <?php
@@ -102,7 +102,7 @@ include_once("footer.php");
         user.save(null, {async: false,
             success: function (data, statusText, xhr) {
                 alert("User registered successfully. Please login.");
-                window.location = "<?php echo base_url()."HomePage/login" ?>";
+                window.location = "<?php echo base_url()."Login/" ?>";
             },
             error: function (data, statusText, xhr) {
                 if (statusText.status == 409) {
