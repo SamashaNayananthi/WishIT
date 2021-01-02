@@ -11,10 +11,9 @@ class WishList extends CI_Controller {
 
         } else {
             $this->load->model('ItemOptionModel');
-            $occasionList = $this->ItemOptionModel->getOccasions();
             $priorityList = $this->ItemOptionModel->getPriorities();
 
-            $data = array("user" => $this->session->user, "occasionList" => $occasionList, "priorityList" => $priorityList);
+            $data = array("user" => $this->session->user, "priorityList" => $priorityList);
             $this->load->view('wishList', $data);
         }
 

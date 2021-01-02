@@ -158,10 +158,44 @@ include_once("footer.php");
             url: $(this).attr('href'),
             success: function(response) {
                 window.location = "<?php echo base_url()."HomePage/" ?>";
+            },
+            error: function () {
+                alert('Unable to logout. Try again.');
             }
         });
         return false;
     });
+
+    var Occasion = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/Occasion/occasion' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "name": ""}
+    });
+
+    var Occasions = Backbone.Collection.extend({
+        model: Occasion,
+        url: "<?php echo base_url().'api/Occasion/occasion' ?>"
+    });
+
+    var occasionList = new Occasions();
+
+    var OccasionView = Backbone.View.extend({
+        el: '#occasion',
+        initialize : function () {
+            this.model.fetch({async:false});
+            this.listenTo(this.model, 'sync', this.render());
+        },
+        render : function () {
+            var html = '';
+            this.model.each(function (occasion) {
+                html += '<option value="' + occasion.get('id') + '">' + occasion.get('name') + '</option>';
+            });
+            this.$el.html(html);
+        }
+    });
+
+    var occasionView = new OccasionView({model:occasionList});
+
 
     var List = Backbone.Model.extend({
         url: "<?php echo base_url().'api/ListDetails/list' ?>",

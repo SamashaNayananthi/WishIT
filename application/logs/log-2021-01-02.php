@@ -419,3 +419,157 @@ DEBUG - 2021-01-02 12:39:30 --> Total execution time: 0.0744
 DEBUG - 2021-01-02 12:41:11 --> UTF-8 Support Enabled
 DEBUG - 2021-01-02 12:41:11 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2021-01-02 12:41:11 --> Total execution time: 0.0876
+DEBUG - 2021-01-02 12:45:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:45:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:45:57 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:45:57 --> samasha.n
+DEBUG - 2021-01-02 12:45:57 --> 1
+DEBUG - 2021-01-02 12:45:57 --> Total execution time: 0.1595
+DEBUG - 2021-01-02 12:45:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:45:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:45:57 --> Total execution time: 0.0749
+DEBUG - 2021-01-02 12:45:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:45:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:45:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:45:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:45:57 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:45:57 --> Total execution time: 0.0966
+DEBUG - 2021-01-02 12:45:57 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:45:57 --> Total execution time: 0.1403
+DEBUG - 2021-01-02 12:46:00 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:46:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:46:00 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:46:00 --> Total execution time: 0.0843
+DEBUG - 2021-01-02 12:46:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:46:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:46:11 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 12:46:11 --> Total execution time: 0.0841
+DEBUG - 2021-01-02 12:46:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 12:46:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 12:46:12 --> Total execution time: 0.0737
+DEBUG - 2021-01-02 13:12:01 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:01 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:01 --> Total execution time: 0.1124
+DEBUG - 2021-01-02 13:12:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:05 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:05 --> samasha.n
+DEBUG - 2021-01-02 13:12:05 --> 1
+DEBUG - 2021-01-02 13:12:05 --> Total execution time: 0.1509
+DEBUG - 2021-01-02 13:12:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:05 --> Total execution time: 0.0675
+DEBUG - 2021-01-02 13:12:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:06 --> Total execution time: 0.1002
+DEBUG - 2021-01-02 13:12:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:06 --> Total execution time: 0.1436
+DEBUG - 2021-01-02 13:12:25 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:25 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:25 --> Total execution time: 0.0938
+DEBUG - 2021-01-02 13:12:27 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:27 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:27 --> Total execution time: 0.0661
+DEBUG - 2021-01-02 13:12:28 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:28 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:12:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:12:28 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:28 --> Total execution time: 0.1159
+DEBUG - 2021-01-02 13:12:28 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:12:28 --> Total execution time: 0.1504
+DEBUG - 2021-01-02 13:27:40 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:40 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:27:40 --> Severity: Notice --> Undefined variable: occasionList C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+ERROR - 2021-01-02 13:27:40 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+DEBUG - 2021-01-02 13:27:40 --> Total execution time: 0.0931
+DEBUG - 2021-01-02 13:27:41 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:41 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:27:41 --> 404 Page Not Found: api/Occasion/occasion
+DEBUG - 2021-01-02 13:27:41 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:41 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:27:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:27:41 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:27:41 --> Total execution time: 0.0862
+DEBUG - 2021-01-02 13:27:41 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:27:41 --> Total execution time: 0.1304
+DEBUG - 2021-01-02 13:27:55 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:55 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:27:55 --> Severity: Notice --> Undefined variable: occasionList C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+ERROR - 2021-01-02 13:27:55 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+DEBUG - 2021-01-02 13:27:55 --> Total execution time: 0.1030
+DEBUG - 2021-01-02 13:27:56 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:56 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:27:56 --> 404 Page Not Found: api/Occasion/occasion
+DEBUG - 2021-01-02 13:27:56 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:56 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:27:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:27:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:27:56 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:27:56 --> Total execution time: 0.1020
+DEBUG - 2021-01-02 13:27:56 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:27:56 --> Total execution time: 0.1465
+DEBUG - 2021-01-02 13:28:42 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:28:42 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:28:42 --> Severity: Notice --> Undefined variable: occasionList C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+ERROR - 2021-01-02 13:28:42 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+DEBUG - 2021-01-02 13:28:42 --> Total execution time: 0.0993
+DEBUG - 2021-01-02 13:28:43 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:28:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:28:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:28:43 --> Total execution time: 0.1107
+DEBUG - 2021-01-02 13:28:43 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:28:43 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:28:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:28:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:28:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:28:43 --> Total execution time: 0.0969
+DEBUG - 2021-01-02 13:28:43 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:28:43 --> Total execution time: 0.1481
+DEBUG - 2021-01-02 13:29:06 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:06 --> Total execution time: 0.0936
+DEBUG - 2021-01-02 13:29:08 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:08 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:29:08 --> Severity: Notice --> Undefined variable: occasionList C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+ERROR - 2021-01-02 13:29:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+DEBUG - 2021-01-02 13:29:08 --> Total execution time: 0.1127
+DEBUG - 2021-01-02 13:29:09 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:09 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:09 --> Total execution time: 0.1159
+DEBUG - 2021-01-02 13:29:09 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:09 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:09 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:09 --> Total execution time: 0.1194
+DEBUG - 2021-01-02 13:29:09 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:09 --> Total execution time: 0.1600
+DEBUG - 2021-01-02 13:29:13 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:13 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:13 --> Total execution time: 0.1031
+DEBUG - 2021-01-02 13:29:15 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:15 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2021-01-02 13:29:15 --> Severity: Notice --> Undefined variable: occasionList C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+ERROR - 2021-01-02 13:29:15 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\WishIT\application\views\wishList.php 73
+DEBUG - 2021-01-02 13:29:15 --> Total execution time: 0.1143
+DEBUG - 2021-01-02 13:29:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:16 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:16 --> Total execution time: 0.0955
+DEBUG - 2021-01-02 13:29:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:16 --> UTF-8 Support Enabled
+DEBUG - 2021-01-02 13:29:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-02 13:29:16 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:16 --> Total execution time: 0.0981
+DEBUG - 2021-01-02 13:29:16 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-02 13:29:16 --> Total execution time: 0.1395

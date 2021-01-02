@@ -42,14 +42,14 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $this->load->model('ListModel');
         $listId = $this ->ListModel->saveList($name, $description, $occasionId, $userId);
 
-        $this->load->model('ItemOptionModel');
+        $this->load->model('OccasionModel');
 
         $list = new stdClass();
         $list->id = $listId;
         $list->name = $name;
         $list->description = $description;
         $list->occasionId = $occasionId;
-        $list->occasion = $this->ItemOptionModel->setOccasionName($occasionId);
+        $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
         $list->userId = $userId;
 
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
@@ -65,14 +65,14 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
         $this->load->model('ListModel');
         $this ->ListModel->updateList($id, $name, $description, $occasionId);
 
-        $this->load->model('ItemOptionModel');
+        $this->load->model('OccasionModel');
 
         $list = new stdClass();
         $list->id = $id;
         $list->name = $name;
         $list->description = $description;
         $list->occasionId = $occasionId;
-        $list->occasion = $this->ItemOptionModel->setOccasionName($occasionId);
+        $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
         $list->userId = $userId;
 
         $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
