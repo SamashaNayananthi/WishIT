@@ -10,7 +10,7 @@ class AuthenticateModel extends CI_Model {
         $query = $this->db->get_where('users', array('username' => $username));
 
         if ($query->num_rows() != 1) {
-            return false;
+            return -1;
         } else {
             $row = $query->row();
 
@@ -24,10 +24,10 @@ class AuthenticateModel extends CI_Model {
                 $user->username = $row->username;
 
                 $this->session->set_userdata('user', $user);
-                return true;
+                return 1;
 
             } else {
-                return false;
+                return 0;
             }
         }
 

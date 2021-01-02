@@ -11,6 +11,8 @@
     <script src="/WishIT/js/jquery-3.5.1.min.js"></script>
     <script src="/WishIT/js/popper.min.js"></script>
     <script src="/WishIT/js/bootstrap.min.js"></script>
+    <script src="/WishIT/js/underscore.js" type="text/javascript"></script>
+    <script src="/WishIT/js/backbone.js" type="text/javascript"></script>
 
 </head>
 
@@ -22,14 +24,11 @@
         <div class="name">WishIT</div>
     </div>
 
-    <form action="<?php echo base_url()."api/Authentication/authenticate" ?>" method="post" class="form" id="form">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" id="psw" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+        <input type="password" name="password" placeholder="Password" id="password" required>
         <i class="far fa-eye" id="togglePassword" onclick="passwordVisibility()"></i>
 
-        <input type="submit" value="Login" class="btn">
-    </form>
-
+        <input type="button" value="Login" class="btn" onclick="login()">
 </div>
 
 <div class="sign-up-div">
@@ -51,22 +50,37 @@ include_once("footer.php");
         }
     }
 
-    $('#form').submit(function(){
-        $.ajax({
-            url: $('#form').attr('action'),
-            type: 'POST',
-            data : $('#form').serialize(),
-            success: function(){
-                window.location = "<?php echo base_url()."WishList/myWishList" ?>";
-            },
-            statusCode: {
-                401: function() {
-                    alert('You have entered an invalid username or password');
-                }
-            }
-        });
-        return false;
+    var Authentication = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/Authentication/authenticate' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "username": "", "password":""}
     });
+
+    var authentication = new Authentication();
+
+    function login() {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        if (username === "" || password === "") {
+            alert('Please fill both fields.');
+        } else {
+            authentication.set('username', username);
+            authentication.set('password', password);
+            authentication.save(null, {async: false,
+                success: function (data, statusText, xhr) {
+                    window.location = "<?php echo base_url()."WishList/myWishList" ?>";
+                },
+                error: function (data, statusText, xhr) {
+                    if (statusText.status === 401) {
+                        alert('You have entered an invalid username or password');
+                    } else {
+                        alert('Error occurred while registering the user. Please try again');
+                    }
+                }
+            });
+        }
+    }
 
 </script>
 

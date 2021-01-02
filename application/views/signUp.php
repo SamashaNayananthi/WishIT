@@ -70,22 +70,26 @@ include_once("footer.php");
         let psw = document.getElementById('psw').value;
         let pswRepeat = document.getElementById('pswRepeat').value;
 
-        if (fname != '' && !fname.match(namePattern)) {
+        if (fname === "" || lname === "" || lname === "" || username === ""
+            || psw === "" || pswRepeat === "") {
+            alert('Please fill all the fields.');
+
+        }else if (!fname.match(namePattern)) {
             alert('First name is invalid');
 
-        } else if (fname != '' && fname.length > 25) {
+        } else if (fname.length > 25) {
             alert('First name is too lengthy');
 
-        } else if (lname != '' && !lname.match(namePattern)) {
+        } else if (!lname.match(namePattern)) {
             alert('Last name is invalid');
 
-        } else if (lname != '' && lname.length > 25) {
+        } else if (lname.length > 25) {
             alert('Last name is too lengthy');
 
-        } else if (username != '' && username.length > 15) {
+        } else if (username.length > 15) {
             alert('Username is too lengthy. Please limit to 15 characters.');
 
-        } else if(psw != pswRepeat) {
+        } else if(psw !== pswRepeat) {
             alert('The password and repeat password do not match.');
 
         } else {
@@ -105,7 +109,7 @@ include_once("footer.php");
                 window.location = "<?php echo base_url()."Login/" ?>";
             },
             error: function (data, statusText, xhr) {
-                if (statusText.status == 409) {
+                if (statusText.status === 409) {
                     alert('Username already exists.');
                 } else {
                     alert('Error occurred while registering the user. Please try again');

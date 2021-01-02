@@ -10,15 +10,19 @@ class Authentication extends \Restserver\Libraries\REST_Controller {
     }
 
     public function authenticate_post(){
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
+        $username = $this->post('username');
+        $password = $this->post('password');
+        log_message('debug', print_r($username, TRUE));
 
         $this->load->model('AuthenticateModel');
 
         $result = $this ->AuthenticateModel->authenticate($username, $password);
+        log_message('debug', print_r($result, TRUE));
 
-        if ($result) {
-            $this->set_response(NULL, \Restserver\Libraries\REST_Controller::HTTP_OK);
+        if ($result == 1) {
+            $authenticated = new stdClass();
+            $authenticated->username = $username;
+            $this->set_response($authenticated, \Restserver\Libraries\REST_Controller::HTTP_OK);
         } else {
             $this->set_response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
         }

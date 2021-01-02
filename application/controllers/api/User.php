@@ -18,7 +18,6 @@ class User extends \Restserver\Libraries\REST_Controller {
         $this->load->model('UserModel');
 
         $result = $this ->UserModel->registerUser(ucfirst($fname), ucfirst($lname), $username, $password);
-        log_message('debug', print_r($result, TRUE));
 
         if ($result != 0) {
             $user = new stdClass();
