@@ -66,9 +66,9 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $this->load->model('WishItemModel');
         $newItemId = $this ->WishItemModel->saveWishItem($title, $listId, $priorityId, $itemUrl, $price, $quantity);
 
-        $this->load->model('ItemOptionModel');
+        $this->load->model('PriorityModel');
 
-        $priority = $this->ItemOptionModel->setPriority($priorityId);
+        $priority = $this->PriorityModel->setPriority($priorityId);
 
         $newItem = array("id" => $newItemId, "title" => $title, "listId" => $listId, "priorityId" => $priorityId,
             "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
@@ -88,9 +88,9 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $this->load->model('WishItemModel');
         $this ->WishItemModel->updateWishItem($id, $title, $priorityId, $itemUrl, $price, $quantity);
 
-        $this->load->model('ItemOptionModel');
+        $this->load->model('PriorityModel');
 
-        $priority = $this->ItemOptionModel->setPriority($priorityId);
+        $priority = $this->PriorityModel->setPriority($priorityId);
 
         $item = array("id" => $id, "title" => $title, "priorityId" => $priorityId, "itemUrl" => $itemUrl,
             "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,

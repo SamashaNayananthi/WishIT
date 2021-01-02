@@ -94,11 +94,7 @@
         <input type="text" placeholder="Item URL" name="itemUrl" id="itemUrl">
 
         <label for="priority" class="lbl">Priority*</label>
-        <select name="priority" id="priority">
-            <?php foreach ($priorityList as $priority) {
-                echo "<option value='$priority->id'>$priority->name</option>";
-            } ?>
-        </select>
+        <select name="priority" id="priority"></select>
 
         <label for="price" class="lbl">Price*</label>
         <input type="number" placeholder="Price" name="price" id="price" min="1" step="any"
@@ -212,6 +208,36 @@ include_once("footer.php");
     });
 
     var occasionView = new OccasionView({model:occasionList});
+
+    var Priority = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/Priority/priority' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "priority": null, "name": ""}
+    });
+
+    var Priorities = Backbone.Collection.extend({
+        model: Priority,
+        url: "<?php echo base_url().'api/Priority/priority' ?>"
+    });
+
+    var priorityList = new Priorities();
+
+    var PriorityView = Backbone.View.extend({
+        el: '#priority',
+        initialize : function () {
+            this.model.fetch({async:false});
+            this.listenTo(this.model, 'sync', this.render());
+        },
+        render : function () {
+            var html = '';
+            this.model.each(function (priority) {
+                html += '<option value="' + priority.get('id') + '">' + priority.get('name') + '</option>';
+            });
+            this.$el.html(html);
+        }
+    });
+
+    var priorityView = new PriorityView({model:priorityList});
 
 
     var List = Backbone.Model.extend({

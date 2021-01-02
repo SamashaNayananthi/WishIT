@@ -1,6 +1,6 @@
 <?php
 
-class ItemOptionModel extends CI_Model {
+class PriorityModel extends CI_Model {
 
     public function __construct() {
         $this->load->database();
