@@ -57,7 +57,7 @@ include_once("footer.php");
             type: 'POST',
             data : $('#form').serialize(),
             success: function(){
-                window.location = "<?php echo base_url()."HomePage/wishList" ?>";
+                window.location = "<?php echo base_url()."WishList/myWishList" ?>";
             },
             statusCode: {
                 401: function() {

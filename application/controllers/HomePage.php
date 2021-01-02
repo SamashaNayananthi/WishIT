@@ -11,20 +11,4 @@ class HomePage extends CI_Controller {
         $this->load->view('samashaCV');
     }
 
-    public function wishList() {
-        $this->load->model('UserModel');
-
-        if (!$this->UserModel->isLoggedIn()) {
-            $this->load->view('login');
-
-        } else {
-            $this->load->model('ItemOptionModel');
-            $occasionList = $this->ItemOptionModel->getOccasions();
-            $priorityList = $this->ItemOptionModel->getPriorities();
-
-            $data = array("user" => $this->session->user, "occasionList" => $occasionList, "priorityList" => $priorityList);
-            $this->load->view('wishList', $data);
-        }
-
-    }
 }

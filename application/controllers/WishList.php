@@ -3,6 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class WishList extends CI_Controller {
 
+    public function myWishList() {
+        $this->load->model('UserModel');
+
+        if (!$this->UserModel->isLoggedIn()) {
+            $this->load->view('login');
+
+        } else {
+            $this->load->model('ItemOptionModel');
+            $occasionList = $this->ItemOptionModel->getOccasions();
+            $priorityList = $this->ItemOptionModel->getPriorities();
+
+            $data = array("user" => $this->session->user, "occasionList" => $occasionList, "priorityList" => $priorityList);
+            $this->load->view('wishList', $data);
+        }
+
+    }
+
     public function sharedList() {
         $username = $this->uri->segment(3);
 
