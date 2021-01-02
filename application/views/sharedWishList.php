@@ -29,59 +29,7 @@
     <div class="list-left" id="listDetails"></div>
 </div>
 
-<?php
-if (empty($items)) {
-    echo "<div class='no-list'>";
-    echo "<div class='no-list-msg'>Currently $user->fName's Wish List is empty</div>";
-    echo "</div>";
-}
-?>
-
-<?php
-if (!empty($items)) {
-    echo "<div class='items'>";
-    foreach ($items as $item) {
-
-        echo "<div class='item-card'>";
-        echo "<div class='card-top'>";
-        echo "<div class='item-name' data-toggle='tooltip' data-placement='bottom' title='$item->title'>$item->title</div>";
-        echo "<div class='item-url'><a href='$item->itemUrl'>$item->itemUrl</a></div>";
-        echo "</div>";
-
-        echo "<div class='card-bottom'>";
-        echo "<span class='item-detail'><span class='item-lbl'>Priority : </span>";
-        echo "<span class='item-lbl-detail'>$item->priority</span>";
-
-        if ($item->priorityLvl == 1) {
-            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
-            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
-            echo "<span class='fa fa-star checked' style='color: #bf0a0a'></span>";
-        } elseif ($item->priorityLvl == 2) {
-            echo "<span class='fa fa-star checked' style='color: orange'></span>";
-            echo "<span class='fa fa-star checked' style='color: orange'></span>";
-            echo "<span class='fa fa-star checked'></span>";
-        } else {
-            echo "<span class='fa fa-star checked' style='color: yellow'></span>";
-            echo "<span class='fa fa-star checked'></span>";
-            echo "<span class='fa fa-star checked'></span>";
-        }
-
-        echo "</span>";
-
-        echo "<span class='item-detail'><span class=item-lbl'>Price : </span>";
-        echo "<span class='item-lbl-detail'>$item->price</span>";
-        echo "</span>";
-
-        echo "<span class='item-detail'><span class='item-lbl'>Quantity : </span>";
-        echo "<span class='item-lbl-detail'>$item->quantity</span>";
-        echo "</span>";
-
-        echo "</div>";
-        echo "</div>";
-    }
-    echo "</div>";
-}
-?>
+<div id="wishItems"></div>
 
 <?php
 include_once("footer.php");
@@ -128,8 +76,8 @@ include_once("footer.php");
     var ListView = Backbone.View.extend({
         el: '#listDetails',
         initialize: function () {
-            this.listenTo(this.model, 'sync', this.render);
             this.model.fetch({data: $.param({"userId": user.get('id')}), async:false});
+            this.render();
         },
         render: function () {
             var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" ' +
@@ -147,6 +95,77 @@ include_once("footer.php");
     });
 
     var listView = new ListView({model:list});
+
+    var WishItem = Backbone.Model.extend({
+        url: "<?php echo base_url().'api/WishItem/wishItems' ?>",
+        idAttribute: 'id',
+        defaults: {"id": null, "title": "", "listId": null, "priorityId": null, "itemUrl": "",
+            "price": null, "quantity": null, "priorityLvl": null, "priority": ""}
+    });
+
+    var WishItems = Backbone.Collection.extend({
+        model: WishItem,
+        comparator: 'priorityLvl',
+        url: "<?php echo base_url().'api/WishItem/wishItems' ?>"
+    });
+
+    var wishItems = new WishItems();
+
+    var WishItemsView = Backbone.View.extend({
+        el: '#wishItems',
+        initialize : function () {
+            this.model.fetch({data: $.param({"listId": list.get('id')}), async:false});
+            this.render();
+        },
+        render : function () {
+            var html = '';
+            if (this.model.length === 0) {
+                html += '<div class="no-list">' +
+                    '<div class="no-list-msg">Currently ' + user.get('fname') + '\'s Wish List is empty</div>' +
+                    '</div>';
+            } else {
+                html += '<div class="items">';
+                this.model.each(function (item) {
+                    html += '<div class="item-card">' +
+                    '<div class="card-top">' +
+                    '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
+                        item.get('title') + '">' + item.get('title') + '</div>' +
+                    '<div class="item-url"><a href="' + item.get('itemUrl') + '">' + item.get('itemUrl') +
+                        '</a></div>' +
+                    '</div>' +
+                    '<div class="card-bottom">' +
+                    '<span class="item-detail"><span class="item-lbl">Priority : </span>' +
+                    '<span class="item-lbl-detail">' + item.get('priority') + '</span>';
+                    if (item.get('priorityLvl') == 1) {
+                        html += '<span class="fa fa-star checked" style="color: #bf0a0a"></span>' +
+                            '<span class="fa fa-star checked" style="color: #bf0a0a"></span>' +
+                            '<span class="fa fa-star checked" style="color: #bf0a0a"></span>';
+                    } else if (item.get('priorityLvl') == 2) {
+                        html += '<span class="fa fa-star checked" style="color: orange"></span>' +
+                            '<span class="fa fa-star checked" style="color: orange"></span>' +
+                            '<span class="fa fa-star checked"></span>';
+                    } else {
+                        html += '<span class="fa fa-star checked" style="color: yellow"></span>' +
+                            '<span class="fa fa-star checked"></span>' +
+                            '<span class="fa fa-star checked"></span>';
+                    }
+                    html += '</span>' +
+                    '<span class="item-detail"><span class="item-lbl">Price : </span>' +
+                    '<span class="item-lbl-detail">' + item.get('price') + '</span>' +
+                    '</span>' +
+                    '<span class="item-detail"><span class="item-lbl">Quantity : </span>' +
+                    '<span class="item-lbl-detail">' + item.get('quantity') + '</span>' +
+                    '</span>' +
+                    '</div>' +
+                    '</div>';
+                    });
+                    html += '</div>';
+            }
+            $('#wishItems').html(html);
+        }
+    });
+
+    var wishItemsView = new WishItemsView({model:wishItems});
 </script>
 
 </body>

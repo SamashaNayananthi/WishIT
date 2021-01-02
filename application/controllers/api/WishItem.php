@@ -9,15 +9,23 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         $id = $this->get('id');
 
         if ($id === NULL) {
+            $this->load->model('UserModel');
             $items = array();
 
-            $userId = $this->session->user->id;
-            $this->load->model('ListModel');
-            $listId = $this->ListModel->getListIdBYUserId($userId);
+            $listId = null;
+            if ($this->UserModel->isLoggedIn()) {
+                $userId = $this->session->user->id;
+
+                $this->load->model('ListModel');
+                $list = $this->ListModel->getListIdBYUserId($userId);
+                $listId = $list->id;
+            } else {
+                $listId = $this->get('listId');
+            }
 
             if (!empty($listId)) {
                 $this->load->model('WishItemModel');
-                $result = $this->WishItemModel->getWishList($listId->id);
+                $result = $this->WishItemModel->getWishList($listId);
 
                 foreach ($result as $row) {
                     $item = array("id" => $row->id, "title" => $row->title, "listId" => $row->list_id,
