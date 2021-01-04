@@ -130,8 +130,8 @@ include_once("footer.php");
                     '<div class="card-top">' +
                     '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
                         item.get('title') + '">' + item.get('title') + '</div>' +
-                    '<div class="item-url"><a href="' + item.get('itemUrl') + '">' + item.get('itemUrl') +
-                        '</a></div>' +
+                    '<div class="item-url"><a href="' + item.get('itemUrl') + '" target="_blank">' +
+                        item.get('itemUrl') + '</a></div>' +
                     '</div>' +
                     '<div class="card-bottom">' +
                     '<span class="item-detail"><span class="item-lbl">Priority : </span>' +

@@ -308,7 +308,8 @@ include_once("footer.php");
                     '<div class="card-top">' +
                     '<div class="item-name" data-toggle="tooltip" data-placement="bottom" title="' +
                     item.get('title') + '">' + item.get('title') + '</div>' +
-                    '<div class="item-url"><a href="' + item.get('itemUrl') + '">' + item.get('itemUrl') + '</a></div>' +
+                    '<div class="item-url"><a href="' + item.get('itemUrl') + '" target="_blank">' +
+                    item.get('itemUrl') + '</a></div>' +
                     '<button class="item-icon" onclick="openDeleteItemPopup(' + item.get('id') + ')">' +
                     '<i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete Item"></i>' +
                     '</button>' +
