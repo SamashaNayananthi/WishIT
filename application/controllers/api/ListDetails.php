@@ -14,7 +14,6 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
 
         } else {
             $userId = $this->get('userId');
-            log_message('debug', print_r($userId, TRUE));
         }
 
         if ($userId === NULL) {
@@ -43,55 +42,77 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
     }
 
     public function list_post() {
-        $name = $this->post('name');
-        $description = $this->post('description');
-        $occasionId = $this->post('occasionId');
-        $userId = $this->post('userId');
+        $this->load->model('UserModel');
 
-        $this->load->model('ListModel');
-        $listId = $this ->ListModel->saveList($name, $description, $occasionId, $userId);
+        if ($this->UserModel->isLoggedIn()) {
+            $name = $this->post('name');
+            $description = $this->post('description');
+            $occasionId = $this->post('occasionId');
+            $userId = $this->post('userId');
 
-        $this->load->model('OccasionModel');
+            $this->load->model('ListModel');
+            $listId = $this ->ListModel->saveList($name, $description, $occasionId, $userId);
 
-        $list = new stdClass();
-        $list->id = $listId;
-        $list->name = $name;
-        $list->description = $description;
-        $list->occasionId = $occasionId;
-        $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
-        $list->userId = $userId;
+            $this->load->model('OccasionModel');
 
-        $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
+            $list = new stdClass();
+            $list->id = $listId;
+            $list->name = $name;
+            $list->description = $description;
+            $list->occasionId = $occasionId;
+            $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
+            $list->userId = $userId;
+
+            $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
+
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
     }
 
     public function list_put() {
-        $id = $this->put('id');
-        $name = $this->put('name');
-        $description = $this->put('description');
-        $occasionId = $this->put('occasionId');
-        $userId = $this->put('userId');
+        $this->load->model('UserModel');
 
-        $this->load->model('ListModel');
-        $this ->ListModel->updateList($id, $name, $description, $occasionId);
+        if ($this->UserModel->isLoggedIn()) {
+            $id = $this->put('id');
+            $name = $this->put('name');
+            $description = $this->put('description');
+            $occasionId = $this->put('occasionId');
+            $userId = $this->put('userId');
 
-        $this->load->model('OccasionModel');
+            $this->load->model('ListModel');
+            $this ->ListModel->updateList($id, $name, $description, $occasionId);
 
-        $list = new stdClass();
-        $list->id = $id;
-        $list->name = $name;
-        $list->description = $description;
-        $list->occasionId = $occasionId;
-        $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
-        $list->userId = $userId;
+            $this->load->model('OccasionModel');
 
-        $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
+            $list = new stdClass();
+            $list->id = $id;
+            $list->name = $name;
+            $list->description = $description;
+            $list->occasionId = $occasionId;
+            $list->occasion = $this->OccasionModel->setOccasionName($occasionId);
+            $list->userId = $userId;
+
+            $this->set_response($list, \Restserver\Libraries\REST_Controller::HTTP_OK);
+
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
+
     }
 
     public function shareableLink_get() {
-        $username = $this->session->user->username;
-        $link = base_url()."WishList/sharedList/".$username;
+        $this->load->model('UserModel');
 
-        $this->set_response($link, \Restserver\Libraries\REST_Controller::HTTP_OK);
+        if ($this->UserModel->isLoggedIn()) {
+            $username = $this->session->user->username;
+            $link = base_url()."WishList/sharedList/".$username;
+
+            $this->set_response($link, \Restserver\Libraries\REST_Controller::HTTP_OK);
+
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
     }
 
 }
