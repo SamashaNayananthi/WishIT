@@ -5,18 +5,25 @@ require APPPATH . '/libraries/REST_Controller.php';
 
 class WishItem extends \Restserver\Libraries\REST_Controller {
 
+    function __construct(){
+        parent::__construct();
+
+        $this->load->model('UserModel');
+        $this->load->model('ListModel');
+        $this->load->model('WishItemModel');
+        $this->load->model('PriorityModel');
+    }
+
     public function wishItems_get() {
         $id = $this->get('id');
 
         if ($id === NULL) {
-            $this->load->model('UserModel');
             $items = array();
 
             $listId = null;
             if ($this->UserModel->isLoggedIn()) {
                 $userId = $this->session->user->id;
 
-                $this->load->model('ListModel');
                 $list = $this->ListModel->getListIdBYUserId($userId);
                 $listId = $list->id;
             } else {
@@ -24,7 +31,6 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
             }
 
             if (!empty($listId)) {
-                $this->load->model('WishItemModel');
                 $result = $this->WishItemModel->getWishList($listId);
 
                 foreach ($result as $row) {
@@ -51,7 +57,6 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
                 $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
 
             } else {
-                $this->load->model('WishItemModel');
                 $result = $this->WishItemModel->getWishItem($id);
 
                 $item = array("id" => $result->id, "title" => $result->title, "listId" => $result->list_id,
@@ -64,63 +69,68 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
     }
 
     public function wishItems_post() {
-        $title = $this->post('title');
-        $listId = $this->post('listId');
-        $priorityId = $this->post('priorityId');
-        $itemUrl = $this->post('itemUrl');
-        $price = $this->post('price');
-        $quantity = $this->post('quantity');
+        if ($this->UserModel->isLoggedIn()) {
+            $title = $this->post('title');
+            $listId = $this->post('listId');
+            $priorityId = $this->post('priorityId');
+            $itemUrl = $this->post('itemUrl');
+            $price = $this->post('price');
+            $quantity = $this->post('quantity');
 
-        $this->load->model('WishItemModel');
-        $newItemId = $this ->WishItemModel->saveWishItem($title, $listId, $priorityId, $itemUrl, $price, $quantity);
+            $newItemId = $this ->WishItemModel->saveWishItem($title, $listId, $priorityId, $itemUrl, $price, $quantity);
 
-        $this->load->model('PriorityModel');
+            $priority = $this->PriorityModel->setPriority($priorityId);
 
-        $priority = $this->PriorityModel->setPriority($priorityId);
+            $newItem = array("id" => $newItemId, "title" => $title, "listId" => $listId, "priorityId" => $priorityId,
+                "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
+                "priority" => $priority->name);
 
-        $newItem = array("id" => $newItemId, "title" => $title, "listId" => $listId, "priorityId" => $priorityId,
-            "itemUrl" => $itemUrl, "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
-            "priority" => $priority->name);
-
-        $this->set_response($newItem, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
+            $this->set_response($newItem, \Restserver\Libraries\REST_Controller::HTTP_CREATED);
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
     }
 
     public function wishItems_put() {
-        $id = $this->put('id');
-        $title = $this->put('title');
-        $priorityId = $this->put('priorityId');
-        $itemUrl = $this->put('itemUrl');
-        $price = $this->put('price');
-        $quantity = $this->put('quantity');
+        if ($this->UserModel->isLoggedIn()) {
+            $id = $this->put('id');
+            $title = $this->put('title');
+            $priorityId = $this->put('priorityId');
+            $itemUrl = $this->put('itemUrl');
+            $price = $this->put('price');
+            $quantity = $this->put('quantity');
 
-        $this->load->model('WishItemModel');
-        $this ->WishItemModel->updateWishItem($id, $title, $priorityId, $itemUrl, $price, $quantity);
+            $this ->WishItemModel->updateWishItem($id, $title, $priorityId, $itemUrl, $price, $quantity);
 
-        $this->load->model('PriorityModel');
+            $priority = $this->PriorityModel->setPriority($priorityId);
 
-        $priority = $this->PriorityModel->setPriority($priorityId);
+            $item = array("id" => $id, "title" => $title, "priorityId" => $priorityId, "itemUrl" => $itemUrl,
+                "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
+                "priority" => $priority->name);
 
-        $item = array("id" => $id, "title" => $title, "priorityId" => $priorityId, "itemUrl" => $itemUrl,
-            "price" => $price, "quantity" => $quantity, "priorityLvl" => $priority->priority,
-            "priority" => $priority->name);
-
-        $this->set_response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
+            $this->set_response($item, \Restserver\Libraries\REST_Controller::HTTP_OK);
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
     }
 
     public function wishItems_delete() {
-        $id = (int) $this->get('id');
+        if ($this->UserModel->isLoggedIn()) {
+            $id = (int) $this->get('id');
 
-        if ($id <= 0) {
-            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
+            if ($id <= 0) {
+                $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
+            }
+
+            $this ->WishItemModel->deleteWishItem($id);
+
+            $message = array('id' => $id, 'message' => 'Deleted the resource');
+
+            $this->set_response($message, \Restserver\Libraries\REST_Controller::HTTP_NO_CONTENT);
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
         }
 
-        log_message('debug',print_r($id,TRUE));
-        $this->load->model('WishItemModel');
-        $this ->WishItemModel->deleteWishItem($id);
-
-        $message = array('id' => $id, 'message' => 'Deleted the resource');
-
-        $this->set_response($message, \Restserver\Libraries\REST_Controller::HTTP_NO_CONTENT);
     }
 
 }

@@ -7,6 +7,8 @@ class User extends \Restserver\Libraries\REST_Controller {
 
     function __construct(){
         parent::__construct();
+
+        $this->load->model('UserModel');
     }
 
     public function users_post(){
@@ -32,22 +34,27 @@ class User extends \Restserver\Libraries\REST_Controller {
     }
 
     public function users_get(){
-        $username = $this->get('username');
+        if ($this->UserModel->isLoggedIn()) {
+            $username = $this->get('username');
 
-        if ($username == NULL) {
-            $user = $this->session->user;
-            $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+            if ($username == NULL) {
+                $user = $this->session->user;
+                $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
 
+            } else {
+                $this->load->model('UserModel');
+                $resultUser = $this ->UserModel->getUserByUsername($username);
+
+                $user = new stdClass();
+                $user->id = $resultUser->id;
+                $user->fname = $resultUser->first_name;
+                $user->lname = $resultUser->last_name;
+
+                $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+            }
         } else {
-            $this->load->model('UserModel');
-            $resultUser = $this ->UserModel->getUserByUsername($username);
-
-            $user = new stdClass();
-            $user->id = $resultUser->id;
-            $user->fname = $resultUser->first_name;
-            $user->lname = $resultUser->last_name;
-
-            $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
         }
+
     }
 }
