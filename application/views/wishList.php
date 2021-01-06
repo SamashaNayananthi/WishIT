@@ -43,13 +43,16 @@
     <div class="list-left" id="listMain"></div>
 
     <div class="list-right">
+        <button class="edit-icon" onclick="openDeleteList()">
+            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="Delete List"></i>
+        </button>
         <button class="edit-icon" onclick="openList('edit')">
             <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit List"></i>
         </button>
         <button class="share-icon" onclick="shareableLink()">
             <i class="fa fa-share" data-toggle="tooltip" data-placement="bottom" title="Get Shareable Link"></i>
         </button>
-        <button class='add-icon' onclick="openItemPopup('add', null)">
+        <button class='add-icon list-add' onclick="openItemPopup('add', null)">
             <i class="fa fa-plus-circle" data-toggle="tooltip" data-placement="bottom" title="Add an Item"></i>
         </button>
     </div>
@@ -71,6 +74,17 @@
 
         <input type="button" value="Create Wish List" class="popupBtn" id="addListBtn" onclick="onSubmitList('add')">
         <input type="button" value="Edit Wish List" class="popupBtn" id="editListBtn" onclick="onSubmitList('edit')">
+    </div>
+</div>
+
+<div class="popup" id="deleteListPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closeDeleteListPopup()">&times;</span>
+        <div class="popup-heading">Delete The List</div>
+
+        <label for="name" class="del-msg" id="deleteListMsg"></label>
+
+        <input type="button" value="Yes, delete this list" class="popupBtn" onclick="onClickDeleteList()">
     </div>
 </div>
 
@@ -410,6 +424,9 @@ include_once("footer.php");
             list.save(null, { async: false,
                 success: function () {
                     listPopup.style.display = "none";
+                    document.getElementById("name").value = '';
+                    document.getElementById("desc").value = '';
+                    document.getElementById("occasion").value = '';
                 },
                 error: function () {
                     if (action === 'add') {
@@ -424,6 +441,33 @@ include_once("footer.php");
             alert('Please fill all the required fields.');
         }
     }
+
+    var listDeletePopup = document.getElementById("deleteListPopup");
+
+    function closeDeleteListPopup() {
+        listDeletePopup.style.display = "none";
+    }
+
+    function openDeleteList() {
+        document.getElementById("deleteListMsg").innerHTML = "Are you sure ? <br> Your wish list '" +
+            list.get('name') + "' and related items will be deleted. ";
+        listDeletePopup.style.display = "block";
+    }
+
+    function onClickDeleteList() {
+        list.destroy({ url: "<?php echo base_url().'api/ListDetails/list/id/' ?>" + list.get('id'),
+            success: function () {
+                list.clear().set(list.defaults);
+                divVisibilityChange();
+                listDeletePopup.style.display = "none";
+            },
+            error: function () {
+                alert('Error occurred while deleting the list.');
+            }
+        });
+    }
+
+
 
     var itemPopup = document.getElementById("itemPopup");
 
@@ -575,6 +619,8 @@ include_once("footer.php");
             deletePopup.style.display = "none";
         } else if (event.target === shareablePopup) {
             shareablePopup.style.display = "none";
+        } else if (event.target === listDeletePopup) {
+            listDeletePopup.style.display = "none";
         }
     }
 

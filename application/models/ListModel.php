@@ -32,4 +32,8 @@ class ListModel extends CI_Model {
         return $query->row();
     }
 
+    function deleteListById($id) {
+        $this->db->delete('list_details', array('id' => $id));
+    }
+
 }

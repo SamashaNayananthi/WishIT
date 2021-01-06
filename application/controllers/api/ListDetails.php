@@ -90,6 +90,25 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
 
     }
 
+    public function list_delete() {
+        if ($this->UserModel->isLoggedIn()) {
+            $id = (int) $this->get('id');
+
+            if ($id <= 0) {
+                $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_BAD_REQUEST);
+            }
+
+            $this ->ListModel->deleteListById($id);
+
+            $message = array('id' => $id, 'message' => 'Deleted the resource');
+
+            $this->set_response($message, \Restserver\Libraries\REST_Controller::HTTP_NO_CONTENT);
+        } else {
+            $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
+        }
+
+    }
+
     public function shareableLink_get() {
         if ($this->UserModel->isLoggedIn()) {
             $username = $this->session->user->username;

@@ -40,6 +40,7 @@ li.dropdown { display: inline-block; }
     background-color: black;
     min-width: 135px;
     z-index: 1;
+    right: 0;
 }
 
 .dropdown-content a {
@@ -205,7 +206,7 @@ select:focus ,option:focus {
 
 .list-left {
     float: left;
-    width: 70%;
+    width: 65%;
 }
 
 .list-heading {
@@ -254,10 +255,15 @@ select:focus ,option:focus {
     color: white;
 }
 
+.list-add {
+    font-size: 350%;
+    margin-left: 10%;
+}
+
 .list-right {
     display: flex;
     float: right;
-    width: 30%;
+    width: 35%;
     justify-content: space-between;
 }
 
