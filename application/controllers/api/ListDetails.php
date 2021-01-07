@@ -14,11 +14,12 @@ class ListDetails extends \Restserver\Libraries\REST_Controller {
     }
 
     public function list_get() {
-        $userId = null;
-        if ($this->UserModel->isLoggedIn()) {
-            $userId = $this->session->user->id;
-        } else {
-            $userId = $this->get('userId');
+        $userId = $this->get('userId');
+
+        if ($userId == null) {
+            if ($this->UserModel->isLoggedIn()) {
+                $userId = $this->session->user->id;
+            }
         }
 
         if ($userId === NULL) {

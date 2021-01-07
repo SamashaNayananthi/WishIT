@@ -114,7 +114,9 @@ include_once("footer.php");
     var WishItemsView = Backbone.View.extend({
         el: '#wishItems',
         initialize : function () {
-            this.model.fetch({data: $.param({"listId": list.get('id')}), async:false});
+            if (list.get('id') != null) {
+                this.model.fetch({data: $.param({"listId": list.get('id')}), async:false});
+            }
             this.render();
         },
         render : function () {

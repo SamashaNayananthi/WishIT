@@ -34,24 +34,24 @@ class User extends \Restserver\Libraries\REST_Controller {
     }
 
     public function users_get(){
-        if ($this->UserModel->isLoggedIn()) {
-            $username = $this->get('username');
+        $username = $this->get('username');
+        $user = new stdClass();
 
-            if ($username == NULL) {
+        if ($username == null) {
+            if ($this->UserModel->isLoggedIn()) {
+                $username = $this->session->user->username;
                 $user = $this->session->user;
-                $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
-
-            } else {
-                $this->load->model('UserModel');
-                $resultUser = $this ->UserModel->getUserByUsername($username);
-
-                $user = new stdClass();
-                $user->id = $resultUser->id;
-                $user->fname = $resultUser->first_name;
-                $user->lname = $resultUser->last_name;
-
-                $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
             }
+        } else {
+            $resultUser = $this ->UserModel->getUserByUsername($username);
+
+            $user->id = $resultUser->id;
+            $user->fname = $resultUser->first_name;
+            $user->lname = $resultUser->last_name;
+        }
+
+        if ($username != null) {
+            $this->response($user, \Restserver\Libraries\REST_Controller::HTTP_OK);
         } else {
             $this->response(NULL, \Restserver\Libraries\REST_Controller::HTTP_UNAUTHORIZED);
         }

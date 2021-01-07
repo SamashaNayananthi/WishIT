@@ -20,14 +20,14 @@ class WishItem extends \Restserver\Libraries\REST_Controller {
         if ($id === NULL) {
             $items = array();
 
-            $listId = null;
-            if ($this->UserModel->isLoggedIn()) {
-                $userId = $this->session->user->id;
+            $listId = $this->get('listId');
+            if ($listId == null) {
+                if ($this->UserModel->isLoggedIn()) {
+                    $userId = $this->session->user->id;
 
-                $list = $this->ListModel->getListIdBYUserId($userId);
-                $listId = $list->id;
-            } else {
-                $listId = $this->get('listId');
+                    $list = $this->ListModel->getListIdBYUserId($userId);
+                    $listId = $list->id;
+                }
             }
 
             if (!empty($listId)) {
