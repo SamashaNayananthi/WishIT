@@ -641,3 +641,82 @@ ERROR - 2021-01-07 17:07:22 --> Severity: Notice --> Trying to get property 'occ
 ERROR - 2021-01-07 17:07:22 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 39
 ERROR - 2021-01-07 17:07:22 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\WishIT\system\core\Exceptions.php:271) C:\xampp\htdocs\WishIT\system\core\Common.php 578
 DEBUG - 2021-01-07 17:07:22 --> Total execution time: 0.4053
+DEBUG - 2021-01-07 17:17:46 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:17:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:17:46 --> Total execution time: 0.0750
+DEBUG - 2021-01-07 17:17:46 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:17:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:17:46 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-07 17:17:46 --> Total execution time: 0.0805
+DEBUG - 2021-01-07 17:17:47 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:17:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:17:47 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 34
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 35
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 36
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'occasion_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 37
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'occasion' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 38
+ERROR - 2021-01-07 17:17:47 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 39
+ERROR - 2021-01-07 17:17:47 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\WishIT\system\core\Exceptions.php:271) C:\xampp\htdocs\WishIT\system\core\Common.php 578
+DEBUG - 2021-01-07 17:17:47 --> Total execution time: 0.2736
+DEBUG - 2021-01-07 17:18:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:18:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:18:57 --> Total execution time: 0.1194
+DEBUG - 2021-01-07 17:18:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:18:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:18:57 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-07 17:18:57 --> Total execution time: 0.1972
+DEBUG - 2021-01-07 17:18:57 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:18:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:18:58 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 34
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 35
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 36
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'occasion_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 37
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'occasion' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 38
+ERROR - 2021-01-07 17:18:58 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 39
+ERROR - 2021-01-07 17:18:58 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\WishIT\system\core\Exceptions.php:271) C:\xampp\htdocs\WishIT\system\core\Common.php 578
+DEBUG - 2021-01-07 17:18:58 --> Total execution time: 0.4824
+DEBUG - 2021-01-07 17:19:03 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:03 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-07 17:19:03 --> Total execution time: 0.1507
+DEBUG - 2021-01-07 17:19:03 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:03 --> Total execution time: 0.1250
+DEBUG - 2021-01-07 17:19:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:05 --> Total execution time: 0.1220
+DEBUG - 2021-01-07 17:19:05 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-07 17:19:06 --> Total execution time: 0.1750
+DEBUG - 2021-01-07 17:19:06 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:06 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 34
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 35
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 36
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'occasion_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 37
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'occasion' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 38
+ERROR - 2021-01-07 17:19:06 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 39
+ERROR - 2021-01-07 17:19:06 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\WishIT\system\core\Exceptions.php:271) C:\xampp\htdocs\WishIT\system\core\Common.php 578
+DEBUG - 2021-01-07 17:19:06 --> Total execution time: 0.4869
+DEBUG - 2021-01-07 17:19:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:12 --> Total execution time: 0.1414
+DEBUG - 2021-01-07 17:19:12 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:12 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+DEBUG - 2021-01-07 17:19:12 --> Total execution time: 0.1696
+DEBUG - 2021-01-07 17:19:12 --> UTF-8 Support Enabled
+DEBUG - 2021-01-07 17:19:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-07 17:19:12 --> Config file loaded: C:\xampp\htdocs\WishIT\application\config/rest.php
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 34
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'name' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 35
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'description' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 36
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'occasion_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 37
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'occasion' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 38
+ERROR - 2021-01-07 17:19:12 --> Severity: Notice --> Trying to get property 'user_id' of non-object C:\xampp\htdocs\WishIT\application\controllers\api\ListDetails.php 39
+ERROR - 2021-01-07 17:19:12 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\WishIT\system\core\Exceptions.php:271) C:\xampp\htdocs\WishIT\system\core\Common.php 578
+DEBUG - 2021-01-07 17:19:12 --> Total execution time: 0.3107

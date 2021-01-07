@@ -80,14 +80,18 @@ include_once("footer.php");
             this.render();
         },
         render: function () {
-            var html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" ' +
-                'title= "' + this.model.get('name') + '">' + this.model.get('name') + '</div>' +
-                '<div class="vl">|</div>' +
-                '<div class="occasion">' + this.model.get('occasion') + '</div>' +
-                '<div class="vl">|</div>' +
-                '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
-                this.model.get('desc') + '">' + this.model.get('description') +
-                '</div>';
+            var html = '';
+
+            if (this.model.get('id') != null) {
+                html = '<div class="list-name" data-toggle="tooltip" data-placement="bottom" ' +
+                    'title= "' + this.model.get('name') + '">' + this.model.get('name') + '</div>' +
+                    '<div class="vl">|</div>' +
+                    '<div class="occasion">' + this.model.get('occasion') + '</div>' +
+                    '<div class="vl">|</div>' +
+                    '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
+                    this.model.get('desc') + '">' + this.model.get('description') +
+                    '</div>';
+            }
 
             this.$el.html(html);
             return this;
@@ -121,7 +125,11 @@ include_once("footer.php");
         },
         render : function () {
             var html = '';
-            if (this.model.length === 0) {
+            if (list.get('id') == null ) {
+                html += '<div class="no-list">' +
+                    '<div class="no-list-msg">Currently ' + user.get('fname') + ' doesn\'t have a Wish List</div>' +
+                    '</div>';
+            } else if (this.model.length === 0) {
                 html += '<div class="no-list">' +
                     '<div class="no-list-msg">Currently ' + user.get('fname') + '\'s Wish List is empty</div>' +
                     '</div>';
