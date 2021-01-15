@@ -78,7 +78,17 @@ var wishItemsView = new WishItemsView({model:wishItems});
 
 var itemPopup = document.getElementById("itemPopup");
 
+function clearItemPopUp() {
+    document.getElementById("title").value = '';
+    document.getElementById("itemUrl").value = '';
+    document.getElementById("price").value = '';
+    document.getElementById("quantity").value = '';
+    document.getElementById("id").value = '';
+    document.getElementById("priority").value = 1;
+}
+
 function closeItemPopup() {
+    clearItemPopUp();
     itemPopup.style.display = "none";
 }
 
@@ -137,12 +147,7 @@ function onSubmitItem(action) {
                     wishItems.sort();
                     wishItemsView.render();
                     itemPopup.style.display = "none";
-                    document.getElementById("title").value = '';
-                    document.getElementById("itemUrl").value = '';
-                    document.getElementById("price").value = '';
-                    document.getElementById("quantity").value = '';
-                    document.getElementById("id").value = '';
-                    document.getElementById("priority").value = 1;
+                    clearItemPopUp();
                 },
                 error: function () {
                     if (action === "add") {

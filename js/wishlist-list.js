@@ -37,7 +37,14 @@ var listView = new ListView({model:list});
 
 var listPopup = document.getElementById("listPopup");
 
+function clearListPopUp() {
+    document.getElementById("name").value = '';
+    document.getElementById("desc").value = '';
+    document.getElementById("occasion").value = 1;
+}
+
 function closeListPopup() {
+    clearListPopUp();
     listPopup.style.display = "none";
 }
 
@@ -74,9 +81,7 @@ function onSubmitList(action) {
         list.save(null, { async: false,
             success: function () {
                 listPopup.style.display = "none";
-                document.getElementById("name").value = '';
-                document.getElementById("desc").value = '';
-                document.getElementById("occasion").value = '';
+                clearListPopUp();
             },
             error: function () {
                 if (action === 'add') {
@@ -108,6 +113,7 @@ function onClickDeleteList() {
     list.destroy({ url: base_url + "api/ListDetails/list/id/" + list.get('id'),
         success: function () {
             list.clear().set(list.defaults);
+            wishItems.reset();
             divVisibilityChange();
             listDeletePopup.style.display = "none";
         },

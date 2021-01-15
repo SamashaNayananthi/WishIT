@@ -192,20 +192,6 @@ include_once("footer.php");
         }
     }
 
-    window.onclick = function(event) {
-        if (event.target === listPopup) {
-            listPopup.style.display = "none";
-        } else if (event.target === itemPopup) {
-            itemPopup.style.display = "none";
-        } else if (event.target === deletePopup) {
-            deletePopup.style.display = "none";
-        } else if (event.target === shareablePopup) {
-            shareablePopup.style.display = "none";
-        } else if (event.target === listDeletePopup) {
-            listDeletePopup.style.display = "none";
-        }
-    }
-
 </script>
 
 <script src="/WishIT/js/wishlist-user.js" type="text/javascript"></script>
