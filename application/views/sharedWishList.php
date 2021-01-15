@@ -89,7 +89,7 @@ include_once("footer.php");
                     '<div class="occasion">' + this.model.get('occasion') + '</div>' +
                     '<div class="vl">|</div>' +
                     '<div class="list-note" data-toggle="tooltip" data-placement="bottom" title="' +
-                    this.model.get('desc') + '">' + this.model.get('description') +
+                    this.model.get('description') + '">' + this.model.get('description') +
                     '</div>';
             }
 

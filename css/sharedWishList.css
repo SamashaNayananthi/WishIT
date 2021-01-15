@@ -108,6 +108,9 @@ body {
     padding: 2% 4%;
     border-radius: 5px;
     font-weight: bold;
+    border-color: floralwhite;
+    border-style: outset;
+    border-width: thick;
 }
 
 .card-top {
