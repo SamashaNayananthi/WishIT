@@ -7,7 +7,7 @@ class AuthenticateModel extends CI_Model {
     }
 
     public function authenticate($username, $password){
-        $query = $this->db->get_where('users', array('username' => $username));
+        $query = $this->db->get_where('wi_users', array('username' => $username));
 
         if ($query->num_rows() != 1) {
             return -1;

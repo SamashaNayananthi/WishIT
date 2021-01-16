@@ -7,7 +7,7 @@ class UserModel extends CI_Model {
     }
 
     public function registerUser($fname, $lname, $username, $password) {
-        $query = $this->db->get_where('users', array('username' => $username));
+        $query = $this->db->get_where('wi_users', array('username' => $username));
 
         if ($query->num_rows() != 0) {
             return 0;
@@ -16,7 +16,7 @@ class UserModel extends CI_Model {
             $data = array('first_name' => $fname, 'last_name' => $lname, 'username' => $username,
                 'password' => $hashPassword);
 
-            $this->db->insert('users', $data);
+            $this->db->insert('wi_users', $data);
 
             return $this->db->insert_id();;
         }
@@ -32,7 +32,7 @@ class UserModel extends CI_Model {
     }
 
     function getUserByUsername($username) {
-        $query = $this->db->get_where('users', array('username' => $username));
+        $query = $this->db->get_where('wi_users', array('username' => $username));
         return $query->row();
     }
 

@@ -7,7 +7,7 @@ class OccasionModel extends CI_Model{
     }
 
     function getOccasions() {
-        $query = $this->db->get('occasions');
+        $query = $this->db->get('wi_occasions');
         return $query->result();
     }
 

@@ -8,7 +8,7 @@ class PriorityModel extends CI_Model {
 
     function getPriorities() {
         $this->db->order_by('priority', 'asc');
-        $query = $this->db->get('priorities');
+        $query = $this->db->get('wi_priorities');
         return $query->result();
     }
 
