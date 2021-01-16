@@ -44,7 +44,7 @@ include_once("footer.php");
 <script>
 
     function passwordVisibility() {
-        const psw = document.getElementById("psw");
+        const psw = document.getElementById("password");
         if (psw.type === "password") {
             psw.type = "text";
         } else {
