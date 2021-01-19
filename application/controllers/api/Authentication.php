@@ -12,12 +12,10 @@ class Authentication extends \Restserver\Libraries\REST_Controller {
     public function authenticate_post(){
         $username = $this->post('username');
         $password = $this->post('password');
-        log_message('debug', print_r($username, TRUE));
 
         $this->load->model('AuthenticateModel');
 
         $result = $this ->AuthenticateModel->authenticate($username, $password);
-        log_message('debug', print_r($result, TRUE));
 
         if ($result == 1) {
             $authenticated = new stdClass();
