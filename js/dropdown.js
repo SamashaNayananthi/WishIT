@@ -16,8 +16,8 @@ var occasionList = new Occasions();
 var OccasionView = Backbone.View.extend({
     el: '#occasion',
     initialize : function () {
+        this.listenTo(this.model, 'sync', this.render);
         this.model.fetch({async:false});
-        this.listenTo(this.model, 'sync', this.render());
     },
     render : function () {
         var html = '';
@@ -46,8 +46,8 @@ var priorityList = new Priorities();
 var PriorityView = Backbone.View.extend({
     el: '#priority',
     initialize : function () {
+        this.listenTo(this.model, 'sync', this.render);
         this.model.fetch({async:false});
-        this.listenTo(this.model, 'sync', this.render());
     },
     render : function () {
         var html = '';

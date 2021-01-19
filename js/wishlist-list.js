@@ -12,8 +12,8 @@ var list = new List();
 var ListView = Backbone.View.extend({
     el: '#listMain',
     initialize: function () {
-        this.listenTo(this.model, 'sync', this.render);
-        this.model.fetch();
+        this.listenTo(this.model, 'sync remove', this.render);
+        this.model.fetch({async:false});
         divVisibilityChange();
     },
     render: function () {

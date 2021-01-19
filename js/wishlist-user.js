@@ -11,8 +11,8 @@ var user = new User();
 var UserView = Backbone.View.extend({
     el: '#loggedInUser',
     initialize : function () {
+        this.listenTo(this.model, 'sync', this.render);
         this.model.fetch({async:false});
-        this.listenTo(this.model, 'sync', this.render());
     },
     render : function () {
         var html = '<div class="user-name">' + this.model.get('fname') +

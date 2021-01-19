@@ -20,8 +20,8 @@ var wishItems = new WishItems();
 var WishItemsView = Backbone.View.extend({
     el: '#wishItems',
     initialize : function () {
+        this.listenTo(this.model, 'sync remove', this.render);
         this.model.fetch({async:false});
-        this.listenTo(this.model, 'sync', this.render());
         divVisibilityChange();
     },
     render : function () {
@@ -70,8 +70,7 @@ var WishItemsView = Backbone.View.extend({
         });
 
         $('#wishItems').html(html);
-    },
-    wait: true
+    }
 });
 
 var wishItemsView = new WishItemsView({model:wishItems});
@@ -141,11 +140,8 @@ function onSubmitItem(action) {
 
             item.save(null, {async:false,
                 success: function () {
-                    if (action === 'add') {
-                        wishItems.add(item);
-                    }
+                    wishItems.add(item);
                     wishItems.sort();
-                    wishItemsView.render();
                     itemPopup.style.display = "none";
                     clearItemPopUp();
                 },
@@ -186,7 +182,7 @@ function onClickDeleteItem() {
 
     item.destroy({ url: base_url + "api/WishItem/wishItems/id/" + item.get('id'),
         success: function () {
-            wishItemsView.render();
+            wishItems.remove(item);
             deletePopup.style.display = "none";
         },
         error: function () {
